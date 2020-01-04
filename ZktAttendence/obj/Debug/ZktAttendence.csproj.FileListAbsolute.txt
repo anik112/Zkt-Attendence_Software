@@ -1,0 +1,12 @@
+F:\C#_Project\ZktAttendence\bin\Debug\ZktAttendence.exe.config
+F:\C#_Project\ZktAttendence\bin\Debug\ZktAttendence.exe
+F:\C#_Project\ZktAttendence\bin\Debug\ZktAttendence.pdb
+F:\C#_Project\ZktAttendence\obj\Debug\ZktAttendence.csprojAssemblyReference.cache
+F:\C#_Project\ZktAttendence\obj\Debug\Interop.zkemkeeper.dll
+F:\C#_Project\ZktAttendence\obj\Debug\ZktAttendence.csproj.ResolveComReference.cache
+F:\C#_Project\ZktAttendence\obj\Debug\ZktAttendence.exe
+F:\C#_Project\ZktAttendence\obj\Debug\ZktAttendence.pdb
+F:\C#_Project\ZktAttendence\bin\Debug\ZktAttendence.exe.manifest
+F:\C#_Project\ZktAttendence\bin\Debug\ZktAttendence.application
+F:\C#_Project\ZktAttendence\obj\Debug\ZktAttendence.exe.manifest
+F:\C#_Project\ZktAttendence\obj\Debug\ZktAttendence.application
