@@ -17,38 +17,42 @@ namespace ZktAttendence.Core
         {
             try
             {
-                string dwEnrollNumber = "";
-                int dwVerifyMode = 0;
-                int dwInOutMode = 0;
-                int dwYear = 0;
-                int dwMonth = 0;
-                int dwDay = 0;
-                int dwHour = 0;
-                int dwMinute = 0;
-                int dwSecond = 0;
-                int dwWorkCode = 0;
+                string dwEnrollNumber = ""; // set EnrollNumber
+                int dwVerifyMode = 0; // set Verify Mode
+                int dwInOutMode = 0; // set in out mode
+                int dwYear = 0; // set year
+                int dwMonth = 0; // set month
+                int dwDay = 0; // set day
+                int dwHour = 0; // set hours
+                int dwMinute = 0; // set minute
+                int dwSecond = 0; // set second
+                int dwWorkCode = 0; // set work code
 
+                // make a arry list for take attendence log from buffer
                 ICollection<MachineInfo> lstAttndData = new List<MachineInfo>();
+                
+                objZkt.ReadAllGLogData(machineNumber); // call ZKT libery function and set machineNumber
 
-                objZkt.ReadAllGLogData(machineNumber);
-
+                // call ZKT libery function SSR_GetGeneralLogData(_) and fatch log data from buffer
                 while (objZkt.SSR_GetGeneralLogData(machineNumber, out dwEnrollNumber, out dwVerifyMode, out dwInOutMode, out dwYear, out dwMonth, out dwDay, out dwHour, out dwMinute, out dwSecond, ref dwWorkCode))
                 {
+                    // make date from long time and date
                     string inputDate = new DateTime(dwYear, dwMonth, dwDay, dwHour, dwMinute, dwSecond).ToString();
-
+                    // call MachineInfo call and access there propraty
                     MachineInfo objMachineInfo = new MachineInfo();
-                    objMachineInfo.MachineNumber = machineNumber;
-                    objMachineInfo.IndRegID = int.Parse(dwEnrollNumber);
-                    objMachineInfo.DateTimeRecord = inputDate;
+                    objMachineInfo.MachineNumber = machineNumber; // set machine number
+                    objMachineInfo.IndRegID = int.Parse(dwEnrollNumber); // set takeing attendence user id
+                    objMachineInfo.DateTimeRecord = inputDate; // set date of attendence
 
-                    lstAttndData.Add(objMachineInfo);
+                    lstAttndData.Add(objMachineInfo); // finaly add machineInfo object in array
                 }
 
-                return lstAttndData;
+                return lstAttndData; // return array
             }
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
+                Console.ReadLine();
             }
             return null;
         }
@@ -58,6 +62,9 @@ namespace ZktAttendence.Core
         {
             try
             {
+                /*
+                 * Connect_Net()
+                 * We get device connection using this method.**/
                 bool check=cZKEM.Connect_Net(ipAddress, portNo); // Connection with Device
                 if (check)
                 {
@@ -72,6 +79,7 @@ namespace ZktAttendence.Core
             catch(Exception e)
             {
                 Console.WriteLine(e.Message);
+                Console.ReadLine();
                 //Response.Write(@"<SCRIPT LANGUAGE=""JavaScript"">alert('" + errorText + "')</SCRIPT>");
             }
             return false;
@@ -150,25 +158,28 @@ namespace ZktAttendence.Core
         {
             try
             {
-                int dwEnrollNumber = 0;
-                int dwEMachineNumber = 0;
-                int dwBackUpNumber = 0;
-                int dwMachinePrivelage = 0;
-                int dwEnabled = 0;
+                int dwEnrollNumber = 0; // set enroll number
+                int dwEMachineNumber = 0; // set machine number
+                int dwBackUpNumber = 0; // set backup number
+                int dwMachinePrivelage = 0; // set machine privelage
+                int dwEnabled = 0; // set machine is enable or not
 
+                // create a array of userIdInfo object.
                 ICollection<UserIdInfo> lstUserIDInfo = new List<UserIdInfo>();
 
+                // call ZKT libery function GetAllUserID() for get user id list
                 while (objZkeeper.GetAllUserID(machineNumber, ref dwEnrollNumber, ref dwEMachineNumber, ref dwBackUpNumber, ref dwMachinePrivelage, ref dwEnabled))
                 {
+                    // set data in UserIdInfo object
                     UserIdInfo userID = new UserIdInfo();
                     userID.BackUpNumber = dwBackUpNumber;
                     userID.Enabled = dwEnabled;
                     userID.EnrollNumber = dwEnrollNumber;
                     userID.MachineNumber = dwEMachineNumber;
                     userID.Privelage = dwMachinePrivelage;
-                    lstUserIDInfo.Add(userID);
+                    lstUserIDInfo.Add(userID); // add the object in array
                 }
-                return lstUserIDInfo;
+                return lstUserIDInfo; // return array
 
             }
             catch(Exception e)
@@ -183,17 +194,20 @@ namespace ZktAttendence.Core
         {
             try
             {
-                int dwMachineNumber = 0;
-                int dwEnrollNumber = 0;
-                string dwName = string.Empty;
-                string dwPassword = string.Empty;
-                int dwPrivilege = 0;
-                bool dwEnable = false;
+                int dwMachineNumber = 0; // set machine number
+                int dwEnrollNumber = 0; // set enroll numner
+                string dwName = string.Empty; // set user name
+                string dwPassword = string.Empty; // set user password
+                int dwPrivilege = 0; // set user privilege
+                bool dwEnable = false; // set is enable
 
+                // make a array for store UserInfo object
                 ICollection<UserInfo> listOfUser = new List<UserInfo>();
 
-                while(objCzkem.GetUserInfo(dwMachineNumber, dwEnrollNumber, ref dwName, ref dwPassword, ref dwPrivilege, ref dwEnable))
+                // call ZKT libray function GetUserInfo() for take user information from buffer
+                while (objCzkem.GetUserInfo(dwMachineNumber, dwEnrollNumber, ref dwName, ref dwPassword, ref dwPrivilege, ref dwEnable))
                 {
+                    // set information in userInfo object
                     UserInfo user = new UserInfo();
                     user.enrollNumber = dwEnrollNumber;
                     user.machineNumber = dwMachineNumber;
@@ -201,10 +215,10 @@ namespace ZktAttendence.Core
                     user.password = dwPassword;
                     user.privilege = dwPrivilege;
                     user.enable = dwEnable;
-                    listOfUser.Add(user);
+                    listOfUser.Add(user); // add object in array
                 }
                 
-                return listOfUser;
+                return listOfUser; // return array
 
             }
             catch(Exception e)

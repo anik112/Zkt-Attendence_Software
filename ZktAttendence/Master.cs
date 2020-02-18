@@ -24,7 +24,9 @@ namespace ZktAttendence
             {
                 Console.Write("IP Add: ");
                 string ipAdd = Console.ReadLine();
-                int port = 4370;
+                //int port = 4370;
+                Console.Write("Port Number: ");
+                int port = int.Parse(Console.ReadLine());
 
                 if (zkt.GetConnection(objZkt, ipAdd, port))
                 {
