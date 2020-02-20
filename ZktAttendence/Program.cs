@@ -16,7 +16,7 @@ namespace ZktAttendence
         static void Main(string[] args)
         {
             //new Master().DriverMethod();
-            new UpdateInDatabase().getUserInfoFromDatabase();
+            new UpdateInDatabase().getUserInfoFromDatabase(DatabaseConnection.getConnection());
         } 
     }
 }

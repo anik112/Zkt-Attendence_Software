@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ZktAttendence.Utilitis
 {
@@ -19,6 +15,11 @@ namespace ZktAttendence.Utilitis
         public DateTime TimeOnlyRecord
         {
             get { return DateTime.Parse(DateTime.Parse(DateTimeRecord).ToString("hh:mm:ss tt")); }
+        }
+
+        public String getIndRegID()
+        {
+            return this.IndRegID.ToString();
         }
     }
 }

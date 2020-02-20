@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using ZktAttendence.Core_Service;
 using ZktAttendence.Core;
 using zkemkeeper;
 using ZktAttendence.Utilitis;
+using Oracle.DataAccess.Client;
 
 namespace ZktAttendence
 {
@@ -69,6 +67,8 @@ namespace ZktAttendence
 
                 cks = 0;
 
+                OracleConnection oraConn = DatabaseConnection.getConnection();
+
                 Console.WriteLine("-------------------- Attendence Data --------------------");
                 foreach (MachineInfo m in userAttndData)
                 {
@@ -77,6 +77,8 @@ namespace ZktAttendence
                     Console.WriteLine("Machine Number: " + m.MachineNumber);
                     Console.WriteLine("User Id: " + m.IndRegID);
                     Console.WriteLine("Time & Date: " + m.DateTimeRecord);
+                    new UpdateInDatabase().storeLogDataInDatabase(m.MachineNumber,m.getIndRegID(),m.DateTimeRecord,oraConn);
+
                     if (cks > 50)
                     {
                         break;

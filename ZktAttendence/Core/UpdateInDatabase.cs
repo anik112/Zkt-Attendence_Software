@@ -9,12 +9,12 @@ using ZktAttendence.Utilitis;
 namespace ZktAttendence.Core
 {
     class UpdateInDatabase
-    {
-        private OracleConnection connection = DatabaseConnection.getConnection();
-
+    {  
         
-
-        public void getUserInfoFromDatabase()
+        /**
+         * this method use for get user information from database.
+         */
+        public void getUserInfoFromDatabase(OracleConnection connection)
         {
             try { 
                 // make command object
@@ -35,11 +35,11 @@ namespace ZktAttendence.Core
                     //Console.WriteLine(oracleDataReader.GetString(0)); // write data in console
                     //if(oracleDataReader.FetchSize)
                     count++;
-                    Console.Write("\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b");
-                    Console.Write("Process: " + count + "%");
+                    Console.Write("\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b"); // remove text from console
+                    Console.Write("Process: " + count + " Data"); // write text in console
                 }
-                cmd.Dispose();
-                connection.Close();
+                cmd.Dispose(); // close OracleCommand
+                connection.Close(); // close Connection
                 Console.WriteLine("\nSize= " + count); 
                 Console.ReadLine();
 
@@ -51,7 +51,9 @@ namespace ZktAttendence.Core
         }
 
 
-
+        /**
+         * This method use for store attendence log information in database.
+         */
         public void storeLogDataInDatabase(int machineNumber, String userId, String timeDate, OracleConnection oraCon)
         {
             try
@@ -60,8 +62,8 @@ namespace ZktAttendence.Core
                 oraCommand.Connection = oraCon; // set oracle database connection in oracle command object
                 // make sql string
                 String prepareSql = "INSER INTO ZKT_ATTENDENCE_LOG(MACHINE_NUMBER,USER_ID,TIME_DATE) VALUES (" + machineNumber + ","
-                                                                                                                + "'" + userId + "',"
-                                                                                                                + "'" + timeDate + "')";
+                                                                                                               + "'" + userId + "',"
+                                                                                                               + "'" + timeDate + "')";
                 oraCommand.CommandText = prepareSql; 
                 int check = oraCommand.ExecuteNonQuery();
                 oraCommand.Dispose();
@@ -75,6 +77,56 @@ namespace ZktAttendence.Core
                 Console.ReadLine();
             }
         }
+
+        /**
+         * this method use for get machine information from daatabase.
+         */
+        public ICollection<MachineSelector> getMachineListFromDatabase(OracleConnection oraConn)
+        {
+
+            ICollection<MachineSelector> machineList = new List<MachineSelector>();
+            try
+            {
+                OracleCommand command = new OracleCommand();
+                command.Connection = oraConn;
+                String prepareSql = "SELECT MACHINE_NUMBER,IP_ADDRESS,PORT_NUMBER FROM ZKT_MACHINE_INFO";
+                command.CommandText = prepareSql;
+                OracleDataReader oracleData = command.ExecuteReader();
+
+                while (oracleData.Read())
+                {
+                    MachineSelector selector = new MachineSelector();
+                    selector.setMachineNumber(oracleData.GetInt16(0));
+                    selector.setIpAddress(oracleData.GetString(1));
+                    selector.setPortNumber(oracleData.GetInt16(2));
+
+                    machineList.Add(selector);
+                }
+
+                return machineList;
+            }catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+                Console.ReadLine();
+            }
+
+            return machineList;
+        }
+
+        /**
+         * this method work for store data in database.
+         */
+        public void setMachineInfoIntoDatabase(int machineNumber,String ipAddress, int portNumber, OracleConnection oraCon)
+        {
+            OracleCommand command = new OracleCommand();
+            command.Connection = oraCon;
+            String preparSql = "INSERT INTO ZKT_MACHINE_INFO(MACHINE_NUMBER,IP_ADDRESS,PORT_NUMBER) VALUES ("+machineNumber+",'"+ipAddress+"',"+portNumber+")";
+            command.CommandText = preparSql;
+            command.ExecuteNonQuery();
+            oraCon.Close();
+            command.Dispose();
+        }
+
 
 
     }
