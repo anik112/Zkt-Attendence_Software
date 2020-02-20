@@ -14,4 +14,8 @@
     - *Properties*
     - *Utilitis*
     - *view*
-
+> **Main Execution File: Program.cs**
+> **Configration File: App.config**
+> **External Libray File: zkemkeeper.dll**
+> **External Libray File: Oracle.DataAccess.dll**
+> **Master File: Master.cs**
