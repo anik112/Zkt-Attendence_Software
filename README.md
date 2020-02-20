@@ -7,7 +7,7 @@
 
 **Folder Structur:**
 - **root**
-    - ** bin **
-    - ** Core **
-    - ** Core Service **
+    > **bin**
+    > **Core**
+    > **Core Service**
 
