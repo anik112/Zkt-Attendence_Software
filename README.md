@@ -3,5 +3,5 @@
 
 
 # Getting Started
-- Using this application you will get attendence log from ZKT Device buffer.
+**Using this application you will get attendence log from ZKT Device buffer.**
 
