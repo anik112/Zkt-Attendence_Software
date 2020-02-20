@@ -3,5 +3,11 @@
 
 
 # Getting Started
-**Using this application you will get attendence log from ZKT Device buffer.**
+**Uses:** *Using this application you will get attendence log from ZKT Device buffer.*
+
+**Folder Structur:**
+- **root**
+    - ** bin **
+    - ** Core **
+    - ** Core Service **
 
