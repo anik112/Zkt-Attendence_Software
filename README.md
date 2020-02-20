@@ -7,7 +7,6 @@
 
 # Folder Structur:
 - **root**
--
     - *bin*
     - *Core*
     - *Core Service*
