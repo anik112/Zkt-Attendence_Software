@@ -8,6 +8,6 @@
 **Folder Structur:**
 - **root**
     > **bin**
-    > **Core**
-    > **Core Service**
+    - **Core**
+    - **Core Service**
 
