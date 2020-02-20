@@ -7,11 +7,11 @@
 
 # Folder Structur:
    - **root**
-    -*bin*
-    -*Core*
-    -*Core Service*
-    -*dll*
-    -*Properties*
-    -*Utilitis*
-    -*view*
+    - *bin*
+    - *Core*
+    - *Core Service*
+    - *dll*
+    - *Properties*
+    - *Utilitis*
+    - *view*
 
