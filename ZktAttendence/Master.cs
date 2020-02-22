@@ -10,11 +10,68 @@ namespace ZktAttendence
 {
     class Master
     {
+        private CoreZkt zkt;
+        private CZKEM objZkt;
+
+        public void consoleProcessForAttendence()
+        {
+            zkt = new CoreZktClass();
+            objZkt = new CZKEM();
+            int deviceCount = 0;
+            int machineNumber = zkt.GetMachineNumber(objZkt);
+            
+
+            ICollection<MachineSelector> getMachineList = new UpdateInDatabase().getMachineListFromDatabase(DatabaseConnection.getConnection());
+
+            foreach(MachineSelector selector in getMachineList)
+            {
+                Console.WriteLine("Device Number " + deviceCount + " IP: " + selector.getIpAddress());
+
+                if (zkt.GetConnection(objZkt, selector.getIpAddress(), selector.getPortNumber()))
+                {
+                    Console.WriteLine("*** Device is connected ***");
+                    ICollection<MachineInfo> userAttndData = new List<MachineInfo>();
+                    userAttndData = zkt.GetAttendenceLogData(objZkt, machineNumber);
+
+                    int recordCount = 0;
+
+                    foreach(MachineInfo machinAttendence in userAttndData)
+                    {
+/*                        Console.WriteLine("----------------------------------------");
+                        Console.WriteLine("Machine Number: " + machinAttendence.MachineNumber);
+                        Console.WriteLine("User Id: " + machinAttendence.IndRegID);
+                        Console.WriteLine("Time & Date: " + machinAttendence.DateTimeRecord);*/
+                        new UpdateInDatabase().storeLogDataInDatabase(machinAttendence.MachineNumber, 
+                                                                     machinAttendence.getIndRegID(), 
+                                                                     machinAttendence.DateTimeRecord,
+                                                                     DatabaseConnection.getConnection()
+                                                                     );
+                        recordCount++;
+                        Console.Write("\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b"); // remove text from console
+                        Console.Write("Process: " + recordCount + " Data"); // write text in console
+
+                        if (recordCount > 50)
+                        {
+                            break;
+                        }
+                    }
+
+                }
+                else
+                {
+                    Console.WriteLine("\n Machine Number: " + selector.getMachineNumber() + " -- Is Disconnected --");
+                }
+                
+            }
+
+        }
+
+
 
         public void DriverMethod()
         {
-            CoreZkt zkt = new CoreZktClass();
-            CZKEM objZkt = new CZKEM();
+            zkt = new CoreZktClass();
+            objZkt = new CZKEM();
 
             Console.WriteLine("[y] = Continue Program, [n] = Exit Program");
 
@@ -55,6 +112,7 @@ namespace ZktAttendence
                     Console.WriteLine("Enroll Number: " + u.EnrollNumber);
                     Console.WriteLine("Backup Number: " + u.BackUpNumber);
                     Console.WriteLine("");
+
                     if (cks > 50)
                     {
                         break;

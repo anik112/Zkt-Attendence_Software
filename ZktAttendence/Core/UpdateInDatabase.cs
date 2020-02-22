@@ -58,17 +58,36 @@ namespace ZktAttendence.Core
         {
             try
             {
-                OracleCommand oraCommand = new OracleCommand(); // call oracle command object
+                /*// make sql string
+                String prepareSql = "INSERT INTO ZKT_ATTENDENCE_LOG (MACHINE_NUMBER,USER_ID,TIME_DATE) VALUES (:machineNum,:secNo,:timeDate);";
+                Console.WriteLine(prepareSql);
+
+                OracleCommand oraCommand = new OracleCommand(prepareSql); // call oracle command object
                 oraCommand.Connection = oraCon; // set oracle database connection in oracle command object
-                // make sql string
-                String prepareSql = "INSER INTO ZKT_ATTENDENCE_LOG(MACHINE_NUMBER,USER_ID,TIME_DATE) VALUES (" + machineNumber + ","
-                                                                                                               + "'" + userId + "',"
-                                                                                                               + "'" + timeDate + "')";
-                oraCommand.CommandText = prepareSql; 
+
+                OracleParameter machineNum = new OracleParameter("machineNum", OracleDbType.Decimal);
+                OracleParameter secNo = new OracleParameter("secNo", OracleDbType.Varchar2, 100);
+                OracleParameter timeDates = new OracleParameter("timeDate", OracleDbType.Varchar2, 40);
+
+                machineNum.Value = machineNumber;
+                secNo.Value = userId;
+                timeDates.Value = timeDate;
+
+                oraCommand.Parameters.Add("machineNum",machineNum);
+                oraCommand.Parameters.Add("secNo", secNo);
+                oraCommand.Parameters.Add("timeDate",timeDates);
+
                 int check = oraCommand.ExecuteNonQuery();
                 oraCommand.Dispose();
                 oraCon.Close(); // close oracle database connection
-                Console.WriteLine(check);
+                Console.WriteLine(check);*/
+
+                String prepareSql = "INSERT INTO ZKT_ATTENDENCE_LOG (MACHINE_NUMBER,USER_ID,TIME_DATE) VALUES (105,'192001','12:30:00 PM');";
+                OracleCommand oracleCommand = new OracleCommand();
+                oracleCommand.CommandText = prepareSql;
+                Console.WriteLine(oracleCommand.CommandText);
+                oracleCommand.Connection = oraCon;
+                oracleCommand.ExecuteNonQuery();
 
             }
             catch(Exception e)
@@ -96,9 +115,9 @@ namespace ZktAttendence.Core
                 while (oracleData.Read())
                 {
                     MachineSelector selector = new MachineSelector();
-                    selector.setMachineNumber(oracleData.GetInt16(0));
+                    selector.setMachineNumber((int)oracleData.GetDecimal(0));
                     selector.setIpAddress(oracleData.GetString(1));
-                    selector.setPortNumber(oracleData.GetInt16(2));
+                    selector.setPortNumber((int)oracleData.GetDecimal(2));
 
                     machineList.Add(selector);
                 }
