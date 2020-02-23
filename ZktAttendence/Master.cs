@@ -12,24 +12,35 @@ namespace ZktAttendence
     {
         private CoreZkt zkt;
         private CZKEM objZkt;
+        private String workToDay=String.Empty;
+        private String workFromDay = String.Empty;
+
 
         public void consoleProcessForAttendence()
         {
             zkt = new CoreZktClass();
             objZkt = new CZKEM();
-            int deviceCount = 0;
             int machineNumber = zkt.GetMachineNumber(objZkt);
-            
+
+            Console.WriteLine("From Date: ");
+            String tempFromDate = Console.ReadLine();
+            Console.WriteLine("To Date: ");
+            String tempToDate = Console.ReadLine();
+
+            workFromDay = tempFromDate.Substring(3, 4)+"/"+tempFromDate.Substring(1,2)+"/"+tempFromDate.Substring(4,8);
+            workToDay = tempToDate.Substring(3, 4) + "/" + tempToDate.Substring(1, 2) + "/" + tempToDate.Substring(4, 8);
+
 
             ICollection<MachineSelector> getMachineList = new UpdateInDatabase().getMachineListFromDatabase(DatabaseConnection.getConnection());
 
             foreach(MachineSelector selector in getMachineList)
             {
-                Console.WriteLine("Device Number " + deviceCount + " IP: " + selector.getIpAddress());
+
+                Console.WriteLine("\nDevice Number " + selector.getMachineNumber() + " - IP: " + selector.getIpAddress());
 
                 if (zkt.GetConnection(objZkt, selector.getIpAddress(), selector.getPortNumber()))
                 {
-                    Console.WriteLine("*** Device is connected ***");
+                    Console.WriteLine("*** Device is connected ***\n");
                     ICollection<MachineInfo> userAttndData = new List<MachineInfo>();
                     userAttndData = zkt.GetAttendenceLogData(objZkt, machineNumber);
 
@@ -37,25 +48,20 @@ namespace ZktAttendence
 
                     foreach(MachineInfo machinAttendence in userAttndData)
                     {
-/*                        Console.WriteLine("----------------------------------------");
-                        Console.WriteLine("Machine Number: " + machinAttendence.MachineNumber);
-                        Console.WriteLine("User Id: " + machinAttendence.IndRegID);
-                        Console.WriteLine("Time & Date: " + machinAttendence.DateTimeRecord);*/
-                        new UpdateInDatabase().storeLogDataInDatabase(machinAttendence.MachineNumber, 
-                                                                     machinAttendence.getIndRegID(), 
-                                                                     machinAttendence.DateTimeRecord,
-                                                                     DatabaseConnection.getConnection()
-                                                                     );
-                        recordCount++;
-                        Console.Write("\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b"); // remove text from console
-                        Console.Write("Process: " + recordCount + " Data"); // write text in console
+                            new UpdateInDatabase().storeLogDataInDatabase(machinAttendence.MachineNumber,
+                                                                         machinAttendence.getIndRegID(),
+                                                                         machinAttendence.DateTimeRecord,
+                                                                         DatabaseConnection.getConnection()
+                                                                         );
+                            recordCount++;
+                            Console.Write("\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b"); // remove text from console
+                            Console.Write("Process: " + recordCount + " Data"); // write text in console
 
-                        if (recordCount > 50)
-                        {
-                            break;
-                        }
+                            if (recordCount > 50)
+                            {
+                                break;
+                            }
                     }
-
                 }
                 else
                 {

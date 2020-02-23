@@ -9,7 +9,7 @@ namespace ZktAttendence.Utilitis
 {
     class DatabaseConnection
     {
-        private static String host = "DESKTOP-NSLL7T5"; // hosting pc name or ip address
+        private static String host = "new-PC";//"DESKTOP-NSLL7T5"; // hosting pc name or ip address
         private static String serviceName = "payroll"; // service name or database name
         private static String userId = "payroll"; // username
         private static String password = "payroll"; // password

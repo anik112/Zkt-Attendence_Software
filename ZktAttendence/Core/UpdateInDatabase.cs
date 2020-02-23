@@ -54,40 +54,23 @@ namespace ZktAttendence.Core
         /**
          * This method use for store attendence log information in database.
          */
-        public void storeLogDataInDatabase(int machineNumber, String userId, String timeDate, OracleConnection oraCon)
+        public void storeLogDataInDatabase(decimal machineNumber, String userId, String timeDate, OracleConnection oraCon)
         {
             try
             {
-                /*// make sql string
-                String prepareSql = "INSERT INTO ZKT_ATTENDENCE_LOG (MACHINE_NUMBER,USER_ID,TIME_DATE) VALUES (:machineNum,:secNo,:timeDate);";
-                Console.WriteLine(prepareSql);
-
-                OracleCommand oraCommand = new OracleCommand(prepareSql); // call oracle command object
-                oraCommand.Connection = oraCon; // set oracle database connection in oracle command object
-
-                OracleParameter machineNum = new OracleParameter("machineNum", OracleDbType.Decimal);
-                OracleParameter secNo = new OracleParameter("secNo", OracleDbType.Varchar2, 100);
-                OracleParameter timeDates = new OracleParameter("timeDate", OracleDbType.Varchar2, 40);
-
-                machineNum.Value = machineNumber;
-                secNo.Value = userId;
-                timeDates.Value = timeDate;
-
-                oraCommand.Parameters.Add("machineNum",machineNum);
-                oraCommand.Parameters.Add("secNo", secNo);
-                oraCommand.Parameters.Add("timeDate",timeDates);
-
-                int check = oraCommand.ExecuteNonQuery();
-                oraCommand.Dispose();
-                oraCon.Close(); // close oracle database connection
-                Console.WriteLine(check);*/
-
-                String prepareSql = "INSERT INTO ZKT_ATTENDENCE_LOG (MACHINE_NUMBER,USER_ID,TIME_DATE) VALUES (105,'192001','12:30:00 PM');";
+                String prepareSql = "INSERT INTO ZKT_ATTENDENCE_LOG(MACHINE_NUMBER,USER_ID,TIME_DATE) VALUES ("+machineNumber+",'"+userId+"','"+timeDate+"')";
                 OracleCommand oracleCommand = new OracleCommand();
+                oracleCommand.Connection = oraCon;
                 oracleCommand.CommandText = prepareSql;
                 Console.WriteLine(oracleCommand.CommandText);
-                oracleCommand.Connection = oraCon;
-                oracleCommand.ExecuteNonQuery();
+                int check=oracleCommand.ExecuteNonQuery();
+                oracleCommand.Dispose();
+                oraCon.Close();
+
+                if (check > 0)
+                {
+                    Console.WriteLine("Data Inserted ...");
+                }
 
             }
             catch(Exception e)
@@ -146,7 +129,31 @@ namespace ZktAttendence.Core
             command.Dispose();
         }
 
-
-
     }
 }
+
+
+
+/*              // make sql string
+                String prepareSql = "INSERT INTO ZKT_ATTENDENCE_LOG (MACHINE_NUMBER,USER_ID,TIME_DATE) VALUES (:machineNum,:secNo,:timeDate);";
+                Console.WriteLine(prepareSql);
+
+                OracleCommand oraCommand = new OracleCommand(prepareSql); // call oracle command object
+                oraCommand.Connection = oraCon; // set oracle database connection in oracle command object
+
+                OracleParameter machineNum = new OracleParameter("machineNum", OracleDbType.Decimal);
+                OracleParameter secNo = new OracleParameter("secNo", OracleDbType.Varchar2, 100);
+                OracleParameter timeDates = new OracleParameter("timeDate", OracleDbType.Varchar2, 40);
+
+                machineNum.Value = machineNumber;
+                secNo.Value = userId;
+                timeDates.Value = timeDate;
+
+                oraCommand.Parameters.Add("machineNum",machineNum);
+                oraCommand.Parameters.Add("secNo", secNo);
+                oraCommand.Parameters.Add("timeDate",timeDates);
+
+                int check = oraCommand.ExecuteNonQuery();
+                oraCommand.Dispose();
+                oraCon.Close(); // close oracle database connection
+                Console.WriteLine(check);*/

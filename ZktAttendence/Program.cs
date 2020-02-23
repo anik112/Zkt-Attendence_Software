@@ -31,10 +31,17 @@ namespace ZktAttendence
                 Console.WriteLine("Ip Address: " + selector.getIpAddress());
                 Console.WriteLine("Port Number: " + selector.getPortNumber());
             }*/
+            /*            new UpdateInDatabase().storeLogDataInDatabase(101,"0000006210","05:30:00 PM",DatabaseConnection.getConnection());
+                        new UpdateInDatabase().setMachineInfoIntoDatabase(101,"192.168.0.20",2470,DatabaseConnection.getConnection());*/
 
+            String tempFromDate = "02202020";
+            String tempToDate = "01022020";
 
-            new UpdateInDatabase().storeLogDataInDatabase(101,"000101","12:30",DatabaseConnection.getConnection());
+            String workFromDay = tempFromDate.Substring(3, 4) + "/" + tempFromDate.Substring(1, 2) + "/" + tempFromDate.Substring(4, 7);
+            String workToDay = tempToDate.Substring(3, 4) + "/" + tempToDate.Substring(1, 2) + "/" + tempToDate.Substring(4, 7);
 
+            Console.WriteLine(workFromDay);
+            Console.WriteLine(workToDay);
 
             Console.ReadLine();
         } 

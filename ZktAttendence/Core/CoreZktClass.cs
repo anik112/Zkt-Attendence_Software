@@ -164,6 +164,7 @@ namespace ZktAttendence.Core
                 int dwMachinePrivelage = 0; // set machine privelage
                 int dwEnabled = 0; // set machine is enable or not
 
+
                 // create a array of userIdInfo object.
                 ICollection<UserIdInfo> lstUserIDInfo = new List<UserIdInfo>();
 
