@@ -36,8 +36,8 @@ namespace ZktAttendence.Core
                 // call ZKT libery function SSR_GetGeneralLogData(_) and fatch log data from buffer
                 while (objZkt.SSR_GetGeneralLogData(machineNumber, out dwEnrollNumber, out dwVerifyMode, out dwInOutMode, out dwYear, out dwMonth, out dwDay, out dwHour, out dwMinute, out dwSecond, ref dwWorkCode))
                 {
-                    // make date from long time and date
-                    string inputDate = new DateTime(dwYear, dwMonth, dwDay, dwHour, dwMinute, dwSecond).ToString();
+                    // make date from long time and date [ format like 05/29/2015 05:50:06 ]
+                    string inputDate = new DateTime(dwYear, dwMonth, dwDay, dwHour, dwMinute, dwSecond).ToString("MM/dd/yyyy HH:mm:ss");
                     // call MachineInfo call and access there propraty
                     MachineInfo objMachineInfo = new MachineInfo();
                     objMachineInfo.MachineNumber = machineNumber; // set machine number

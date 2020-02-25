@@ -45,7 +45,7 @@ namespace ZktAttendence.Core
 
             }catch(Exception e)
             {
-                Console.WriteLine(e.Message);
+                Console.WriteLine("UpdateInDatabase sys: "+e.Message);
                 Console.ReadLine();
             }
         }
@@ -62,20 +62,20 @@ namespace ZktAttendence.Core
                 OracleCommand oracleCommand = new OracleCommand();
                 oracleCommand.Connection = oraCon;
                 oracleCommand.CommandText = prepareSql;
-                Console.WriteLine(oracleCommand.CommandText);
+                //Console.WriteLine(oracleCommand.CommandText);
                 int check=oracleCommand.ExecuteNonQuery();
                 oracleCommand.Dispose();
                 oraCon.Close();
 
-                if (check > 0)
+                /*if (check > 0)
                 {
                     Console.WriteLine("Data Inserted ...");
-                }
+                }*/
 
             }
             catch(Exception e)
             {
-                Console.WriteLine(e.Message);
+                Console.WriteLine("UpdateInDatabase sys: "+e.Message);
                 Console.ReadLine();
             }
         }
@@ -108,7 +108,7 @@ namespace ZktAttendence.Core
                 return machineList;
             }catch(Exception e)
             {
-                Console.WriteLine(e.Message);
+                Console.WriteLine("UpdateInDatabase sys: "+e.Message);
                 Console.ReadLine();
             }
 
@@ -120,13 +120,84 @@ namespace ZktAttendence.Core
          */
         public void setMachineInfoIntoDatabase(int machineNumber,String ipAddress, int portNumber, OracleConnection oraCon)
         {
-            OracleCommand command = new OracleCommand();
-            command.Connection = oraCon;
-            String preparSql = "INSERT INTO ZKT_MACHINE_INFO(MACHINE_NUMBER,IP_ADDRESS,PORT_NUMBER) VALUES ("+machineNumber+",'"+ipAddress+"',"+portNumber+")";
-            command.CommandText = preparSql;
-            command.ExecuteNonQuery();
-            oraCon.Close();
-            command.Dispose();
+            try
+            {
+                OracleCommand command = new OracleCommand();
+                command.Connection = oraCon;
+                String preparSql = "INSERT INTO ZKT_MACHINE_INFO(MACHINE_NUMBER,IP_ADDRESS,PORT_NUMBER) VALUES (" + machineNumber + ",'" + ipAddress + "'," + portNumber + ")";
+                command.CommandText = preparSql;
+                command.ExecuteNonQuery();
+                oraCon.Close();
+                command.Dispose();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("UpdateInDatabase sys: "+e.Message);
+                Console.ReadLine();
+            }
+        }
+
+
+        /**
+         * This method work for take existing date list from databse
+         */
+        public ICollection<String> getSelectedTimeDateFromDatabase(String date, OracleConnection oraCon)
+        {
+            ICollection<String> listOfDate = new List<String>();
+
+            try
+            {
+                OracleCommand command = new OracleCommand();
+                command.Connection = oraCon;
+                String preparSql = "SELECT TIME_DATE FROM ZKT_ATTENDENCE_LOG WHERE TIME_DATE LIKE '" + date + " %'";
+                command.CommandText = preparSql;
+                OracleDataReader dataReader = command.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    listOfDate.Add(dataReader.GetString(0));
+                }
+                command.Dispose();
+                oraCon.Close();
+
+                return listOfDate;
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine("UpdateInDatabase sys: " + e.Message);
+                Console.ReadLine();
+            }
+            return listOfDate;
+        }
+
+
+        public Boolean checkIfIsNotExists(String timeDate, OracleConnection oraCon)
+        {
+            try
+            {
+                OracleCommand command = new OracleCommand();
+                command.Connection = oraCon;
+                String preparSql = "SELECT TIME_DATE FROM ZKT_ATTENDENCE_LOG WHERE TIME_DATE='" + timeDate + "'";
+                command.CommandText = preparSql;
+                OracleDataReader dataReader = command.ExecuteReader();
+
+                if(dataReader.Read())
+                {
+                    command.Dispose();
+                    return false;
+                }
+                else
+                {
+                    command.Dispose();
+                    return true;
+                }
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine("UpdateInDatabase sys: " + e.Message);
+                Console.ReadLine();
+            }
+
+            return false;
         }
 
     }

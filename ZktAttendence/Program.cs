@@ -17,11 +17,9 @@ namespace ZktAttendence
         {
             //new Master().DriverMethod();
             //new UpdateInDatabase().getUserInfoFromDatabase(DatabaseConnection.getConnection());
-            /*Console.WriteLine("Please type any key... to start");
-            Console.ReadLine();
             new Master().consoleProcessForAttendence();
             Console.WriteLine("\n\nPlease type any key... close");
-            Console.ReadLine();*/
+            Console.ReadLine();
 
             /*ICollection<MachineSelector> getList= new UpdateInDatabase().getMachineListFromDatabase(DatabaseConnection.getConnection());
 
@@ -34,16 +32,28 @@ namespace ZktAttendence
             /*            new UpdateInDatabase().storeLogDataInDatabase(101,"0000006210","05:30:00 PM",DatabaseConnection.getConnection());
                         new UpdateInDatabase().setMachineInfoIntoDatabase(101,"192.168.0.20",2470,DatabaseConnection.getConnection());*/
 
-            String tempFromDate = "02202020";
-            String tempToDate = "01022020";
+            /* String tempFromDate = "20022020";
+             String tempToDate = "23012020";
+             String str = "Hello I am anik, Date: 01/20/2020 15:20:00,  02/24/2020 01:20:00,  01/23/2020 10:20:00";
 
-            String workFromDay = tempFromDate.Substring(3, 4) + "/" + tempFromDate.Substring(1, 2) + "/" + tempFromDate.Substring(4, 7);
-            String workToDay = tempToDate.Substring(3, 4) + "/" + tempToDate.Substring(1, 2) + "/" + tempToDate.Substring(4, 7);
+             String workFromDay = tempFromDate.Substring(2, 2) + "/" + tempFromDate.Substring(0, 2) + "/" + tempFromDate.Substring(4, 4);
+             String workToDay = tempToDate.Substring(2, 2) + "/" + tempToDate.Substring(0, 2) + "/" + tempToDate.Substring(4, 4);
 
-            Console.WriteLine(workFromDay);
-            Console.WriteLine(workToDay);
 
-            Console.ReadLine();
+             Console.WriteLine(workFromDay);
+             Console.WriteLine(workToDay);
+
+             if (str.Contains(workToDay))
+             {
+                 Console.WriteLine("String Present");
+             }
+             else
+             {
+                 Console.WriteLine("Not Present");
+             }
+
+
+             Console.ReadLine();*/
         } 
     }
 }

@@ -12,68 +12,111 @@ namespace ZktAttendence
     {
         private CoreZkt zkt;
         private CZKEM objZkt;
-        private String workToDay=String.Empty;
-        private String workFromDay = String.Empty;
+        private String workToDate=String.Empty;
+        private String workFromDate = String.Empty;
 
 
+        /**
+         * Main working function in this program. this function pull data from machine buffer
+         * and push into database.
+         */
         public void consoleProcessForAttendence()
         {
-            zkt = new CoreZktClass();
-            objZkt = new CZKEM();
-            int machineNumber = zkt.GetMachineNumber(objZkt);
-
-            Console.WriteLine("From Date: ");
+            zkt = new CoreZktClass(); // create object of Core class
+            objZkt = new CZKEM(); // create object of Lib class
+            
+            // get date from user
+            Console.Write("From Date: ");
             String tempFromDate = Console.ReadLine();
-            Console.WriteLine("To Date: ");
+            // get date from user
+            Console.Write("To Date: ");
             String tempToDate = Console.ReadLine();
+            // make final format of date
+            workFromDate = tempFromDate.Substring(2, 2)+"/"+tempFromDate.Substring(0,2)+"/"+tempFromDate.Substring(4, 4);
+            // make final format of date
+            workToDate = tempToDate.Substring(2, 2) + "/" + tempToDate.Substring(0, 2) + "/" + tempToDate.Substring(4, 4);
 
-            workFromDay = tempFromDate.Substring(3, 4)+"/"+tempFromDate.Substring(1,2)+"/"+tempFromDate.Substring(4,8);
-            workToDay = tempToDate.Substring(3, 4) + "/" + tempToDate.Substring(1, 2) + "/" + tempToDate.Substring(4, 8);
+            Console.WriteLine("\n ------------------------- \n " + workFromDate + " to " + workToDate + "\n ------------------------- \n");
 
+            // take machine information from database
+            ICollection <MachineSelector> getMachineList = new UpdateInDatabase().getMachineListFromDatabase(DatabaseConnection.getConnection());
 
-            ICollection<MachineSelector> getMachineList = new UpdateInDatabase().getMachineListFromDatabase(DatabaseConnection.getConnection());
-
+            // patch machine information
             foreach(MachineSelector selector in getMachineList)
             {
 
                 Console.WriteLine("\nDevice Number " + selector.getMachineNumber() + " - IP: " + selector.getIpAddress());
 
+                OracleConnection connection = DatabaseConnection.getConnectionWithoutMsg();
+                // get device connection using UTP protocol
                 if (zkt.GetConnection(objZkt, selector.getIpAddress(), selector.getPortNumber()))
                 {
                     Console.WriteLine("*** Device is connected ***\n");
+                    // if device connected then make a object array
                     ICollection<MachineInfo> userAttndData = new List<MachineInfo>();
-                    userAttndData = zkt.GetAttendenceLogData(objZkt, machineNumber);
+                    // get attendence data from device buffer
+                    userAttndData = zkt.GetAttendenceLogData(objZkt, selector.getMachineNumber());
 
-                    int recordCount = 0;
-
+                    int recordCount = 0;// record counter
+                    // patch attendence data
                     foreach(MachineInfo machinAttendence in userAttndData)
                     {
-                            new UpdateInDatabase().storeLogDataInDatabase(machinAttendence.MachineNumber,
-                                                                         machinAttendence.getIndRegID(),
-                                                                         machinAttendence.DateTimeRecord,
-                                                                         DatabaseConnection.getConnection()
-                                                                         );
-                            recordCount++;
-                            Console.Write("\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b"); // remove text from console
-                            Console.Write("Process: " + recordCount + " Data"); // write text in console
-
-                            if (recordCount > 50)
+                        
+                        String chekingData = machinAttendence.DateTimeRecord;
+                        if(chekingData.Contains(workFromDate) || chekingData.Contains(workToDate))
+                        {
+                            // check the data exists or not in database, which data come from device buffer
+                            if (new UpdateInDatabase().checkIfIsNotExists(machinAttendence.DateTimeRecord, connection))
                             {
-                                break;
+                                // Console.WriteLine("[ " + machinAttendence.getIndRegID() + " & " + chekingData+" ]");
+                                // if not exists in database then store this data
+                                new UpdateInDatabase().storeLogDataInDatabase(machinAttendence.MachineNumber,
+                                                                             machinAttendence.getIndRegID(),
+                                                                             chekingData,
+                                                                             connection
+                                                                             );
+                                recordCount++; // record counter
+                                Console.Write("\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b"); // remove text from console
+                                Console.Write("Process: " + recordCount + " Data"); // write text in console
+
+/*                                if (recordCount > 50)
+                                {
+                                    break;
+                                }*/
                             }
+                            else
+                            {
+                                continue;
+                            }
+                        }
+                        else
+                        {
+                            continue;
+                        }
                     }
                 }
                 else
                 {
-                    Console.WriteLine("\n Machine Number: " + selector.getMachineNumber() + " -- Is Disconnected --");
+                    Console.WriteLine("\n============================================\n" +
+                                      "Device Number: " + selector.getMachineNumber() + " - IP: " + selector.getIpAddress() +
+                                      "\n*** Device is disconnected ***"+
+                                      "\n============================================\n");
                 }
-                
+                connection.Close();
             }
 
+            Console.WriteLine("\n\n*****************************************\n" +
+                                  "            Data store complete            " +
+                                  "\n*****************************************");  
         }
 
 
 
+
+
+        /**
+         * this is a test perpose function for checking
+         */
         public void DriverMethod()
         {
             zkt = new CoreZktClass();
