@@ -7,7 +7,7 @@ using ZktAttendence.Core_Service;
 using ZktAttendence.Core;
 using zkemkeeper;
 using ZktAttendence.Utilitis;
-
+using System.Xml;
 
 namespace ZktAttendence
 {
@@ -17,43 +17,23 @@ namespace ZktAttendence
         {
             //new Master().DriverMethod();
             //new UpdateInDatabase().getUserInfoFromDatabase(DatabaseConnection.getConnection());
-            new Master().consoleProcessForAttendence();
-            Console.WriteLine("\n\nPlease type any key... close");
-            Console.ReadLine();
-
-            /*ICollection<MachineSelector> getList= new UpdateInDatabase().getMachineListFromDatabase(DatabaseConnection.getConnection());
-
-            foreach(MachineSelector selector in getList)
-            {
-                Console.WriteLine("Machine Number: " + selector.getMachineNumber());
-                Console.WriteLine("Ip Address: " + selector.getIpAddress());
-                Console.WriteLine("Port Number: " + selector.getPortNumber());
-            }*/
-            /*            new UpdateInDatabase().storeLogDataInDatabase(101,"0000006210","05:30:00 PM",DatabaseConnection.getConnection());
-                        new UpdateInDatabase().setMachineInfoIntoDatabase(101,"192.168.0.20",2470,DatabaseConnection.getConnection());*/
-
-            /* String tempFromDate = "20022020";
-             String tempToDate = "23012020";
-             String str = "Hello I am anik, Date: 01/20/2020 15:20:00,  02/24/2020 01:20:00,  01/23/2020 10:20:00";
-
-             String workFromDay = tempFromDate.Substring(2, 2) + "/" + tempFromDate.Substring(0, 2) + "/" + tempFromDate.Substring(4, 4);
-             String workToDay = tempToDate.Substring(2, 2) + "/" + tempToDate.Substring(0, 2) + "/" + tempToDate.Substring(4, 4);
+            /*new Master().consoleProcessForAttendence();
+            Console.WriteLine("\n\n#########  Please type Enter & Close  ###########" +
+                                "\n@ 2019-Vistasoft IT Bangladesh Ltd. Dev-by-Pranta");
+            Console.ReadLine();*/
 
 
-             Console.WriteLine(workFromDay);
-             Console.WriteLine(workToDay);
+            String xmlPath = "\\C#_Project\\ZktAttendence\\Utilitis\\DatabaseSetup.xml";
+            XmlDocument xmlDocument = new XmlDocument();
+            XmlTextWriter xmlTextWriter = new XmlTextWriter(xmlPath, System.Text.Encoding.UTF8);
+            xmlTextWriter.Formatting = Formatting.Indented;
 
-             if (str.Contains(workToDay))
-             {
-                 Console.WriteLine("String Present");
-             }
-             else
-             {
-                 Console.WriteLine("Not Present");
-             }
+            xmlTextWriter.WriteProcessingInstruction("xml", "version='1.0' encoding='UTF-8'");
 
+            xmlTextWriter.WriteStartElement("Vistasoft");
+            xmlTextWriter.WriteEndElement();
+            xmlTextWriter.Close();
 
-             Console.ReadLine();*/
         } 
     }
 }
