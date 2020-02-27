@@ -6,11 +6,14 @@ F:\C#_Project\ZktAttendence\bin\Debug\ZktAttendence.pdb
 F:\C#_Project\ZktAttendence\bin\Debug\Oracle.DataAccess.dll
 F:\C#_Project\ZktAttendence\obj\Debug\Interop.zkemkeeper.dll
 F:\C#_Project\ZktAttendence\obj\Debug\ZktAttendence.csproj.ResolveComReference.cache
+F:\C#_Project\ZktAttendence\obj\Debug\ZktAttendence.Properties.Resources.resources
+F:\C#_Project\ZktAttendence\obj\Debug\ZktAttendence.view.test.resources
+F:\C#_Project\ZktAttendence\obj\Debug\ZktAttendence.csproj.GenerateResource.cache
 F:\C#_Project\ZktAttendence\obj\Debug\ZktAttendence.exe.manifest
 F:\C#_Project\ZktAttendence\obj\Debug\ZktAttendence.application
 F:\C#_Project\ZktAttendence\obj\Debug\ZktAttendence.csproj.CopyComplete
 F:\C#_Project\ZktAttendence\obj\Debug\ZktAttendence.exe
 F:\C#_Project\ZktAttendence\obj\Debug\ZktAttendence.pdb
-F:\C#_Project\ZktAttendence\obj\Debug\ZktAttendence.Properties.Resources.resources
-F:\C#_Project\ZktAttendence\obj\Debug\ZktAttendence.view.test.resources
-F:\C#_Project\ZktAttendence\obj\Debug\ZktAttendence.csproj.GenerateResource.cache
+F:\C#_Project\ZktAttendence\bin\Debug\ZktAttendence.xml
+F:\C#_Project\ZktAttendence\bin\Debug\ZktAttendence.exe.CodeAnalysisLog.xml
+F:\C#_Project\ZktAttendence\bin\Debug\ZktAttendence.exe.lastcodeanalysissucceeded

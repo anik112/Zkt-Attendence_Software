@@ -71,7 +71,7 @@ namespace ZktAttendence
             // make final format of date
             workToDate = tempToDate.Substring(2, 2) + "/" + tempToDate.Substring(0, 2) + "/" + tempToDate.Substring(4, 4);
 
-            Console.WriteLine("\n ------------------------- \n " + workFromDate + " to " + workToDate + "\n ------------------------- \n");
+            Console.WriteLine("\n------------------------- \n " + workFromDate + " to " + workToDate + "\n------------------------- \n");
 
             // take machine information from database
             ICollection <MachineSelector> getMachineList = new UpdateInDatabase().getMachineListFromDatabase(DatabaseConnection.getConnection());

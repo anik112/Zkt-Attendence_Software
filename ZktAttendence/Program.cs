@@ -17,24 +17,12 @@ namespace ZktAttendence
         {
             //new Master().DriverMethod();
             //new UpdateInDatabase().getUserInfoFromDatabase(DatabaseConnection.getConnection());
-            /*new Master().consoleProcessForAttendence();
+            new Master().consoleProcessForAttendence();
             Console.WriteLine("\n\n#########  Please type Enter & Close  ###########" +
                                 "\n@ 2019-Vistasoft IT Bangladesh Ltd. Dev-by-Pranta");
-            Console.ReadLine();*/
+            Console.ReadLine();
 
-
-            String xmlPath = "\\C#_Project\\ZktAttendence\\Utilitis\\DatabaseSetup.xml";
-            XmlDocument xmlDocument = new XmlDocument();
-            XmlTextWriter xmlTextWriter = new XmlTextWriter(xmlPath, System.Text.Encoding.UTF8);
-            xmlTextWriter.Formatting = Formatting.Indented;
-
-            xmlTextWriter.WriteProcessingInstruction("xml", "version='1.0' encoding='UTF-8'");
-
-            xmlTextWriter.WriteStartElement("Vistasoft");
-            xmlTextWriter.WriteEndElement();
-            xmlTextWriter.Close();
-
-        } 
+        }
     }
 }
 

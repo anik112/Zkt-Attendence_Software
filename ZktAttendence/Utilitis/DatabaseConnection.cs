@@ -3,27 +3,47 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 using Oracle.DataAccess.Client;
 
 namespace ZktAttendence.Utilitis
 {
     class DatabaseConnection
     {
+        private static String filePath = "Setup.xml";
+        private static String host = String.Empty;//"DESKTOP-NSLL7T5";"OFFICE-2"; // hosting pc name or ip address
+        private static String serviceName = String.Empty; // service name or database name
+        private static String userId = String.Empty; // username
+        private static String password = String.Empty; // password
+        private static String connectionString = String.Empty;
 
-        private static String host = "new-PC";//"DESKTOP-NSLL7T5";"OFFICE-2"; // hosting pc name or ip address
-        private static String serviceName = "payroll"; // service name or database name
-        private static String userId = "payroll"; // username
-        private static String password = "payroll"; // password
 
-        // make TNS connection text
-        private static String connectionString = "Data Source=( DESCRIPTION ="
-        + "(ADDRESS = (PROTOCOL = TCP)(HOST = " + host + ")(PORT = 1521))"
-        + "(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = " + serviceName + "))"
-        + ");User ID=" + userId + ";Password=" + password + "; Pooling=False;";
 
+        private static void setupDatabase()
+        {
+            // get the node data from xml file
+            XmlNodeList list = new SetupUtility().getDatabaseSetupInformation(filePath, "setup_database", "server_1");
+            // set geting data in variable
+            foreach (XmlNode node in list)
+            {
+                host = node.SelectSingleNode("host").InnerText;
+                serviceName = node.SelectSingleNode("service_name").InnerText;
+                userId = node.SelectSingleNode("user_id").InnerText;
+                password = node.SelectSingleNode("password").InnerText;
+            }
+
+            // make TNS connection text
+            connectionString = "Data Source=( DESCRIPTION ="
+            + "(ADDRESS = (PROTOCOL = TCP)(HOST = " + host + ")(PORT = 1521))"
+            + "(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = " + serviceName + "))"
+            + ");User ID=" + userId + ";Password=" + password + "; Pooling=False;";
+        }
+
+        
 
         public static OracleConnection getConnection()
         {
+            setupDatabase();
             try
             {
                 // call Oracle Database connection driver
@@ -39,7 +59,6 @@ namespace ZktAttendence.Utilitis
                 Console.WriteLine("DatabaseConnection sys: "+e.Message);
                 Console.ReadLine();
             }
-
             return new OracleConnection();
         }
 
@@ -47,6 +66,7 @@ namespace ZktAttendence.Utilitis
 
         public static OracleConnection getConnectionWithoutMsg()
         {
+            setupDatabase();
             try
             {
                 // call Oracle Database connection driver
