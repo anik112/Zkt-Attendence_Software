@@ -6,7 +6,7 @@
    <Modules>
     <Module Name="zktattendence.exe">
      <Messages>
-      <Message TypeName="MarkWindowsFormsEntryPointsWithStaThread" Category="Microsoft.Usage" CheckId="CA2232" Status="Active" Created="2020-03-01 12:07:14Z" FixCategory="NonBreaking">
+      <Message TypeName="MarkWindowsFormsEntryPointsWithStaThread" Category="Microsoft.Usage" CheckId="CA2232" Status="Active" Created="2020-03-03 03:59:24Z" FixCategory="NonBreaking">
        <Issue Certainty="95" Level="Error">Mark the entry point method 'Program.Main(string[])' in assembly 'ZktAttendence.exe' with an STAThreadAttribute.</Issue>
       </Message>
      </Messages>
