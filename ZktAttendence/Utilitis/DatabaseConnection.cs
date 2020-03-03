@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,7 +11,7 @@ namespace ZktAttendence.Utilitis
 {
     class DatabaseConnection
     {
-        private static String filePath = "Setup.xml";
+        private static String filePath = Path.Combine(Environment.CurrentDirectory, @"..\..\Setup.xml");
         private static String host = String.Empty;//"DESKTOP-NSLL7T5";"OFFICE-2"; // hosting pc name or ip address
         private static String serviceName = String.Empty; // service name or database name
         private static String userId = String.Empty; // username

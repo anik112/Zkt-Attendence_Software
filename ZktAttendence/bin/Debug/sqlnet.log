@@ -544,3 +544,21 @@ Fatal NI connect error 12504, connecting to:
     nt main err code: 0
     nt secondary err code: 0
     nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12504, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=)(PORT=1521))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=)(CID=(PROGRAM=F:\C#_Project\ZktAttendence\bin\Debug\ZktAttendence.exe)(HOST=DESKTOP-NSLL7T5)(USER=VSI-ANIK))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 10.2.0.3.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 10.2.0.3.0 - Production
+  Time: 01-MAR-2020 18:07:26
+  Tracing not turned on.
+  Tns error struct:
+    ns main err code: 12564
+    TNS-12564: TNS:connection refused
+    ns secondary err code: 0
+    nt main err code: 0
+    nt secondary err code: 0
+    nt OS err code: 0
