@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Xml;
 
 namespace ZktAttendence.Test
@@ -13,8 +9,8 @@ namespace ZktAttendence.Test
         public static void main(String[] args)
         {
             // write xml file
-            String filePath = "\\C#_Project\\ZktAttendence\\Setup.xml";
-            XmlTextWriter xmlTextWriter = new XmlTextWriter(filePath,System.Text.Encoding.UTF8);
+            String filePath = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\Setup.xml");
+            XmlTextWriter xmlTextWriter = new XmlTextWriter(filePath, System.Text.Encoding.UTF8);
             xmlTextWriter.WriteStartDocument(true);
             xmlTextWriter.Formatting = Formatting.Indented;
             xmlTextWriter.WriteStartElement("setup_database");
@@ -23,7 +19,7 @@ namespace ZktAttendence.Test
             xmlTextWriter.WriteEndElement();
             xmlTextWriter.WriteEndDocument();
             xmlTextWriter.Close();
-            
+
             // Read from xml file
             XmlNodeList list = new XMLtest().getDatabaseSetupInformation(filePath, "setup_database", "server_1");
             foreach (XmlNode node in list)
@@ -54,7 +50,8 @@ namespace ZktAttendence.Test
                 xmlTextWriter.WriteStartElement("password");
                 xmlTextWriter.WriteString(password);
                 xmlTextWriter.WriteEndElement();
-            }catch(Exception e)
+            }
+            catch (Exception e)
             {
                 Console.WriteLine(e.Message);
             }
@@ -71,7 +68,7 @@ namespace ZktAttendence.Test
                 XmlNodeList nodeList = xmlDocument.SelectNodes($"/{rootNode}/{selectedSubNode}");
                 return nodeList;
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Console.WriteLine(e.Message);
             }

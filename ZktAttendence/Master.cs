@@ -1,10 +1,10 @@
-﻿using System;
+﻿using Oracle.DataAccess.Client;
+using System;
 using System.Collections.Generic;
-using ZktAttendence.Core_Service;
-using ZktAttendence.Core;
 using zkemkeeper;
+using ZktAttendence.Core;
+using ZktAttendence.Core_Service;
 using ZktAttendence.Utilitis;
-using Oracle.DataAccess.Client;
 
 namespace ZktAttendence
 {
@@ -12,7 +12,7 @@ namespace ZktAttendence
     {
         private CoreZkt zkt;
         private CZKEM objZkt;
-        private String workToDate=String.Empty;
+        private String workToDate = String.Empty;
         private String workFromDate = String.Empty;
         private bool checkDataStoreOrNot = false;
 
@@ -26,8 +26,8 @@ namespace ZktAttendence
             zkt = new CoreZktClass(); // create object of Core class
             objZkt = new CZKEM(); // create object of Lib class
 
-            String tempFromDate=String.Empty;
-            String tempToDate=String.Empty;
+            String tempFromDate = String.Empty;
+            String tempToDate = String.Empty;
 
             while (true)
             {
@@ -38,7 +38,7 @@ namespace ZktAttendence
                 Console.Write("To Date: ");
                 tempToDate = Console.ReadLine();
                 // check given date is valid or not
-                if(tempFromDate.Length==8 && tempToDate.Length == 8)
+                if (tempFromDate.Length == 8 && tempToDate.Length == 8)
                 {
                     int checkDayOfFromDate = Convert.ToInt32(tempFromDate.Substring(0, 2));
                     int checkMOnthOfFromDate = Convert.ToInt32(tempFromDate.Substring(2, 2));
@@ -47,9 +47,9 @@ namespace ZktAttendence
                     int checkMonthOfToDate = Convert.ToInt32(tempToDate.Substring(2, 2));
                     int checkYearOfToDate = Convert.ToInt32(tempToDate.Substring(4, 4));
 
-                    if ((checkDayOfFromDate>=1 && checkDayOfFromDate <= 31)
-                        && (checkMOnthOfFromDate>=1 && checkMOnthOfFromDate<=12)
-                        && (checkYearOfFromDate>=2000 && checkYearOfFromDate <= 3000)
+                    if ((checkDayOfFromDate >= 1 && checkDayOfFromDate <= 31)
+                        && (checkMOnthOfFromDate >= 1 && checkMOnthOfFromDate <= 12)
+                        && (checkYearOfFromDate >= 2000 && checkYearOfFromDate <= 3000)
                         && (checkDayOfToDate >= 1 && checkDayOfToDate <= 31)
                         && (checkMonthOfToDate >= 1 && checkMonthOfToDate <= 12)
                         && (checkYearOfToDate >= 2000 && checkYearOfToDate <= 3000))
@@ -67,17 +67,21 @@ namespace ZktAttendence
                 }
             }
             // make final format of date
-            workFromDate = tempFromDate.Substring(2, 2)+"/"+tempFromDate.Substring(0,2)+"/"+tempFromDate.Substring(4, 4);
+            workFromDate = tempFromDate.Substring(2, 2) + "/" + tempFromDate.Substring(0, 2) + "/" + tempFromDate.Substring(4, 4);
             // make final format of date
             workToDate = tempToDate.Substring(2, 2) + "/" + tempToDate.Substring(0, 2) + "/" + tempToDate.Substring(4, 4);
 
             Console.WriteLine("\n------------------------- \n " + workFromDate + " to " + workToDate + "\n------------------------- \n");
 
             // take machine information from database
-            ICollection <MachineSelector> getMachineList = new UpdateInDatabase().getMachineListFromDatabase(DatabaseConnection.getConnection());
+            //ICollection <MachineSelector> getMachineList = new UpdateInDatabase().getMachineListFromDatabase(DatabaseConnection.getConnection());
+
+            ICollection<MachineSelector> getMachineList = new List<MachineSelector>();
+
+
 
             // patch machine information
-            foreach(MachineSelector selector in getMachineList)
+            foreach (MachineSelector selector in getMachineList)
             {
 
                 Console.WriteLine("\nDevice Number " + selector.getMachineNumber() + " - IP: " + selector.getIpAddress());
@@ -94,11 +98,11 @@ namespace ZktAttendence
 
                     int recordCount = 0;// record counter
                     // patch attendence data
-                    foreach(MachineInfo machinAttendence in userAttndData)
+                    foreach (MachineInfo machinAttendence in userAttndData)
                     {
-                        
+
                         String chekingData = machinAttendence.DateTimeRecord;
-                        if(chekingData.Contains(workFromDate) || chekingData.Contains(workToDate))
+                        if (chekingData.Contains(workFromDate) || chekingData.Contains(workToDate))
                         {
                             // check the data exists or not in database, which data come from device buffer
                             if (new UpdateInDatabase().checkIfIsNotExists(machinAttendence.DateTimeRecord, connection))
@@ -136,7 +140,7 @@ namespace ZktAttendence
                 {
                     Console.WriteLine("\n============================================\n" +
                                       "Device Number: " + selector.getMachineNumber() + " - IP: " + selector.getIpAddress() +
-                                      "\n*** Device is disconnected ***"+
+                                      "\n*** Device is disconnected ***" +
                                       "\n============================================\n");
                 }
                 connection.Close(); //close database connection
@@ -231,7 +235,7 @@ namespace ZktAttendence
                     Console.WriteLine("Machine Number: " + m.MachineNumber);
                     Console.WriteLine("User Id: " + m.IndRegID);
                     Console.WriteLine("Time & Date: " + m.DateTimeRecord);
-                    new UpdateInDatabase().storeLogDataInDatabase(m.MachineNumber,m.getIndRegID(),m.DateTimeRecord,oraConn);
+                    new UpdateInDatabase().storeLogDataInDatabase(m.MachineNumber, m.getIndRegID(), m.DateTimeRecord, oraConn);
 
                     if (cks > 50)
                     {

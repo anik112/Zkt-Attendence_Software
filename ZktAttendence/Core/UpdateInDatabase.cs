@@ -1,29 +1,27 @@
-﻿using System;
+﻿using Oracle.DataAccess.Client;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Oracle.DataAccess.Client;
 using ZktAttendence.Utilitis;
 
 namespace ZktAttendence.Core
 {
     class UpdateInDatabase
-    {  
-        
+    {
+
         /**
          * this method use for get user information from database.
          */
         public void getUserInfoFromDatabase(OracleConnection connection)
         {
-            try { 
+            try
+            {
                 // make command object
                 OracleCommand cmd = new OracleCommand();
                 cmd.Connection = connection; // set connection in command object
                 cmd.CommandText = "SELECT empname FROM TB_PERSONAL_INFO where active=1"; // make sql
                 OracleDataReader oracleDataReader = cmd.ExecuteReader(); // execute command in oracle database
                 int count = 0;
-                
+
                 // loop for get data from oracleDataReader.
                 // oracleDataReader.Read() function work for trevel last untill element in array.
                 while (oracleDataReader.Read())
@@ -34,12 +32,13 @@ namespace ZktAttendence.Core
                 }
                 cmd.Dispose(); // close OracleCommand
                 connection.Close(); // close Connection
-                Console.WriteLine("\nSize= " + count); 
+                Console.WriteLine("\nSize= " + count);
                 Console.ReadLine();
 
-            }catch(Exception e)
+            }
+            catch (Exception e)
             {
-                Console.WriteLine("UpdateInDatabase sys: "+e.Message);
+                Console.WriteLine("UpdateInDatabase sys: " + e.Message);
                 Console.ReadLine();
             }
         }
@@ -52,12 +51,12 @@ namespace ZktAttendence.Core
         {
             try
             {
-                String prepareSql = "INSERT INTO ZKT_ATTENDENCE_LOG(MACHINE_NUMBER,USER_ID,TIME_DATE) VALUES ("+machineNumber+",'"+userId+"','"+timeDate+"')";
+                String prepareSql = "INSERT INTO ZKT_ATTENDENCE_LOG(MACHINE_NUMBER,USER_ID,TIME_DATE) VALUES (" + machineNumber + ",'" + userId + "','" + timeDate + "')";
                 OracleCommand oracleCommand = new OracleCommand();
                 oracleCommand.Connection = oraCon;
                 oracleCommand.CommandText = prepareSql;
                 //Console.WriteLine(oracleCommand.CommandText);
-                int check=oracleCommand.ExecuteNonQuery();
+                int check = oracleCommand.ExecuteNonQuery();
                 oracleCommand.Dispose();
 
                 /*if (check > 0)
@@ -66,9 +65,9 @@ namespace ZktAttendence.Core
                 }*/
 
             }
-            catch(Exception e)
+            catch (Exception e)
             {
-                Console.WriteLine("UpdateInDatabase sys: "+e.Message);
+                Console.WriteLine("UpdateInDatabase sys: " + e.Message);
                 Console.ReadLine();
             }
         }
@@ -99,9 +98,10 @@ namespace ZktAttendence.Core
                 }
 
                 return machineList;
-            }catch(Exception e)
+            }
+            catch (Exception e)
             {
-                Console.WriteLine("UpdateInDatabase sys: "+e.Message);
+                Console.WriteLine("UpdateInDatabase sys: " + e.Message);
                 Console.ReadLine();
             }
 
@@ -111,7 +111,7 @@ namespace ZktAttendence.Core
         /**
          * this method work for store data in database.
          */
-        public void setMachineInfoIntoDatabase(int machineNumber,String ipAddress, int portNumber, OracleConnection oraCon)
+        public void setMachineInfoIntoDatabase(int machineNumber, String ipAddress, int portNumber, OracleConnection oraCon)
         {
             try
             {
@@ -125,7 +125,7 @@ namespace ZktAttendence.Core
             }
             catch (Exception e)
             {
-                Console.WriteLine("UpdateInDatabase sys: "+e.Message);
+                Console.WriteLine("UpdateInDatabase sys: " + e.Message);
                 Console.ReadLine();
             }
         }
@@ -154,7 +154,7 @@ namespace ZktAttendence.Core
 
                 return listOfDate;
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Console.WriteLine("UpdateInDatabase sys: " + e.Message);
                 Console.ReadLine();
@@ -173,7 +173,7 @@ namespace ZktAttendence.Core
                 command.CommandText = preparSql;
                 OracleDataReader dataReader = command.ExecuteReader();
 
-                if(dataReader.Read())
+                if (dataReader.Read())
                 {
                     command.Dispose();
                     return false;
@@ -184,7 +184,7 @@ namespace ZktAttendence.Core
                     return true;
                 }
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Console.WriteLine("UpdateInDatabase sys: " + e.Message);
                 Console.ReadLine();

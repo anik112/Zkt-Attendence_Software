@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using zkemkeeper;
 using ZktAttendence.Core_Service;
 using ZktAttendence.Utilitis;
@@ -30,7 +28,7 @@ namespace ZktAttendence.Core
 
                 // make a arry list for take attendence log from buffer
                 ICollection<MachineInfo> lstAttndData = new List<MachineInfo>();
-                
+
                 objZkt.ReadAllGLogData(machineNumber); // call ZKT libery function and set machineNumber
 
                 // call ZKT libery function SSR_GetGeneralLogData(_) and fatch log data from buffer
@@ -56,16 +54,16 @@ namespace ZktAttendence.Core
             }
             return null;
         }
-        
+
         // Device Connection
-        public bool GetConnection(CZKEM cZKEM,string ipAddress, int portNo)
+        public bool GetConnection(CZKEM cZKEM, string ipAddress, int portNo)
         {
             try
             {
                 /*
                  * Connect_Net()
                  * We get device connection using this method.**/
-                bool check=cZKEM.Connect_Net(ipAddress, portNo); // Connection with Device
+                bool check = cZKEM.Connect_Net(ipAddress, portNo); // Connection with Device
                 if (check)
                 {
                     return true; // return true
@@ -74,9 +72,9 @@ namespace ZktAttendence.Core
                 {
                     return false; // return false
                 }
-                
+
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Console.WriteLine(e.Message);
                 Console.ReadLine();
@@ -86,7 +84,7 @@ namespace ZktAttendence.Core
         }
 
         // Device Information
-        public string GetDeviceInformation(CZKEM objZkeeper,int machineNumber)
+        public string GetDeviceInformation(CZKEM objZkeeper, int machineNumber)
         {
 
             StringBuilder sb = new StringBuilder();
@@ -112,7 +110,7 @@ namespace ZktAttendence.Core
 
             string sWiegandFmt = string.Empty;
             objZkeeper.GetWiegandFmt(machineNumber, ref sWiegandFmt);
-            if(sWiegandFmt.Trim() != string.Empty)
+            if (sWiegandFmt.Trim() != string.Empty)
             {
                 sb.Append("Wiegand Fmt: ");
                 sb.Append(sWiegandFmt);
@@ -183,7 +181,7 @@ namespace ZktAttendence.Core
                 return lstUserIDInfo; // return array
 
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Console.WriteLine(e.Message);
             }
@@ -218,11 +216,11 @@ namespace ZktAttendence.Core
                     user.enable = dwEnable;
                     listOfUser.Add(user); // add object in array
                 }
-                
+
                 return listOfUser; // return array
 
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Console.WriteLine(e.Message);
             }

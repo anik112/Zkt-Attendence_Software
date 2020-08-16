@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using zkemkeeper;
 using ZktAttendence.Utilitis;
 
@@ -12,9 +8,9 @@ namespace ZktAttendence.Core_Service
     {
 
         // Get Connection with Device.
-        bool GetConnection(CZKEM cZKEM,string ipAddress, int portNo);
+        bool GetConnection(CZKEM cZKEM, string ipAddress, int portNo);
         // Get Device infomation form device.
-        string GetDeviceInformation(CZKEM objZkeeper,int machineNumber);
+        string GetDeviceInformation(CZKEM objZkeeper, int machineNumber);
         // Get User Id List from Device.
         ICollection<UserIdInfo> GetUserIdList(CZKEM objZkeeper, int machineNumber);
         // Get User Information form Device.

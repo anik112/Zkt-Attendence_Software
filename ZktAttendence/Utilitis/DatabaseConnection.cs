@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Oracle.DataAccess.Client;
+using System;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Xml;
-using Oracle.DataAccess.Client;
 
 namespace ZktAttendence.Utilitis
 {
@@ -40,7 +36,7 @@ namespace ZktAttendence.Utilitis
             + ");User ID=" + userId + ";Password=" + password + "; Pooling=False;";
         }
 
-        
+
 
         public static OracleConnection getConnection()
         {
@@ -57,7 +53,7 @@ namespace ZktAttendence.Utilitis
             }
             catch (Exception e)
             {
-                Console.WriteLine("DatabaseConnection sys: "+e.Message);
+                Console.WriteLine("DatabaseConnection sys: " + e.Message);
                 Console.ReadLine();
             }
             return new OracleConnection();
@@ -78,7 +74,7 @@ namespace ZktAttendence.Utilitis
             }
             catch (Exception e)
             {
-                Console.WriteLine("DatabaseConnection sys: "+e.Message);
+                Console.WriteLine("DatabaseConnection sys: " + e.Message);
                 Console.ReadLine();
             }
 

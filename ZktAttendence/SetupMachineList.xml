@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<deviceSetupInfo>
+  <device01>
+    <machineNo>101</machineNo>
+    <ipAddress>192.168.1.201</ipAddress>
+    <port>1215</port>
+  </device01>
+  <device02>
+    <machineNo>102</machineNo>
+    <ipAddress>192.168.1.202</ipAddress>
+    <port>1215</port>
+  </device02>
+  <device03>
+    <machineNo>103</machineNo>
+    <ipAddress>192.168.1.203</ipAddress>
+    <port>1215</port>
+  </device03>
+</deviceSetupInfo>

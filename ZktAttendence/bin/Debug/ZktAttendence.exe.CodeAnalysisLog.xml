@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="c:\program files (x86)\microsoft visual studio\2019\community\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
+<?xml-stylesheet type="text/xsl" href="c:\program files (x86)\microsoft visual studio\2019\professional\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
 <FxCopReport Version="16.0">
  <Targets>
-  <Target Name="F:\C#_Project\ZktAttendence\bin\Debug\ZktAttendence.exe">
+  <Target Name="E:\VSI_PRANTA_WORKING_FOLDER\Zkt-Attendence_Software\ZktAttendence\bin\Debug\ZktAttendence.exe">
    <Modules>
     <Module Name="zktattendence.exe">
      <Messages>
-      <Message TypeName="MarkWindowsFormsEntryPointsWithStaThread" Category="Microsoft.Usage" CheckId="CA2232" Status="Active" Created="2020-03-03 03:59:24Z" FixCategory="NonBreaking">
+      <Message TypeName="MarkWindowsFormsEntryPointsWithStaThread" Category="Microsoft.Usage" CheckId="CA2232" Status="Active" Created="2020-08-16 11:48:20Z" FixCategory="NonBreaking">
        <Issue Certainty="95" Level="Error">Mark the entry point method 'Program.Main(string[])' in assembly 'ZktAttendence.exe' with an STAThreadAttribute.</Issue>
       </Message>
      </Messages>

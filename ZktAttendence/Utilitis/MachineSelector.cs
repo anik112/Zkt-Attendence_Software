@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ZktAttendence.Utilitis
 {
@@ -27,7 +23,7 @@ namespace ZktAttendence.Utilitis
         {
             return this.ipAddress;
         }
-        
+
         public void setIpAddress(String address)
         {
             this.ipAddress = address;
@@ -37,7 +33,7 @@ namespace ZktAttendence.Utilitis
         {
             return this.portNumber;
         }
-        
+
         public void setPortNumber(int number)
         {
             this.portNumber = number;

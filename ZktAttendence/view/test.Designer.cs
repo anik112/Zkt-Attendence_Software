@@ -28,18 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.check_data = new System.Windows.Forms.Label();
+            System.Windows.Forms.Label check_data;
             this.get_name = new System.Windows.Forms.TextBox();
             this.btn_show = new System.Windows.Forms.Button();
+            check_data = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // check_data
             // 
-            this.check_data.Location = new System.Drawing.Point(51, 45);
-            this.check_data.Name = "check_data";
-            this.check_data.Size = new System.Drawing.Size(57, 19);
-            this.check_data.TabIndex = 0;
-            this.check_data.Text = "check";
+            check_data.AccessibleName = "lblShowMsg";
+            check_data.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            check_data.Location = new System.Drawing.Point(51, 45);
+            check_data.Name = "check_data";
+            check_data.Size = new System.Drawing.Size(130, 19);
+            check_data.TabIndex = 0;
+            check_data.Click += new System.EventHandler(this.check_data_Click);
             // 
             // get_name
             // 
@@ -64,7 +67,7 @@
             this.ClientSize = new System.Drawing.Size(340, 361);
             this.Controls.Add(this.btn_show);
             this.Controls.Add(this.get_name);
-            this.Controls.Add(this.check_data);
+            this.Controls.Add(check_data);
             this.Name = "test";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -75,7 +78,6 @@
 
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label empName;
-        private System.Windows.Forms.Label check_data;
         private System.Windows.Forms.TextBox get_name;
         private System.Windows.Forms.Button btn_show;
     }

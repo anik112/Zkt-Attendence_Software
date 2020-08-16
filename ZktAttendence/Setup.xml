@@ -1,11 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <setup_database>
-  <host>DESKTOP-NSLL7T5</host>
-  <service_name>payroll</service_name>
-  <user_id>payroll</user_id>
-  <password>payroll</password>
-  <host>DESKTOP-NSLL7T5</host>
-  <service_name>payroll2</service_name>
-  <user_id>payroll2</user_id>
-  <password>payroll2</password>
+  <server_1>
+    <host>DESKTOP-NSLL7T5</host>
+    <service_name>payroll</service_name>
+    <user_id>payroll</user_id>
+    <password>payroll</password>
+  </server_1>
+  <server_2>
+    <host>DESKTOP-NSLL7T5</host>
+    <service_name>payroll2</service_name>
+    <user_id>payroll2-s</user_id>
+    <password>payroll2-s</password>
+  </server_2>
 </setup_database>

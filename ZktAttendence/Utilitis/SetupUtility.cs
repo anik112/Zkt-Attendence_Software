@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Xml;
 
 namespace ZktAttendence.Utilitis
@@ -29,8 +25,49 @@ namespace ZktAttendence.Utilitis
             }
             catch (Exception e)
             {
-                Console.WriteLine("SetupUtility sys: "+e.Message);
+                Console.WriteLine("SetupUtility sys: " + e.Message);
             }
+        }
+
+        public void writeMachineInfoInXML(int machineNo, String ipAddress, int port, XmlTextWriter xmlTextWriter)
+        {
+            try
+            {
+                xmlTextWriter.WriteStartElement("machineNo");
+                xmlTextWriter.WriteString(machineNo.ToString());
+                xmlTextWriter.WriteEndElement();
+                xmlTextWriter.WriteStartElement("ipAddress");
+                xmlTextWriter.WriteString(ipAddress);
+                xmlTextWriter.WriteEndElement();
+                xmlTextWriter.WriteStartElement("port");
+                xmlTextWriter.WriteString(port.ToString());
+                xmlTextWriter.WriteEndElement();
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("SetupUtility sys: " + e.Message);
+            }
+        }
+
+
+        public XmlNodeList getDeviceSetupInformation(String filePath, String rootNode, String selectedSubNode)
+        {
+            try
+            {
+                // read xml file
+                XmlDocument xmlDocument = new XmlDocument();
+                xmlDocument.Load(filePath);
+                XmlNodeList nodeList = xmlDocument.SelectNodes($"/{rootNode}/{selectedSubNode}");
+
+                return nodeList;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("SetupUtility sys: " + e.Message);
+                Console.ReadLine();
+            }
+            return null;
         }
 
 
@@ -42,12 +79,12 @@ namespace ZktAttendence.Utilitis
                 XmlDocument xmlDocument = new XmlDocument();
                 xmlDocument.Load(filePath);
                 XmlNodeList nodeList = xmlDocument.SelectNodes($"/{rootNode}/{selectedSubNode}");
-                
+
                 return nodeList;
             }
             catch (Exception e)
             {
-                Console.WriteLine("SetupUtility sys: "+e.Message);
+                Console.WriteLine("SetupUtility sys: " + e.Message);
                 Console.ReadLine();
             }
             return null;
