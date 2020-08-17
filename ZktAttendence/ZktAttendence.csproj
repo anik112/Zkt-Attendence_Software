@@ -100,6 +100,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core Service\CoreZkt.cs" />
+    <Compile Include="Core\AttendenceDataWriteInDatabase.cs" />
+    <Compile Include="Core\AttendenceDataWriteInTxt.cs" />
     <Compile Include="Core\CoreZktClass.cs" />
     <Compile Include="Core\UpdateInDatabase.cs" />
     <Compile Include="Master.cs" />
@@ -124,10 +126,11 @@
     <Compile Include="Utilitis\SetupUtility.cs" />
     <Compile Include="Utilitis\UserIdInfo.cs" />
     <Compile Include="Utilitis\UserInfo.cs" />
-    <Compile Include="view\test.cs">
+    <Compile Include="view\ConsoleView.cs" />
+    <Compile Include="Test\test.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="view\test.Designer.cs">
+    <Compile Include="Test\test.Designer.cs">
       <DependentUpon>test.cs</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -171,14 +174,13 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="view\test.resx">
+    <EmbeddedResource Include="Test\test.resx">
       <DependentUpon>test.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Content Include="logo02.ico" />
     <Content Include="logo_m3X_icon.ico" />
-    <Content Include="Utilitis\DatabaseSetup.xml" />
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.2.9.6\analyzers\dotnet\cs\Microsoft.CodeAnalysis.VersionCheckAnalyzer.resources.dll" />

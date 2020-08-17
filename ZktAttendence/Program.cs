@@ -8,11 +8,16 @@ namespace ZktAttendence
 {
     class Program
     {
+
+        private static String zktFilePath = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\SetupMachineList.xml");
+
         static void Main(string[] args)
         {
 
-            setMachineInfo();
-
+            new ZktAttendence.view.ConsoleView(zktFilePath).showMainConsole();
+            //Console.ReadLine();
+            /* setMachineInfo();
+             getMachineInfo();*/
             //new XMLtest();
 
             //new Master().DriverMethod();
@@ -24,9 +29,9 @@ namespace ZktAttendence
             Console.ReadLine();
             */
 
-            // write xml file
-            String filePath = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\Setup.xml");
-            System.Xml.XmlTextWriter xmlTextWriter = new System.Xml.XmlTextWriter(filePath, System.Text.Encoding.UTF8);
+           /* // write xml file
+            String dbaFilePath = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\Setup.xml");
+            System.Xml.XmlTextWriter xmlTextWriter = new System.Xml.XmlTextWriter(dbaFilePath, System.Text.Encoding.UTF8);
             xmlTextWriter.WriteStartDocument(true);
             xmlTextWriter.Formatting = System.Xml.Formatting.Indented;
             xmlTextWriter.WriteStartElement("setup_database");
@@ -38,9 +43,9 @@ namespace ZktAttendence
             xmlTextWriter.WriteEndElement();
             xmlTextWriter.WriteEndElement();
             xmlTextWriter.WriteEndDocument();
-            xmlTextWriter.Close();
+            xmlTextWriter.Close();*/
 
-            // Read from xml file
+            /*// Read from xml file
             System.Xml.XmlNodeList list = new XMLtest().getDatabaseSetupInformation(filePath, "setup_database", "server_1");
             foreach (System.Xml.XmlNode node in list)
             {
@@ -50,7 +55,7 @@ namespace ZktAttendence
                 Console.WriteLine("password: " + node.SelectSingleNode("password").InnerText);
                 Console.WriteLine("----------------------------------------\n");
             }
-            Console.ReadLine();
+            Console.ReadLine();*/
 
 
         }
@@ -60,8 +65,7 @@ namespace ZktAttendence
         {
             String DEVICE_SETUP_NODE = "deviceSetupInfo";
 
-            String filePath = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\SetupMachineList.xml");
-            System.Xml.XmlTextWriter xmlTextWriter = new XmlTextWriter(filePath, System.Text.Encoding.UTF8);
+            System.Xml.XmlTextWriter xmlTextWriter = new XmlTextWriter(zktFilePath, System.Text.Encoding.UTF8);
             xmlTextWriter.WriteStartDocument(true);
             xmlTextWriter.Formatting = System.Xml.Formatting.Indented;
             xmlTextWriter.WriteStartElement(DEVICE_SETUP_NODE);
@@ -80,7 +84,15 @@ namespace ZktAttendence
 
         public static void getMachineInfo()
         {
-
+            String filePath = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\SetupMachineList.xml");
+            System.Xml.XmlNodeList list = new XMLtest().getDatabaseSetupInformation(filePath, "deviceSetupInfo", "device01");
+            foreach (System.Xml.XmlNode node in list)
+            {
+                Console.WriteLine("MachineNo: " + node.SelectSingleNode("machineNo").InnerText);
+                Console.WriteLine("IpAddress: " + node.SelectSingleNode("ipAddress").InnerText);
+                Console.WriteLine("Port: " + node.SelectSingleNode("port").InnerText);
+                Console.WriteLine("----------------------------------------\n");
+            }
         }
     }
 }

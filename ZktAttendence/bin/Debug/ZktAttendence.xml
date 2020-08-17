@@ -4,6 +4,14 @@
         <name>ZktAttendence</name>
     </assembly>
     <members>
+        <member name="M:ZktAttendence.Core.AttendenceDataWriteInDatabase.writeAttendenceInDatabase">
+            Main working function in this program. this function pull data from machine buffer
+            and push into database.
+        </member>
+        <member name="M:ZktAttendence.Core.AttendenceDataWriteInTxt.consoleProcessForAttendence(System.String)">
+            Main working function in this program. this function pull data from machine buffer
+            and push into database.
+        </member>
         <member name="M:ZktAttendence.Core.UpdateInDatabase.getUserInfoFromDatabase(Oracle.DataAccess.Client.OracleConnection)">
             this method use for get user information from database.
         </member>
@@ -18,10 +26,6 @@
         </member>
         <member name="M:ZktAttendence.Core.UpdateInDatabase.getSelectedTimeDateFromDatabase(System.String,Oracle.DataAccess.Client.OracleConnection)">
             This method work for take existing date list from databse
-        </member>
-        <member name="M:ZktAttendence.Master.consoleProcessForAttendence">
-            Main working function in this program. this function pull data from machine buffer
-            and push into database.
         </member>
         <member name="M:ZktAttendence.Master.DriverMethod">
             this is a test perpose function for checking

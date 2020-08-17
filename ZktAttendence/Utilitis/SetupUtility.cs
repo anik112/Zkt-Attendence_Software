@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Xml;
+
 
 namespace ZktAttendence.Utilitis
 {
@@ -51,23 +53,33 @@ namespace ZktAttendence.Utilitis
         }
 
 
-        public XmlNodeList getDeviceSetupInformation(String filePath, String rootNode, String selectedSubNode)
+        public ICollection<MachineSelector> getDeviceSetupInformation(String filePath, String rootNode)
         {
+            ICollection<MachineSelector> machineList = new List<MachineSelector>();
             try
             {
                 // read xml file
                 XmlDocument xmlDocument = new XmlDocument();
                 xmlDocument.Load(filePath);
-                XmlNodeList nodeList = xmlDocument.SelectNodes($"/{rootNode}/{selectedSubNode}");
+                XmlNodeList nodeList = xmlDocument.SelectNodes($"/{rootNode}");
 
-                return nodeList;
+                foreach(XmlNode node in nodeList)
+                {
+                    MachineSelector machineSelector = new MachineSelector();
+                    machineSelector.setMachineNumber(Convert.ToInt32(node.SelectSingleNode("machineNo").InnerText));
+                    machineSelector.setIpAddress(node.SelectSingleNode("ipAddress").InnerText);
+                    machineSelector.setPortNumber(Convert.ToInt32(node.SelectSingleNode("port").InnerText));
+
+                    machineList.Add(machineSelector);
+                }
+
             }
             catch (Exception e)
             {
                 Console.WriteLine("SetupUtility sys: " + e.Message);
                 Console.ReadLine();
             }
-            return null;
+            return machineList;
         }
 
 

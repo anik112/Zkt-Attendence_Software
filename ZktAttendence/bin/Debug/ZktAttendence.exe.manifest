@@ -55,14 +55,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ZktAttendence.exe" size="86000">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ZktAttendence.exe" size="89072">
       <assemblyIdentity name="ZktAttendence" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>7DvndqA7XJBI6ohjCvHZVaS6FR39xfELiamMyS9gxhM=</dsig:DigestValue>
+        <dsig:DigestValue>BmdcYknZR8KfNXZyI8h2NJjwlCYoI4WrMLnO4o9Hy/Q=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -82,15 +82,6 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
       <dsig:DigestValue>F222N927AK58/YzUxaM4NGlAEYuuWKGIYo/r2bAn5MA=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="Utilitis\DatabaseSetup.xml" size="0" writeableType="applicationData">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=</dsig:DigestValue>
     </hash>
   </file>
   <file name="ZktAttendence.exe.config" size="189">
