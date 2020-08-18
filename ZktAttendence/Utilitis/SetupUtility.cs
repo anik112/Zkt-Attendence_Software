@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Xml;
-
+using System.Xml.Linq;
 
 namespace ZktAttendence.Utilitis
 {
@@ -63,20 +63,35 @@ namespace ZktAttendence.Utilitis
                 xmlDocument.Load(filePath);
                 XmlNodeList nodeList = xmlDocument.SelectNodes($"/{rootNode}");
 
+                // there have some problem
+                int count = xmlDocument.SelectNodes("deviceSetupInfo").Count;         
+                Console.WriteLine("total node: " + count);
+
+                int nodeCount = 0;
+                //while(nodeCount<2)
                 foreach(XmlNode node in nodeList)
                 {
+                    XmlNodeList innerNode = node.SelectNodes($"/{rootNode}/device{nodeCount}");
+                    Console.WriteLine("total node: " +innerNode.Count);
+
                     MachineSelector machineSelector = new MachineSelector();
-                    machineSelector.setMachineNumber(Convert.ToInt32(node.SelectSingleNode("machineNo").InnerText));
-                    machineSelector.setIpAddress(node.SelectSingleNode("ipAddress").InnerText);
-                    machineSelector.setPortNumber(Convert.ToInt32(node.SelectSingleNode("port").InnerText));
+                    foreach (XmlNode xmlNode in innerNode)
+                    {
+                        machineSelector.setMachineNumber(Convert.ToInt32(xmlNode.SelectSingleNode("machineNo").InnerText));
+                        Console.WriteLine("Machine No: " + machineSelector.getMachineNumber());
+                        machineSelector.setIpAddress(xmlNode.SelectSingleNode("ipAddress").InnerText);
+                        Console.WriteLine("Ip address: "+machineSelector.getIpAddress());
+                        machineSelector.setPortNumber(Convert.ToInt32(xmlNode.SelectSingleNode("port").InnerText));
+                    }
 
                     machineList.Add(machineSelector);
+                    nodeCount++;
                 }
 
             }
             catch (Exception e)
             {
-                Console.WriteLine("SetupUtility sys: " + e.Message);
+                Console.WriteLine("SetupUtility sys: " + e.Message+" > "+ e.StackTrace);
                 Console.ReadLine();
             }
             return machineList;

@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using ZktAttendence.Utilitis;
 using System.Xml;
+using System.IO;
+using ZktAttendence.Core;
 
 namespace ZktAttendence.view
 {
@@ -61,51 +63,73 @@ namespace ZktAttendence.view
                 switch (courser)
                 {
                     case "1":
-                        List<XmlNodeList> xmlNodes = new List<System.Xml.XmlNodeList>();
-                        System.Xml.XmlTextWriter xmlTextWriter = new XmlTextWriter(zktFilePath, System.Text.Encoding.UTF8);
-                        xmlTextWriter.WriteStartDocument(true);
-                        xmlTextWriter.Formatting = System.Xml.Formatting.Indented;
-                        xmlTextWriter.WriteStartElement("deviceSetupInfo");
-
-                        int checker = 0;
-                        while (true)
+                        try
                         {
-                            Console.WriteLine("Device " + checker);
-                            xmlTextWriter.WriteStartElement("device" + checker);
-                            //-------------------------------------
-                            Console.Write("Machine No: ");
-                            String machineNo = Console.ReadLine();
-                            //---------------------------------------
-                            Console.Write("IpAddress: ");
-                            String ipAddress = Console.ReadLine();
-                            //---------------------------------------
-                            Console.Write("Port: ");
-                            String port = Console.ReadLine();
-                            //----------------------------------------
-                            new SetupUtility().writeMachineInfoInXML(Convert.ToInt32(machineNo), ipAddress, Convert.ToInt32(port), xmlTextWriter);
+                            List<XmlNodeList> xmlNodes = new List<System.Xml.XmlNodeList>();
+                            System.Xml.XmlTextWriter xmlTextWriter = new XmlTextWriter(zktFilePath, System.Text.Encoding.UTF8);
+                            xmlTextWriter.WriteStartDocument(true);
+                            xmlTextWriter.Formatting = System.Xml.Formatting.Indented;
+                            xmlTextWriter.WriteStartElement("deviceSetupInfo");
 
+                            int checker = 0;
+                            while (true)
+                            {
+                                Console.WriteLine("Device " + checker);
+                                xmlTextWriter.WriteStartElement("device" + checker);
+                                //-------------------------------------
+                                Console.Write("Machine No: ");
+                                String machineNo = Console.ReadLine();
+                                //---------------------------------------
+                                Console.Write("IpAddress: ");
+                                String ipAddress = Console.ReadLine();
+                                //---------------------------------------
+                                Console.Write("Port: ");
+                                String port = Console.ReadLine();
+                                //----------------------------------------
+                                new SetupUtility().writeMachineInfoInXML(Convert.ToInt32(machineNo), ipAddress, Convert.ToInt32(port), xmlTextWriter);
+
+                                xmlTextWriter.WriteEndElement();
+                                checker++;
+                                Console.WriteLine("For Exit Type: 0");
+                                if (Console.ReadLine().Equals("0"))
+                                {
+                                    Console.Clear();
+                                    showConsoleHeader();
+                                    break;
+                                }
+                                else
+                                {
+                                    continue;
+                                }
+                            }
                             xmlTextWriter.WriteEndElement();
-                            checker++;
-                            Console.WriteLine("For Exit Type: 0");
-                            if (Console.ReadLine().Equals("0"))
-                            {
-                                Console.Clear();
-                                showConsoleHeader();
-                                break;
-                            }
-                            else
-                            {
-                                continue;
-                            }
+                            xmlTextWriter.Close();
+                            Console.WriteLine("Data save in file..(-_-)");
+                        }catch(Exception e)
+                        {
+                            Console.WriteLine("\n" + e.Message);
                         }
-                        xmlTextWriter.WriteEndElement();
-                        xmlTextWriter.Close();
-                        Console.WriteLine("Data save in file..(-_-)");
                         break;
 
 
                     case "2":
-
+                        if (new AttendenceDataWriteInTxt().consoleProcessForAttendence(zktFilePath))
+                        {
+#pragma warning disable CA1303 // Do not pass literals as localized parameters
+                            Console.WriteLine("\n\n*****************************************\n" +
+                                             "           Data store in FILE            " +
+                                             "\n*****************************************");
+#pragma warning restore CA1303 // Do not pass literals as localized parameters
+                        }
+                        else
+                        {
+#pragma warning disable CA1303 // Do not pass literals as localized parameters
+                            Console.WriteLine("\n\n*****************************************\n" +
+                                                "       Data not store in FILE      " +
+                                                "\n*****************************************");
+#pragma warning restore CA1303 // Do not pass literals as localized parameters
+                        }
+                        break;
 
                     case "0":
                         loopExitChecker = false;

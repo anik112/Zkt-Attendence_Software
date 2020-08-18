@@ -3,23 +3,25 @@ using System.Collections.Generic;
 using ZktAttendence.Core_Service;
 using zkemkeeper;
 using ZktAttendence.Utilitis;
+using System.IO;
 
 namespace ZktAttendence.Core
 {
-    class AttendenceDataWriteInTxt
+    public class AttendenceDataWriteInTxt
     {
         private CoreZkt zkt;
         private CZKEM objZkt;
         private String workToDate = String.Empty;
         private String workFromDate = String.Empty;
         private bool checkDataStoreOrNot = false;
+        private String formatString = "105:00020001990:20191125:195420:BLANK !!:11";
 
 
         /**
          * Main working function in this program. this function pull data from machine buffer
          * and push into database.
          */
-        public void consoleProcessForAttendence(String zktSetupPath)
+        public bool consoleProcessForAttendence(String zktSetupPath)
         {
             zkt = new CoreZktClass(); // create object of Core class
             objZkt = new CZKEM(); // create object of Lib class
@@ -91,47 +93,36 @@ namespace ZktAttendence.Core
                     userAttndData = zkt.GetAttendenceLogData(objZkt, selector.getMachineNumber());
 
                     int recordCount = 0;// record counter
-                    // patch attendence data
-                    foreach (MachineInfo machinAttendence in userAttndData)
+
+                    try
                     {
-
-                        String chekingData = machinAttendence.DateTimeRecord;
-                        if (chekingData.Contains(workFromDate) || chekingData.Contains(workToDate))
+                        FileStream file = new FileStream("\\test.txt", FileMode.Create, FileAccess.Write);
+                        StreamWriter writer = new StreamWriter(file);
+                        // patch attendence data
+                        foreach (MachineInfo machinAttendence in userAttndData)
                         {
-                            
-/*
-                            
-                            // check the data exists or not in database, which data come from device buffer
-                            if (new UpdateInDatabase().checkIfIsNotExists(machinAttendence.DateTimeRecord, connection))
-                            {
-                                // Console.WriteLine("[ " + machinAttendence.getIndRegID() + " & " + chekingData+" ]");
-                                // if not exists in database then store this data
-                                new UpdateInDatabase().storeLogDataInDatabase(machinAttendence.MachineNumber,
-                                                                             machinAttendence.getIndRegID(),
-                                                                             chekingData,
-                                                                             connection
-                                                                             );
-                                recordCount++; // record counter
-                                Console.Write("\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b"); // remove text from console
-                                Console.Write("Process: " + recordCount + " Data"); // write text in console
 
-                                *//*                                if (recordCount > 50)
-                                                                {
-                                                                    break;
-                                                                }*//*
-                                checkDataStoreOrNot = true;
+                            String chekingData = machinAttendence.DateTimeRecord;
+                            if (chekingData.Contains(workFromDate) || chekingData.Contains(workToDate))
+                            {
+                                //105:00020001990:20191125:195420:BLANK!!:11
+                                writer.WriteLine($"{machinAttendence.MachineNumber}:{machinAttendence.IndRegID}:{chekingData}:BLANK!!:11");
+                               
                             }
                             else
                             {
                                 continue;
-                            }*/
+                            }
                         }
-                        else
-                        {
-                            continue;
-                        }
+                        writer.Close();
+                        file.Close();
+                        checkDataStoreOrNot = true;
+                        Console.WriteLine("\n");
                     }
-                    Console.WriteLine("\n");
+                    catch (Exception e)
+                    {
+                        Console.WriteLine("\n" + e.Message);
+                    }
                 }
                 else
                 {
@@ -140,22 +131,8 @@ namespace ZktAttendence.Core
                                       "\n*** Device is disconnected ***" +
                                       "\n============================================\n");
                 }
-               
             }
-
-            if (checkDataStoreOrNot)
-            {
-                Console.WriteLine("\n\n*****************************************\n" +
-                                 "           Data store in database            " +
-                                 "\n*****************************************");
-            }
-            else
-            {
-                Console.WriteLine("\n\n*****************************************\n" +
-                                    "       Data not store in database      " +
-                                    "\n*****************************************");
-
-            }
+            return checkDataStoreOrNot;
         }
 
     }
