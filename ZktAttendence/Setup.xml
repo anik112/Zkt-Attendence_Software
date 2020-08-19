@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<setup_database>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<setup>
   <server_1>
     <host>DESKTOP-NSLL7T5</host>
     <service_name>payroll</service_name>
@@ -12,4 +12,5 @@
     <user_id>payroll2-s</user_id>
     <password>payroll2-s</password>
   </server_2>
-</setup_database>
+  <zktfilepath>C:\Program Files (x86)\ZKTeco\att2000.mdb</zktfilepath>
+</setup>

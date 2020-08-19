@@ -14,10 +14,12 @@ namespace ZktAttendence.view
     {
         private String courser = "0";
         private String zktFilePath;
+        private String setupPath;
 
-        public ConsoleView(String zktSetupPath)
+        public ConsoleView(String zktSetupPath, String setupPath)
         {
             this.zktFilePath = zktSetupPath;
+            this.setupPath = setupPath;
         }
 
         private void showConsoleHeader()
@@ -42,9 +44,14 @@ namespace ZktAttendence.view
                 }
                 if (i == 3)
                 {
+                    Console.WriteLine("*      3. Update ZKT Path                *");
+                }
+                if (i == 4)
+                {
                     Console.WriteLine("*      0. Exit the system                *");
                 }
             }
+            Console.WriteLine("*                                        *");
             Console.WriteLine("******************************************");
             courser = "404";
         }
@@ -65,8 +72,7 @@ namespace ZktAttendence.view
                     case "1":
                         try
                         {
-                            List<XmlNodeList> xmlNodes = new List<System.Xml.XmlNodeList>();
-                            System.Xml.XmlTextWriter xmlTextWriter = new XmlTextWriter(zktFilePath, System.Text.Encoding.UTF8);
+                            XmlTextWriter xmlTextWriter = new XmlTextWriter(zktFilePath, System.Text.Encoding.UTF8);
                             xmlTextWriter.WriteStartDocument(true);
                             xmlTextWriter.Formatting = System.Xml.Formatting.Indented;
                             xmlTextWriter.WriteStartElement("deviceSetupInfo");
@@ -131,6 +137,12 @@ namespace ZktAttendence.view
                         }
                         break;
 
+                    case "3":
+                        //new SetupUtility().writeZktFileLoc(setupPath, Console.ReadLine());
+                        Console.WriteLine(new SetupUtility().getZktFilePath(setupPath));
+                        Console.WriteLine("----------");
+                        break;
+                      
                     case "0":
                         loopExitChecker = false;
                         break;

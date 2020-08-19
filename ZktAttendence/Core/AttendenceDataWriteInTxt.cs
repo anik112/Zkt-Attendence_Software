@@ -93,21 +93,30 @@ namespace ZktAttendence.Core
                     userAttndData = zkt.GetAttendenceLogData(objZkt, selector.getMachineNumber());
 
                     int recordCount = 0;// record counter
-
                     try
                     {
-                        FileStream file = new FileStream("\\test.txt", FileMode.Create, FileAccess.Write);
+                        FileStream file = new FileStream("D:\\DATA\\test.txt", FileMode.Create, FileAccess.Write);
                         StreamWriter writer = new StreamWriter(file);
                         // patch attendence data
                         foreach (MachineInfo machinAttendence in userAttndData)
                         {
-
+                            Console.WriteLine(">" + machinAttendence.MachineNumber);
+                            // writer.WriteLine("105:00020001990:20191125:195420:BLANK!!:11");
                             String chekingData = machinAttendence.DateTimeRecord;
                             if (chekingData.Contains(workFromDate) || chekingData.Contains(workToDate))
                             {
                                 //105:00020001990:20191125:195420:BLANK!!:11
-                                writer.WriteLine($"{machinAttendence.MachineNumber}:{machinAttendence.IndRegID}:{chekingData}:BLANK!!:11");
-                               
+                                String[] part = chekingData.Split(' ');
+                                String[] datePart = part[0].Split('/');
+                                String finalDateWithFormat = datePart[2] + datePart[0] + datePart[1];
+                                String[] timePart = part[1].Split(':');
+                                String finalTimeWithFormat = timePart[0] + timePart[1] + timePart[2];
+
+                                writer.WriteLine($"{machinAttendence.MachineNumber}:{machinAttendence.IndRegID}:{finalDateWithFormat}:{finalTimeWithFormat}:BLANK!!:11");
+
+                                recordCount++;
+                                Console.Write("\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b"); // remove text from console
+                                Console.Write("Process: " + recordCount + " Data"); // write text in console
                             }
                             else
                             {

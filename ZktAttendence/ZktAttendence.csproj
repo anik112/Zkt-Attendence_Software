@@ -99,7 +99,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Core Service\CoreZkt.cs" />
+    <Compile Include="CoreService\CoreZkt.cs" />
     <Compile Include="Core\AttendenceDataWriteInDatabase.cs" />
     <Compile Include="Core\AttendenceDataWriteInTxt.cs" />
     <Compile Include="Core\CoreZktClass.cs" />

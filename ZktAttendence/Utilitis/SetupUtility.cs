@@ -27,7 +27,7 @@ namespace ZktAttendence.Utilitis
             }
             catch (Exception e)
             {
-                Console.WriteLine("SetupUtility sys: " + e.Message);
+                Console.WriteLine("SetupUtility sys: " + e.Message+" > "+ e.StackTrace);
             }
         }
 
@@ -52,6 +52,38 @@ namespace ZktAttendence.Utilitis
             }
         }
 
+        public void writeZktFileLoc(String lodingPath, String storePath)
+        {
+            try
+            {
+                XElement element = XElement.Load(lodingPath);
+                element.Add(new XElement("zktfilepath", storePath));
+                element.Save(lodingPath);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("SetupUtility sys: " + e.Message);
+            }
+        }
+
+        public String getZktFilePath(String lodingPath)
+        {
+            String path = "No path";
+            try
+            {
+                XmlDocument xmlDocument = new XmlDocument();
+                xmlDocument.Load(lodingPath);
+                XmlNode node = xmlDocument.SelectSingleNode("setup/zktfilepath");
+                Console.WriteLine(node.ChildNodes);
+                path = node.Value;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("SetupUtility sys: " + e.Message);
+            }
+            return path;
+        }
+
 
         public ICollection<MachineSelector> getDeviceSetupInformation(String filePath, String rootNode)
         {
@@ -63,24 +95,22 @@ namespace ZktAttendence.Utilitis
                 xmlDocument.Load(filePath);
                 XmlNodeList nodeList = xmlDocument.SelectNodes($"/{rootNode}");
 
-                // there have some problem
-                int count = xmlDocument.SelectNodes("deviceSetupInfo").Count;         
-                Console.WriteLine("total node: " + count);
-
                 int nodeCount = 0;
-                //while(nodeCount<2)
-                foreach(XmlNode node in nodeList)
+                while(true)
                 {
-                    XmlNodeList innerNode = node.SelectNodes($"/{rootNode}/device{nodeCount}");
-                    Console.WriteLine("total node: " +innerNode.Count);
+                    XmlNodeList innerNode = xmlDocument.SelectNodes($"/{rootNode}/device{nodeCount}");
+                    if (innerNode.Count <= 0)
+                    {
+                        break;
+                    }
 
                     MachineSelector machineSelector = new MachineSelector();
                     foreach (XmlNode xmlNode in innerNode)
                     {
                         machineSelector.setMachineNumber(Convert.ToInt32(xmlNode.SelectSingleNode("machineNo").InnerText));
-                        Console.WriteLine("Machine No: " + machineSelector.getMachineNumber());
+                        //Console.WriteLine("Machine No: " + machineSelector.getMachineNumber());
                         machineSelector.setIpAddress(xmlNode.SelectSingleNode("ipAddress").InnerText);
-                        Console.WriteLine("Ip address: "+machineSelector.getIpAddress());
+                        //Console.WriteLine("Ip address: "+machineSelector.getIpAddress());
                         machineSelector.setPortNumber(Convert.ToInt32(xmlNode.SelectSingleNode("port").InnerText));
                     }
 
