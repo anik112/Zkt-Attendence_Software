@@ -9,8 +9,11 @@ namespace ZktAttendence
     class Program
     {
 
-        private static String zktFilePath = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\SetupMachineList.xml");
-        private static String dbaFilePath = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\Setup.xml");
+        /*private static String zktFilePath = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\SetupMachineList.xml");
+        private static String dbaFilePath = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\Setup.xml");*/
+
+        private static String zktFilePath = System.IO.Path.Combine(Environment.CurrentDirectory, "SetupMachineList.xml");
+        private static String dbaFilePath = System.IO.Path.Combine(Environment.CurrentDirectory, "Setup.xml");
 
         static void Main(string[] args)
         {
@@ -26,10 +29,8 @@ namespace ZktAttendence
             /*
             new Master().consoleProcessForAttendence();
             Console.WriteLine("\n\n#########  Please type Enter & Close  ###########" +
-                                "\n@ 2019-Vistasoft IT Bangladesh Ltd. Dev-by-Pranta");
+                                "\n     @ 2019-Vistasoft IT Bangladesh Ltd.  ");
             */
-
-                  Console.ReadLine();
         }
     }
 }

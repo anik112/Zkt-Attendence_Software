@@ -2,11 +2,14 @@
 
 namespace ZktAttendence.Utilitis
 {
-    class MachineInfo
+    class AttendenceInfo
     {
         public int MachineNumber { get; set; }
         public int IndRegID { get; set; }
         public string DateTimeRecord { get; set; }
+        public String empName { get; set; }
+        public int privilege { get; set; }
+        public bool enabled { get; set; }
 
         public DateTime DateOnlyRecord
         {

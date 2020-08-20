@@ -31,6 +31,7 @@ namespace ZktAttendence.Core
 
             while (true)
             {
+                Console.ForegroundColor = ConsoleColor.White;
                 // get date from user
                 Console.Write("From Date: ");
                 tempFromDate = Console.ReadLine();
@@ -58,11 +59,13 @@ namespace ZktAttendence.Core
                     }
                     else
                     {
+                        Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine("\n=> Sorry Date is not valid...\n");
                     }
                 }
                 else
                 {
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("\n=> Sorry Date is not valid...\n");
                 }
             }
@@ -76,32 +79,31 @@ namespace ZktAttendence.Core
             ICollection<MachineSelector> getMachineList = new List<MachineSelector>();
 
             getMachineList = new SetupUtility().getDeviceSetupInformation(zktSetupPath, "deviceSetupInfo");
+            FileStream file = new FileStream($"D:\\DATA\\{tempToDate}-{new Random().Next(10,99)}.txt", FileMode.Create, FileAccess.Write);
+            StreamWriter writer = new StreamWriter(file);
 
             // patch machine information
             foreach (MachineSelector selector in getMachineList)
             {
-
+                Console.ForegroundColor = ConsoleColor.White;
                 Console.WriteLine("\nDevice Number " + selector.getMachineNumber() + " - IP: " + selector.getIpAddress());
 
                 // get device connection using UTP protocol
                 if (zkt.GetConnection(objZkt, selector.getIpAddress(), selector.getPortNumber()))
                 {
+                    Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine("*** Device is connected ***\n");
                     // if device connected then make a object array
-                    ICollection<MachineInfo> userAttndData = new List<MachineInfo>();
+                    ICollection<AttendenceInfo> userAttndData = new List<AttendenceInfo>();
                     // get attendence data from device buffer
                     userAttndData = zkt.GetAttendenceLogData(objZkt, selector.getMachineNumber());
 
                     int recordCount = 0;// record counter
                     try
                     {
-                        FileStream file = new FileStream("D:\\DATA\\test.txt", FileMode.Create, FileAccess.Write);
-                        StreamWriter writer = new StreamWriter(file);
                         // patch attendence data
-                        foreach (MachineInfo machinAttendence in userAttndData)
+                        foreach (AttendenceInfo machinAttendence in userAttndData)
                         {
-                            Console.WriteLine(">" + machinAttendence.MachineNumber);
-                            // writer.WriteLine("105:00020001990:20191125:195420:BLANK!!:11");
                             String chekingData = machinAttendence.DateTimeRecord;
                             if (chekingData.Contains(workFromDate) || chekingData.Contains(workToDate))
                             {
@@ -112,9 +114,10 @@ namespace ZktAttendence.Core
                                 String[] timePart = part[1].Split(':');
                                 String finalTimeWithFormat = timePart[0] + timePart[1] + timePart[2];
 
-                                writer.WriteLine($"{machinAttendence.MachineNumber}:{machinAttendence.IndRegID}:{finalDateWithFormat}:{finalTimeWithFormat}:BLANK!!:11");
+                                writer.WriteLine($"{machinAttendence.MachineNumber}:{machinAttendence.empName}:{finalDateWithFormat}:{finalTimeWithFormat}:BLANK!!:11");
 
                                 recordCount++;
+                                Console.ForegroundColor = ConsoleColor.Yellow;
                                 Console.Write("\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b"); // remove text from console
                                 Console.Write("Process: " + recordCount + " Data"); // write text in console
                             }
@@ -123,8 +126,6 @@ namespace ZktAttendence.Core
                                 continue;
                             }
                         }
-                        writer.Close();
-                        file.Close();
                         checkDataStoreOrNot = true;
                         Console.WriteLine("\n");
                     }
@@ -135,12 +136,15 @@ namespace ZktAttendence.Core
                 }
                 else
                 {
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("\n============================================\n" +
                                       "Device Number: " + selector.getMachineNumber() + " - IP: " + selector.getIpAddress() +
                                       "\n*** Device is disconnected ***" +
                                       "\n============================================\n");
                 }
             }
+            writer.Close();
+            file.Close();
             return checkDataStoreOrNot;
         }
 

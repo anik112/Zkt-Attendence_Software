@@ -16,7 +16,7 @@ namespace ZktAttendence.Core_Service
         // Get User Information form Device.
         ICollection<UserInfo> GetUserInformation(CZKEM objCzkem, int machineNumber);
         // Get Attendence Data from Buffer .
-        ICollection<MachineInfo> GetAttendenceLogData(CZKEM objZkt, int machineNumber);
+        ICollection<AttendenceInfo> GetAttendenceLogData(CZKEM objZkt, int machineNumber);
         // get machineNumber
         int GetMachineNumber(CZKEM objZkt);
 

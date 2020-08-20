@@ -11,7 +11,7 @@ namespace ZktAttendence.Core
     {
 
         // Attendence Data from Buffer
-        public ICollection<MachineInfo> GetAttendenceLogData(CZKEM objZkt, int machineNumber)
+        public ICollection<AttendenceInfo> GetAttendenceLogData(CZKEM objZkt, int machineNumber)
         {
             try
             {
@@ -27,23 +27,34 @@ namespace ZktAttendence.Core
                 int dwWorkCode = 0; // set work code
 
                 // make a arry list for take attendence log from buffer
-                ICollection<MachineInfo> lstAttndData = new List<MachineInfo>();
+                ICollection<AttendenceInfo> lstAttndData = new List<AttendenceInfo>();
 
                 objZkt.ReadAllGLogData(machineNumber); // call ZKT libery function and set machineNumber
 
                 // call ZKT libery function SSR_GetGeneralLogData(_) and fatch log data from buffer
                 while (objZkt.SSR_GetGeneralLogData(machineNumber, out dwEnrollNumber, out dwVerifyMode, out dwInOutMode, out dwYear, out dwMonth, out dwDay, out dwHour, out dwMinute, out dwSecond, ref dwWorkCode))
                 {
-                    Console.WriteLine("---->> " + dwEnrollNumber);
                     // make date from long time and date [ format like 05/29/2015 05:50:06 ]
                     string inputDate = new DateTime(dwYear, dwMonth, dwDay, dwHour, dwMinute, dwSecond).ToString("MM/dd/yyyy HH:mm:ss");
                     // call MachineInfo call and access there propraty
-                    MachineInfo objMachineInfo = new MachineInfo();
-                    objMachineInfo.MachineNumber = machineNumber; // set machine number
-                    objMachineInfo.IndRegID = int.Parse(dwEnrollNumber); // set takeing attendence user id
-                    objMachineInfo.DateTimeRecord = inputDate; // set date of attendence
+                    AttendenceInfo objAttendenceInf = new AttendenceInfo();
+                    objAttendenceInf.MachineNumber = machineNumber; // set machine number
+                    objAttendenceInf.IndRegID = int.Parse(dwEnrollNumber); // set takeing attendence user id
 
-                    lstAttndData.Add(objMachineInfo); // finaly add machineInfo object in array
+                    String usrName = "";
+                    String password = "";
+                    int privilege;
+                    bool enabled;
+
+                    if(objZkt.SSR_GetUserInfo(machineNumber, dwEnrollNumber, out usrName, out password, out privilege, out enabled))
+                    {
+                        objAttendenceInf.empName = usrName;
+                        objAttendenceInf.privilege = privilege;
+                        objAttendenceInf.enabled = enabled;
+                    }
+                    objAttendenceInf.DateTimeRecord = inputDate; // set date of attendence
+
+                    lstAttndData.Add(objAttendenceInf); // finaly add machineInfo object in array
                 }
 
                 return lstAttndData; // return array

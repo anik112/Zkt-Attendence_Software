@@ -120,7 +120,7 @@
     <Compile Include="Test\XMLtest.cs" />
     <Compile Include="Utilitis\DatabaseConnection.cs" />
     <Compile Include="Utilitis\DatabaseInfo.cs" />
-    <Compile Include="Utilitis\MachineInfo.cs" />
+    <Compile Include="Utilitis\AttendenceInfo.cs" />
     <Compile Include="Utilitis\MachineSelector.cs" />
     <Compile Include="Test\TestCodeDocument.cs" />
     <Compile Include="Utilitis\SetupUtility.cs" />

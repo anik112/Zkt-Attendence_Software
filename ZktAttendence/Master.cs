@@ -69,7 +69,7 @@ namespace ZktAttendence
                 }
                 userList.Clear();
 
-                ICollection<MachineInfo> userAttndData = new List<MachineInfo>();
+                ICollection<AttendenceInfo> userAttndData = new List<AttendenceInfo>();
                 userAttndData = zkt.GetAttendenceLogData(objZkt, machineNumber);
 
                 cks = 0;
@@ -77,7 +77,7 @@ namespace ZktAttendence
                 OracleConnection oraConn = DatabaseConnection.getConnection();
 
                 Console.WriteLine("-------------------- Attendence Data --------------------");
-                foreach (MachineInfo m in userAttndData)
+                foreach (AttendenceInfo m in userAttndData)
                 {
                     cks++;
                     Console.WriteLine("----------------------------------------");

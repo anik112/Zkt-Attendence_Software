@@ -87,13 +87,13 @@ namespace ZktAttendence.Core
                 {
                     Console.WriteLine("*** Device is connected ***\n");
                     // if device connected then make a object array
-                    ICollection<MachineInfo> userAttndData = new List<MachineInfo>();
+                    ICollection<AttendenceInfo> userAttndData = new List<AttendenceInfo>();
                     // get attendence data from device buffer
                     userAttndData = zkt.GetAttendenceLogData(objZkt, selector.getMachineNumber());
 
                     int recordCount = 0;// record counter
                     // patch attendence data
-                    foreach (MachineInfo machinAttendence in userAttndData)
+                    foreach (AttendenceInfo machinAttendence in userAttndData)
                     {
 
                         String chekingData = machinAttendence.DateTimeRecord;
