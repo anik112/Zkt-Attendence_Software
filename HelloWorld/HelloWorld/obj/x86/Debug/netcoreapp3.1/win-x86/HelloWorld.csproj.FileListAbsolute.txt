@@ -1,0 +1,14 @@
+F:\C#_Project\HelloWorld\HelloWorld\bin\x86\Debug\netcoreapp3.1\win-x86\HelloWorld.exe
+F:\C#_Project\HelloWorld\HelloWorld\bin\x86\Debug\netcoreapp3.1\win-x86\HelloWorld.deps.json
+F:\C#_Project\HelloWorld\HelloWorld\bin\x86\Debug\netcoreapp3.1\win-x86\HelloWorld.runtimeconfig.json
+F:\C#_Project\HelloWorld\HelloWorld\bin\x86\Debug\netcoreapp3.1\win-x86\HelloWorld.runtimeconfig.dev.json
+F:\C#_Project\HelloWorld\HelloWorld\bin\x86\Debug\netcoreapp3.1\win-x86\HelloWorld.dll
+F:\C#_Project\HelloWorld\HelloWorld\bin\x86\Debug\netcoreapp3.1\win-x86\HelloWorld.pdb
+F:\C#_Project\HelloWorld\HelloWorld\bin\x86\Debug\netcoreapp3.1\win-x86\Interop.zkemkeeper.dll
+F:\C#_Project\HelloWorld\HelloWorld\obj\x86\Debug\netcoreapp3.1\win-x86\Interop.zkemkeeper.dll
+F:\C#_Project\HelloWorld\HelloWorld\obj\x86\Debug\netcoreapp3.1\win-x86\HelloWorld.csproj.ResolveComReference.cache
+F:\C#_Project\HelloWorld\HelloWorld\obj\x86\Debug\netcoreapp3.1\win-x86\HelloWorld.AssemblyInfoInputs.cache
+F:\C#_Project\HelloWorld\HelloWorld\obj\x86\Debug\netcoreapp3.1\win-x86\HelloWorld.AssemblyInfo.cs
+F:\C#_Project\HelloWorld\HelloWorld\obj\x86\Debug\netcoreapp3.1\win-x86\HelloWorld.dll
+F:\C#_Project\HelloWorld\HelloWorld\obj\x86\Debug\netcoreapp3.1\win-x86\HelloWorld.pdb
+F:\C#_Project\HelloWorld\HelloWorld\obj\x86\Debug\netcoreapp3.1\win-x86\HelloWorld.csprojAssemblyReference.cache

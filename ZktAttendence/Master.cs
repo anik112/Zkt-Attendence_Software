@@ -16,6 +16,7 @@ namespace ZktAttendence
 
         /**
          * this is a test perpose function for checking
+         * Old function
          */
         public void DriverMethod()
         {

@@ -18,20 +18,14 @@ namespace ZktAttendence
         static void Main(string[] args)
         {
 
-            new ZktAttendence.view.ConsoleView(zktFilePath,dbaFilePath).showMainConsole();
-            //Console.ReadLine();
-            /* setMachineInfo();
-             getMachineInfo();*/
-            //new XMLtest();
-
-            //new Master().DriverMethod();
-            //new UpdateInDatabase().getUserInfoFromDatabase(DatabaseConnection.getConnection());
-            /*
-            new Master().consoleProcessForAttendence();
-            Console.WriteLine("\n\n#########  Please type Enter & Close  ###########" +
-                                "\n     @ 2019-Vistasoft IT Bangladesh Ltd.  ");
-            */
+            new ZktAttendence.view.ConsoleViewV2(zktFilePath, dbaFilePath).showConsole();
         }
     }
 }
 
+
+/*
+            new Master().consoleProcessForAttendence();
+            Console.WriteLine("\n\n#########  Please type Enter & Close  ###########" +
+                                "\n     @ 2019-Vistasoft IT Bangladesh Ltd.  ");
+            */

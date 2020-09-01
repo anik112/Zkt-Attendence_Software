@@ -1,0 +1,10 @@
+F:\C#_Project\TestConsole\bin\x86\Debug\TestConsole.exe.config
+F:\C#_Project\TestConsole\bin\x86\Debug\TestConsole.exe
+F:\C#_Project\TestConsole\bin\x86\Debug\TestConsole.pdb
+F:\C#_Project\TestConsole\obj\x86\Debug\TestConsole.exe
+F:\C#_Project\TestConsole\obj\x86\Debug\TestConsole.pdb
+F:\C#_Project\TestConsole\bin\x86\Debug\TestConsole.exe.manifest
+F:\C#_Project\TestConsole\bin\x86\Debug\TestConsole.application
+F:\C#_Project\TestConsole\obj\x86\Debug\TestConsole.csprojAssemblyReference.cache
+F:\C#_Project\TestConsole\obj\x86\Debug\TestConsole.exe.manifest
+F:\C#_Project\TestConsole\obj\x86\Debug\TestConsole.application

@@ -126,6 +126,7 @@
     <Compile Include="Utilitis\SetupUtility.cs" />
     <Compile Include="Utilitis\UserIdInfo.cs" />
     <Compile Include="Utilitis\UserInfo.cs" />
+    <Compile Include="view\ConsoleViewV2.cs" />
     <Compile Include="view\ConsoleView.cs" />
     <Compile Include="Test\test.cs">
       <SubType>Form</SubType>

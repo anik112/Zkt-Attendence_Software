@@ -1,0 +1,13 @@
+F:\C#_Project\HelloWorld\HelloWorld\bin\x86\Debug\netcoreapp3.1\ZKT_TEST.exe
+F:\C#_Project\HelloWorld\HelloWorld\bin\x86\Debug\netcoreapp3.1\ZKT_TEST.deps.json
+F:\C#_Project\HelloWorld\HelloWorld\bin\x86\Debug\netcoreapp3.1\ZKT_TEST.runtimeconfig.json
+F:\C#_Project\HelloWorld\HelloWorld\bin\x86\Debug\netcoreapp3.1\ZKT_TEST.runtimeconfig.dev.json
+F:\C#_Project\HelloWorld\HelloWorld\bin\x86\Debug\netcoreapp3.1\ZKT_TEST.dll
+F:\C#_Project\HelloWorld\HelloWorld\bin\x86\Debug\netcoreapp3.1\ZKT_TEST.pdb
+F:\C#_Project\HelloWorld\HelloWorld\bin\x86\Debug\netcoreapp3.1\Interop.zkemkeeper.dll
+F:\C#_Project\HelloWorld\HelloWorld\obj\x86\Debug\netcoreapp3.1\Interop.zkemkeeper.dll
+F:\C#_Project\HelloWorld\HelloWorld\obj\x86\Debug\netcoreapp3.1\ZKT_TEST.csproj.ResolveComReference.cache
+F:\C#_Project\HelloWorld\HelloWorld\obj\x86\Debug\netcoreapp3.1\ZKT_TEST.AssemblyInfoInputs.cache
+F:\C#_Project\HelloWorld\HelloWorld\obj\x86\Debug\netcoreapp3.1\ZKT_TEST.AssemblyInfo.cs
+F:\C#_Project\HelloWorld\HelloWorld\obj\x86\Debug\netcoreapp3.1\ZKT_TEST.dll
+F:\C#_Project\HelloWorld\HelloWorld\obj\x86\Debug\netcoreapp3.1\ZKT_TEST.pdb

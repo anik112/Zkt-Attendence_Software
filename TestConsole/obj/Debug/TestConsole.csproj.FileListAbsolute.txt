@@ -1,0 +1,6 @@
+F:\C#_Project\TestConsole\bin\Debug\TestConsole.exe.config
+F:\C#_Project\TestConsole\bin\Debug\TestConsole.exe
+F:\C#_Project\TestConsole\bin\Debug\TestConsole.pdb
+F:\C#_Project\TestConsole\obj\Debug\TestConsole.csprojAssemblyReference.cache
+F:\C#_Project\TestConsole\obj\Debug\TestConsole.exe
+F:\C#_Project\TestConsole\obj\Debug\TestConsole.pdb

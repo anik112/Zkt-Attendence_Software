@@ -29,6 +29,7 @@
         </member>
         <member name="M:ZktAttendence.Master.DriverMethod">
             this is a test perpose function for checking
+            Old function
         </member>
         <member name="T:ZktAttendence.Properties.Resources">
             <summary>
