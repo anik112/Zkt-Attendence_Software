@@ -12,13 +12,18 @@ namespace HelloWorld
     class Program
     {
 
-        static void Main(string[] args)
+        static void Main()
         {
+            Console.SetWindowSize(1, 1);
+            while (true)
+            {
+
+            }
             /*Process process = Process.Start("D:\\RTA600E SDK\\rta600v10.exe");
             process.WaitForExit();
             Console.WriteLine("Execute OK... !");*/
             //SerialPort port = new SerialPort("COM2", 9600, Parity.Even, 8, StopBits.One);
-            try
+            /*try
             {
                 SerialPort port = new SerialPort("COM1", 9600, Parity.None, 8, StopBits.One);
                 port.Open();
@@ -34,7 +39,7 @@ namespace HelloWorld
             {
                 Console.WriteLine("Port can't open: " + e.Message);
             }
-            Console.ReadLine();
+            Console.ReadLine();*/
 
         }
 

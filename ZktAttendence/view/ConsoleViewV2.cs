@@ -12,7 +12,6 @@ namespace ZktAttendence.view
 {
     class ConsoleViewV2
     {
-        private String courser = "0";
         private String zktFilePath;
         private String setupPath;
 
@@ -26,11 +25,14 @@ namespace ZktAttendence.view
         {
             // Print Header text
             //Console.SetWindowSize(100, 80);
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("******************************************");
             Console.WriteLine("###### Vistasoft IT Bangladesh Ltd. ######");
-            Console.WriteLine("********************************88********");
-            Console.WriteLine("###### [0] Exit the system          ######");
+            Console.WriteLine("######                              ######");
+            Console.WriteLine("######     [0] Exit the system      ######");
             Console.WriteLine("******************************************\n");
 
+            // check data store or not
             if (new AttendenceDataWriteInTxt().consoleProcessForAttendence(zktFilePath))
             {
                 Console.ForegroundColor = ConsoleColor.Green;
@@ -50,6 +52,7 @@ namespace ZktAttendence.view
 #pragma warning restore CA1303 // Do not pass literals as localized parameters
             }
             Console.ForegroundColor = ConsoleColor.White;
+            Console.Read();
         }
 
     }

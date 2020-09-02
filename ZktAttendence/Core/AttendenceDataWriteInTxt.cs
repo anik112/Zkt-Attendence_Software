@@ -9,11 +9,11 @@ namespace ZktAttendence.Core
 {
     public class AttendenceDataWriteInTxt
     {
-        private CoreZkt zkt;
-        private CZKEM objZkt;
-        private String workToDate = String.Empty;
-        private String workFromDate = String.Empty;
-        private bool checkDataStoreOrNot = false;
+        private CoreZkt zkt; // make zkt libs object
+        private CZKEM objZkt;  // make zkt libs object
+        private String workToDate = String.Empty; // declare to date variable
+        private String workFromDate = String.Empty; // decalre from date variable
+        private bool checkDataStoreOrNot = false; // checking variable
         private String formatString = "105:00020001990:20191125:195420:BLANK !!:11";
 
 
@@ -41,6 +41,7 @@ namespace ZktAttendence.Core
                 // check given date is valid or not
                 if (tempFromDate.Length == 8 && tempToDate.Length == 8)
                 {
+                    // Formating given data into Day, Month, Year
                     int checkDayOfFromDate = Convert.ToInt32(tempFromDate.Substring(0, 2));
                     int checkMOnthOfFromDate = Convert.ToInt32(tempFromDate.Substring(2, 2));
                     int checkYearOfFromDate = Convert.ToInt32(tempFromDate.Substring(4, 4));
@@ -63,6 +64,7 @@ namespace ZktAttendence.Core
                         Console.WriteLine("\n=> Sorry Date is not valid...\n");
                     }
                 }
+                // If data isn't valid
                 else
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
@@ -73,14 +75,20 @@ namespace ZktAttendence.Core
             workFromDate = tempFromDate.Substring(2, 2) + "/" + tempFromDate.Substring(0, 2) + "/" + tempFromDate.Substring(4, 4);
             // make final format of date
             workToDate = tempToDate.Substring(2, 2) + "/" + tempToDate.Substring(0, 2) + "/" + tempToDate.Substring(4, 4);
-
+            // Show massage
             Console.WriteLine("\n------------------------- \n " + workFromDate + " to " + workToDate + "\n------------------------- \n");
 
-            ICollection<MachineSelector> getMachineList = new List<MachineSelector>();
+            /**
+             * From this part i get all device from stored file and store in a array.
+             * then i traversing this array and get one by one device info.
+             * then i execute 'GetAttendenceLogData(objZkt, selector.getMachineNumber())' this function for
+             * get attendence.
+             */
+            ICollection<MachineSelector> getMachineList = new List<MachineSelector>(); // call the array for store device info
 
-            getMachineList = new SetupUtility().getDeviceSetupInformation(zktSetupPath, "deviceSetupInfo");
-            FileStream file = new FileStream($"D:\\DATA\\{tempToDate}-{new Random().Next(10,99)}.txt", FileMode.Create, FileAccess.Write);
-            StreamWriter writer = new StreamWriter(file);
+            getMachineList = new SetupUtility().getDeviceSetupInformation(zktSetupPath, "deviceSetupInfo"); // get all device info in array
+            FileStream file = new FileStream($"D:\\DATA\\{tempToDate}-{new Random().Next(10,99)}.txt", FileMode.Create, FileAccess.Write); // Make file path for store data
+            StreamWriter writer = new StreamWriter(file); // open file by file writer
 
             // patch machine information
             foreach (MachineSelector selector in getMachineList)
@@ -108,12 +116,12 @@ namespace ZktAttendence.Core
                             if (chekingData.Contains(workFromDate) || chekingData.Contains(workToDate))
                             {
                                 //105:00020001990:20191125:195420:BLANK!!:11
-                                String[] part = chekingData.Split(' ');
-                                String[] datePart = part[0].Split('/');
+                                String[] part = chekingData.Split(' '); // string like '19:54:20 2020/08/20'
+                                String[] datePart = part[0].Split('/'); // '2020/08/20' to {2020,08,20}
                                 String finalDateWithFormat = datePart[2] + datePart[0] + datePart[1];
-                                String[] timePart = part[1].Split(':');
+                                String[] timePart = part[1].Split(':'); // '19:54:20' to {19,54,20}
                                 String finalTimeWithFormat = timePart[0] + timePart[1] + timePart[2];
-
+                                // Write file in selected file location
                                 writer.WriteLine($"{machinAttendence.MachineNumber}:{machinAttendence.empName}:{finalDateWithFormat}:{finalTimeWithFormat}:BLANK!!:11");
 
                                 recordCount++;
@@ -139,7 +147,7 @@ namespace ZktAttendence.Core
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("\n============================================\n" +
                                       "Device Number: " + selector.getMachineNumber() + " - IP: " + selector.getIpAddress() +
-                                      "\n*** Device is disconnected ***" +
+                                      "\n  *** Device is disconnected ***" +
                                       "\n============================================\n");
                 }
             }

@@ -205,12 +205,12 @@ namespace ZktAttendence.Core
         {
             try
             {
-                int dwMachineNumber = 0; // set machine number
+                int dwMachineNumber = machineNumber; // set machine number
                 int dwEnrollNumber = 0; // set enroll numner
-                string dwName = string.Empty; // set user name
-                string dwPassword = string.Empty; // set user password
-                int dwPrivilege = 0; // set user privilege
-                bool dwEnable = false; // set is enable
+                string dwName = string.Empty; // get user name
+                string dwPassword = string.Empty; // get user password
+                int dwPrivilege = 0; // get user privilege
+                bool dwEnable = false; // get is enable
 
                 // make a array for store UserInfo object
                 ICollection<UserInfo> listOfUser = new List<UserInfo>();
