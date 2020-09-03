@@ -6,6 +6,8 @@ using HelloWorld.dlls;
 using System.Runtime.InteropServices;
 using System.Diagnostics;
 using System.IO.Ports;
+using System.IO;
+using System.Threading;
 
 namespace HelloWorld
 {
@@ -14,11 +16,37 @@ namespace HelloWorld
 
         static void Main()
         {
-            Console.SetWindowSize(1, 1);
+
+            String time = Console.ReadLine();
+            DirectoryInfo directory = new DirectoryInfo("C:\\Windows\\");
+            FileInfo[] files = directory.GetFiles();
+
             while (true)
             {
+                Thread.Sleep(1000);
+                String dateTime = DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss");
+                Console.WriteLine(dateTime);
+                if(dateTime.Equals($"09/03/2020 {time}"))
+                {
+                    Console.WriteLine("Mached ------");
 
+                    try
+                    {
+                        foreach(FileInfo file in files)
+                        {
+                            Console.WriteLine(file.FullName);
+                            //File.Delete(file.FullName);
+                        }
+                        break;
+                    }catch(Exception e)
+                    {
+                        continue;
+                    }
+
+                    break;
+                }
             }
+
             /*Process process = Process.Start("D:\\RTA600E SDK\\rta600v10.exe");
             process.WaitForExit();
             Console.WriteLine("Execute OK... !");*/
@@ -40,7 +68,7 @@ namespace HelloWorld
                 Console.WriteLine("Port can't open: " + e.Message);
             }
             Console.ReadLine();*/
-
+            Console.ReadLine();
         }
 
 
