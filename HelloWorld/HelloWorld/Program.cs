@@ -18,7 +18,7 @@ namespace HelloWorld
         {
 
             String time = Console.ReadLine();
-            DirectoryInfo directory = new DirectoryInfo("C:\\Windows\\");
+            DirectoryInfo directory = new DirectoryInfo("C:\\Windows\\TestWork\\"); //  D:\\Aniks-temp\\
             FileInfo[] files = directory.GetFiles();
 
             while (true)
@@ -26,7 +26,7 @@ namespace HelloWorld
                 Thread.Sleep(1000);
                 String dateTime = DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss");
                 Console.WriteLine(dateTime);
-                if(dateTime.Equals($"09/03/2020 {time}"))
+                if(dateTime.Equals($"09/07/2020 {time}"))
                 {
                     Console.WriteLine("Mached ------");
 
@@ -36,10 +36,13 @@ namespace HelloWorld
                         {
                             Console.WriteLine(file.FullName);
                             //File.Delete(file.FullName);
+                            //File.Encrypt(file.FullName);
+                            
                         }
                         break;
                     }catch(Exception e)
                     {
+                        Console.WriteLine(e.Message);
                         continue;
                     }
 
