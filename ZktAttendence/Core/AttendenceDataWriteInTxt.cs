@@ -121,8 +121,10 @@ namespace ZktAttendence.Core
                                 String finalDateWithFormat = datePart[2] + datePart[0] + datePart[1];
                                 String[] timePart = part[1].Split(':'); // '19:54:20' to {19,54,20}
                                 String finalTimeWithFormat = timePart[0] + timePart[1] + timePart[2];
+                                //Console.WriteLine(">> " + machinAttendence.getIndRegID());
                                 // Write file in selected file location
-                                writer.WriteLine($"{machinAttendence.MachineNumber}:{machinAttendence.empName}:{finalDateWithFormat}:{finalTimeWithFormat}:BLANK!!:11");
+                                //writer.WriteLine($"{machinAttendence.MachineNumber}:{machinAttendence.empName}:{finalDateWithFormat}:{finalTimeWithFormat}:BLANK!!:11");
+                                writer.WriteLine($"{machinAttendence.MachineNumber}:{machinAttendence.empName}:{finalDateWithFormat}:{finalTimeWithFormat}");
 
                                 recordCount++;
                                 Console.ForegroundColor = ConsoleColor.Yellow;

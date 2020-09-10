@@ -32,7 +32,6 @@ F:\C#_Project\ZktAttendence\obj\Debug\ZktAttendence.csprojAssemblyReference.cach
 F:\C#_Project\ZktAttendence\obj\Debug\Interop.zkemkeeper.dll
 F:\C#_Project\ZktAttendence\obj\Debug\ZktAttendence.csproj.ResolveComReference.cache
 F:\C#_Project\ZktAttendence\obj\Debug\ZktAttendence.Properties.Resources.resources
-F:\C#_Project\ZktAttendence\obj\Debug\ZktAttendence.view.test.resources
 F:\C#_Project\ZktAttendence\obj\Debug\ZktAttendence.csproj.GenerateResource.cache
 F:\C#_Project\ZktAttendence\obj\Debug\ZktAttendence.csproj.CoreCompileInputs.cache
 F:\C#_Project\ZktAttendence\obj\Debug\ZktAttendence.exe.manifest

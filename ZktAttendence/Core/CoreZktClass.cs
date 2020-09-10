@@ -52,6 +52,7 @@ namespace ZktAttendence.Core
                         objAttendenceInf.privilege = privilege;
                         objAttendenceInf.enabled = enabled;
                     }
+
                     objAttendenceInf.DateTimeRecord = inputDate; // set date of attendence
 
                     lstAttndData.Add(objAttendenceInf); // finaly add machineInfo object in array
