@@ -85,9 +85,9 @@ namespace ZktAttendence.Utilitis
         }
 
 
-        public ICollection<MachineSelector> getDeviceSetupInformation(String filePath, String rootNode)
+        public List<MachineSelector> getDeviceSetupInformation(String filePath, String rootNode)
         {
-            ICollection<MachineSelector> machineList = new List<MachineSelector>();
+            List<MachineSelector> machineList = new List<MachineSelector>();
             try
             {
                 // read xml file

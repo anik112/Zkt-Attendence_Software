@@ -28,7 +28,6 @@ namespace ZktAttendence.Core
 
                 // make a arry list for take attendence log from buffer
                 ICollection<AttendenceInfo> lstAttndData = new List<AttendenceInfo>();
-
                 objZkt.ReadAllGLogData(machineNumber); // call ZKT libery function and set machineNumber
 
                 // call ZKT libery function SSR_GetGeneralLogData(_) and fatch log data from buffer
@@ -40,19 +39,6 @@ namespace ZktAttendence.Core
                     AttendenceInfo objAttendenceInf = new AttendenceInfo();
                     objAttendenceInf.MachineNumber = machineNumber; // set machine number
                     objAttendenceInf.IndRegID = int.Parse(dwEnrollNumber); // set takeing attendence user id
-
-                    String usrName = "";
-                    String password = "";
-                    int privilege;
-                    bool enabled;
-
-                    if(objZkt.SSR_GetUserInfo(machineNumber, dwEnrollNumber, out usrName, out password, out privilege, out enabled))
-                    {
-                        objAttendenceInf.empName = usrName;
-                        objAttendenceInf.privilege = privilege;
-                        objAttendenceInf.enabled = enabled;
-                    }
-
                     objAttendenceInf.DateTimeRecord = inputDate; // set date of attendence
 
                     lstAttndData.Add(objAttendenceInf); // finaly add machineInfo object in array
@@ -63,10 +49,11 @@ namespace ZktAttendence.Core
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
-                Console.ReadLine();
             }
             return null;
         }
+
+        
 
         // Device Connection
         public bool GetConnection(CZKEM cZKEM, string ipAddress, int portNo)
@@ -90,11 +77,11 @@ namespace ZktAttendence.Core
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
-                Console.ReadLine();
-                //Response.Write(@"<SCRIPT LANGUAGE=""JavaScript"">alert('" + errorText + "')</SCRIPT>");
             }
             return false;
         }
+
+
 
         // Device Information
         public string GetDeviceInformation(CZKEM objZkeeper, int machineNumber)
@@ -164,6 +151,8 @@ namespace ZktAttendence.Core
             return objZkt.MachineNumber;
         }
 
+
+
         // User ID List
         public ICollection<UserIdInfo> GetUserIdList(CZKEM objZkeeper, int machineNumber)
         {
@@ -201,35 +190,34 @@ namespace ZktAttendence.Core
             return null;
         }
 
+
+
         // User Information
-        public ICollection<UserInfo> GetUserInformation(CZKEM objCzkem, int machineNumber)
+        public List<UserInfo> GetUserInformation(CZKEM objCzkem, int machineNumber)
         {
             try
             {
-                int dwMachineNumber = machineNumber; // set machine number
-                int dwEnrollNumber = 0; // set enroll numner
-                string dwName = string.Empty; // get user name
-                string dwPassword = string.Empty; // get user password
-                int dwPrivilege = 0; // get user privilege
-                bool dwEnable = false; // get is enable
-
                 // make a array for store UserInfo object
-                ICollection<UserInfo> listOfUser = new List<UserInfo>();
+                List<UserInfo> listOfUser = new List<UserInfo>();
 
-                // call ZKT libray function GetUserInfo() for take user information from buffer
-                while (objCzkem.GetUserInfo(dwMachineNumber, dwEnrollNumber, ref dwName, ref dwPassword, ref dwPrivilege, ref dwEnable))
+                string dwEnrollNumber = "";
+                string Name = "";
+                string Password = "";
+                int Privilege = 0;
+                bool Enabled = false;
+
+                while (objCzkem.SSR_GetAllUserInfo(machineNumber, out dwEnrollNumber, out Name, out Password, out Privilege, out Enabled))
                 {
-                    // set information in userInfo object
-                    UserInfo user = new UserInfo();
-                    user.enrollNumber = dwEnrollNumber;
-                    user.machineNumber = dwMachineNumber;
-                    user.name = dwName;
-                    user.password = dwPassword;
-                    user.privilege = dwPrivilege;
-                    user.enable = dwEnable;
-                    listOfUser.Add(user); // add object in array
-                }
+                    UserInfo info = new UserInfo();
+                    info.machineNumber = machineNumber;
+                    info.dwEnrollNumber = int.Parse(dwEnrollNumber);
+                    info.name = Name;
+                    info.password = Password;
+                    info.privilege = Privilege;
+                    info.enable = Enabled;
 
+                    listOfUser.Add(info);
+                }
                 return listOfUser; // return array
 
             }

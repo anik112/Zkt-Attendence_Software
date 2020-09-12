@@ -7,9 +7,6 @@ namespace ZktAttendence.Utilitis
         public int MachineNumber { get; set; }
         public int IndRegID { get; set; }
         public string DateTimeRecord { get; set; }
-        public String empName { get; set; }
-        public int privilege { get; set; }
-        public bool enabled { get; set; }
 
         public DateTime DateOnlyRecord
         {
@@ -20,7 +17,7 @@ namespace ZktAttendence.Utilitis
             get { return DateTime.Parse(DateTime.Parse(DateTimeRecord).ToString("hh:mm:ss tt")); }
         }
 
-        public String getIndRegID()
+        public string getIndRegID()
         {
             return this.IndRegID.ToString();
         }

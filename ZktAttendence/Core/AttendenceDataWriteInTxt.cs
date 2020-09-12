@@ -4,6 +4,8 @@ using ZktAttendence.Core_Service;
 using zkemkeeper;
 using ZktAttendence.Utilitis;
 using System.IO;
+using System.Runtime.ConstrainedExecution;
+using System.Collections;
 
 namespace ZktAttendence.Core
 {
@@ -14,7 +16,7 @@ namespace ZktAttendence.Core
         private String workToDate = String.Empty; // declare to date variable
         private String workFromDate = String.Empty; // decalre from date variable
         private bool checkDataStoreOrNot = false; // checking variable
-        private String formatString = "105:00020001990:20191125:195420:BLANK !!:11";
+        private String formatString = "105:00020001990:20191125:195420:11";
 
 
         /**
@@ -78,18 +80,19 @@ namespace ZktAttendence.Core
             // Show massage
             Console.WriteLine("\n------------------------- \n " + workFromDate + " to " + workToDate + "\n------------------------- \n");
 
+
             /**
              * From this part i get all device from stored file and store in a array.
              * then i traversing this array and get one by one device info.
              * then i execute 'GetAttendenceLogData(objZkt, selector.getMachineNumber())' this function for
              * get attendence.
              */
-            ICollection<MachineSelector> getMachineList = new List<MachineSelector>(); // call the array for store device info
+            List<MachineSelector> getMachineList = new List<MachineSelector>(); // call the array for store device info
 
             getMachineList = new SetupUtility().getDeviceSetupInformation(zktSetupPath, "deviceSetupInfo"); // get all device info in array
-            FileStream file = new FileStream($"D:\\DATA\\{tempToDate}-{new Random().Next(10,99)}.txt", FileMode.Create, FileAccess.Write); // Make file path for store data
+            FileStream file = new FileStream($"D:\\DATA\\{tempToDate}-{new Random().Next(10,20)}.txt", FileMode.Create, FileAccess.Write); // Make file path for store data
             StreamWriter writer = new StreamWriter(file); // open file by file writer
-
+            List<UserInfo> userList = new List<UserInfo>(); // store all user in list
             // patch machine information
             foreach (MachineSelector selector in getMachineList)
             {
@@ -101,10 +104,10 @@ namespace ZktAttendence.Core
                 {
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine("*** Device is connected ***\n");
-                    // if device connected then make a object array
-                    ICollection<AttendenceInfo> userAttndData = new List<AttendenceInfo>();
+                    ICollection<AttendenceInfo> userAttndData = new List<AttendenceInfo>();// if device connected then make a object array
                     // get attendence data from device buffer
                     userAttndData = zkt.GetAttendenceLogData(objZkt, selector.getMachineNumber());
+                    userList.AddRange(zkt.GetUserInformation(objZkt, selector.getMachineNumber()));
 
                     int recordCount = 0;// record counter
                     try
@@ -115,16 +118,22 @@ namespace ZktAttendence.Core
                             String chekingData = machinAttendence.DateTimeRecord;
                             if (chekingData.Contains(workFromDate) || chekingData.Contains(workToDate))
                             {
-                                //105:00020001990:20191125:195420:BLANK!!:11
+                                //105:00020001990:20191125:195420:11
                                 String[] part = chekingData.Split(' '); // string like '19:54:20 2020/08/20'
                                 String[] datePart = part[0].Split('/'); // '2020/08/20' to {2020,08,20}
                                 String finalDateWithFormat = datePart[2] + datePart[0] + datePart[1];
                                 String[] timePart = part[1].Split(':'); // '19:54:20' to {19,54,20}
                                 String finalTimeWithFormat = timePart[0] + timePart[1] + timePart[2];
-                                //Console.WriteLine(">> " + machinAttendence.getIndRegID());
-                                // Write file in selected file location
-                                //writer.WriteLine($"{machinAttendence.MachineNumber}:{machinAttendence.empName}:{finalDateWithFormat}:{finalTimeWithFormat}:BLANK!!:11");
-                                writer.WriteLine($"{machinAttendence.MachineNumber}:{machinAttendence.empName}:{finalDateWithFormat}:{finalTimeWithFormat}");
+
+                                foreach (UserInfo user in userList)
+                                {
+                                    if (user.dwEnrollNumber == machinAttendence.IndRegID)
+                                    {
+                                        // Write file in selected file location
+                                        writer.WriteLine($"{machinAttendence.MachineNumber}:{user.name}:{finalDateWithFormat}:{finalTimeWithFormat}:11");
+                                        //Console.WriteLine(">>>>> " + machinAttendence.MachineNumber + " >>" + user.name + " >>" + machinAttendence.IndRegID);
+                                    }
+                                }
 
                                 recordCount++;
                                 Console.ForegroundColor = ConsoleColor.Yellow;
@@ -148,11 +157,11 @@ namespace ZktAttendence.Core
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("\n============================================\n" +
-                                      "Device Number: " + selector.getMachineNumber() + " - IP: " + selector.getIpAddress() +
-                                      "\n  *** Device is disconnected ***" +
+                                      "        *** Device is disconnected ***" +
                                       "\n============================================\n");
                 }
             }
+
             writer.Close();
             file.Close();
             return checkDataStoreOrNot;

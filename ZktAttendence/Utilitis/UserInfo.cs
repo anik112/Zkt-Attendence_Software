@@ -2,11 +2,17 @@
 {
     class UserInfo
     {
-        public long machineNumber { get; set; }
-        public long enrollNumber { get; set; }
+        public int machineNumber { get; set; }
+        public int dwEnrollNumber { get; set; }
         public string name { get; set; }
         public string password { get; set; }
-        public long privilege { get; set; }
+        public int privilege { get; set; }
         public bool enable { get; set; }
+
+
+        public string getDwEnrollNumber()
+        {
+            return this.dwEnrollNumber.ToString();
+        }
     }
 }
