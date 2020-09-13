@@ -31,6 +31,35 @@ Prerequisite
 - *zkemkeeper.dll*
 - *Microsoft .net framework 4.5*
 
-### First you need to register the SDK in your System. For register the SDK you simple ___Register_SDK.bat___ in ___RegSDK___ folder. you need to install ___Microsoft .net framework 4.5___
+#### First you need to register the SDK in your System. For register the SDK you simple ___Register_SDK.bat___ in ___RegSDK___ folder. you need to install ___Microsoft .net framework 4.5___
 
+
+Content
+=======
+##### Workable Class name:
+```javascript
+// Main class
+Program.cs
+Master.cs
+ConsoleViewV2.cs
+
+// Core class
+AttendenceDataWriteInTxt.cs
+CoreZktClass.cs
+CoreZkt.cs
+
+// Utilitis class
+AttendenceInfo.cs
+MachineSelector.cs
+SetupUtility.cs
+UserInfo.cs
+
+```
+
+##### Workable Function name:
+```javascript
+// Mian function
+Class: Program.cs Fun: static void Main(String args[]);
+
+// View function
 
