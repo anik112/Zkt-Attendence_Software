@@ -2,8 +2,8 @@
 > Create a application for get attendence data from ZKT device.
 
 
-# Getting Started
-**Uses:** *Using this application you will get attendence log from ZKT Device buffer.*
+# Programming Module
+**Uses:** *Full documentation of this project*
 
 **Folder Structur:**
 - **root**
@@ -20,3 +20,10 @@
 - **External Function Libray File: zkemkeeper.dll**
 - **External Database Libray File: Oracle.DataAccess.dll**
 - **Master File: Master.cs**
+
+![](https://img.shields.io/github/stars/pandao/editor.md.svg) 
+![](https://img.shields.io/github/forks/pandao/editor.md.svg) 
+![](https://img.shields.io/github/tag/pandao/editor.md.svg) 
+![](https://img.shields.io/github/release/pandao/editor.md.svg) 
+![](https://img.shields.io/github/issues/pandao/editor.md.svg) 
+![](https://img.shields.io/bower/v/editor.md.svg)
