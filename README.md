@@ -1,6 +1,12 @@
 # Zkt-Attendence_Software
 > Create a application for get attendence data from ZKT device.
 
+![](V 01) 
+![](https://img.shields.io/github/forks/pandao/editor.md.svg) 
+![](https://img.shields.io/github/tag/pandao/editor.md.svg) 
+![](https://img.shields.io/github/release/pandao/editor.md.svg) 
+![](https://img.shields.io/github/issues/pandao/editor.md.svg) 
+![](https://img.shields.io/bower/v/editor.md.svg)
 
 # Programming Module
 **Uses:** *Full documentation of this project*
@@ -21,9 +27,4 @@
 - **External Database Libray File: Oracle.DataAccess.dll**
 - **Master File: Master.cs**
 
-![](https://img.shields.io/github/stars/pandao/editor.md.svg) 
-![](https://img.shields.io/github/forks/pandao/editor.md.svg) 
-![](https://img.shields.io/github/tag/pandao/editor.md.svg) 
-![](https://img.shields.io/github/release/pandao/editor.md.svg) 
-![](https://img.shields.io/github/issues/pandao/editor.md.svg) 
-![](https://img.shields.io/bower/v/editor.md.svg)
+
