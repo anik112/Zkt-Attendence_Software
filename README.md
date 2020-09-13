@@ -101,8 +101,9 @@ Class: SetupUtility Fun: public XmlNodeList getDatabaseSetupInformation(String f
 Class: UserInfo Fun: public string getDwEnrollNumber();
 
 ```
+=========
 
-- **1. static void Main(String args[]);**
+**1. static void Main(String args[]);**
 ###### This is main function of this application. This function load when we execute the program. Frist it get the XML file path by ' System.IO.Path.Combine(Environment.CurrentDirectory, "SetupMachineList.xml") ' this statements then run main view class.
 
 
