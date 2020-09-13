@@ -115,7 +115,8 @@ Discussion
 ###### This function show the text in windows console and get input from user. Fristly it show company information then call controller function.
 
 **4. public bool consoleProcessForAttendence(String zktSetupPath);**
-###### This function work for get attendence from device and write on txt file.
+###### This function work for get attendence from device and write on txt file. Par [ _zktSetupPath_ ] for get setup file and return True if it's successfully write data on txt file other return false.
+
 
 
 
