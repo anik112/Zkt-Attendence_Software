@@ -63,7 +63,7 @@ Class: Program Fun: static void Main(String args[]);
 
 // View function
 Class: ConsoleViewV2 Fun: public ConsoleViewV2(String zktSetupPath, String setupPath);
-Class: ConsoleViewV2 Fun:  public void showConsole();
+Class: ConsoleViewV2 Fun: public void showConsole();
 
 // Controller function
 Class: AttendenceDataWriteInTxt Fun: public bool consoleProcessForAttendence(String zktSetupPath);
@@ -101,10 +101,21 @@ Class: SetupUtility Fun: public XmlNodeList getDatabaseSetupInformation(String f
 Class: UserInfo Fun: public string getDwEnrollNumber();
 
 ```
-=========
+
+Discussion
+==========
 
 **1. static void Main(String args[]);**
 ###### This is main function of this application. This function load when we execute the program. Frist it get the XML file path by ' System.IO.Path.Combine(Environment.CurrentDirectory, "SetupMachineList.xml") ' this statements then run main view class.
+
+**2. public ConsoleViewV2(String zktSetupPath, String setupPath);**
+###### This is conustroctor of view class. This function get xml setup path by [ zktSetupPath, setupPath ]
+
+**3. public void showConsole();**
+###### This function show the text in windows console and get input from user. Fristly it show company information then call controller function.
+
+**4. public bool consoleProcessForAttendence(String zktSetupPath);**
+###### This function work for get attendence from device and write on txt file.
 
 
 
