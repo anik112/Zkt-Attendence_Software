@@ -90,7 +90,7 @@ namespace ZktAttendence.Core
             List<MachineSelector> getMachineList = new List<MachineSelector>(); // call the array for store device info
 
             getMachineList = new SetupUtility().getDeviceSetupInformation(zktSetupPath, "deviceSetupInfo"); // get all device info in array
-            FileStream file = new FileStream($"D:\\DATA\\{tempToDate}-{new Random().Next(10,20)}.txt", FileMode.Create, FileAccess.Write); // Make file path for store data
+            FileStream file = new FileStream($"D:\\DATA\\{tempToDate}{DateTime.Now.ToString("hhmm")}.txt", FileMode.Create, FileAccess.Write); // Make file path for store data
             StreamWriter writer = new StreamWriter(file); // open file by file writer
             List<UserInfo> userList = new List<UserInfo>(); // store all user in list
             // patch machine information
