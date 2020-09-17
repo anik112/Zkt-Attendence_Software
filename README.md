@@ -186,8 +186,30 @@ Discussion
 **27. public XmlNodeList getDatabaseSetupInformation(String filePath, String rootNode, String selectedSubNode);**
 ###### This function return a XML node list from XML file. [___filePath___] take XML file location, [___rootNode___] take root node name, [___selectedSubNode___] take sub node where information store.
 
+Application Output
+==================
 
-    
+### Output is: 105:00020001990:20191125:075438:BLANK !!:11
+### Or
+### Output is: 105:00020001990:20191125:075438
 
+**Explain the output**
+```javascript
 
+105 -> This is machine number
+: -> Notation
+00020001990 ->  Cardno or sec no
+: -> Notation
+20191125 -> Date by (Year Month Day)
+: -> Notation 
+075438 -> Time (HH mm ss)
+: -> Notation
+BLANK !! -> Notation
+: -> Notation
+11 -> Notation
 
+````
+
+# Follow me on
+#### Github: https://github.com/anik112
+#### Facebook: www.facebook.com/paulanik112/
