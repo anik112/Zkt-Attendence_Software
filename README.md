@@ -189,9 +189,9 @@ Discussion
 Application Output
 ==================
 
-### Output is: 105:00020001990:20191125:075438:BLANK !!:11
-### Or
-### Output is: 105:00020001990:20191125:075438
+**Output is: 105:00020001990:20191125:075438:BLANK !!:11
+Or
+Output is: 105:00020001990:20191125:075438**
 
 **Explain the output**
 ```javascript
