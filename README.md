@@ -180,7 +180,7 @@ Discussion
 **25. public String getZktFilePath(String lodingPath);**
 ###### This function return ZKT db file path from XML file. The prm [___lodingPath___] take root node of XML file.
 
-**26. public List < MachineSelector > getDeviceSetupInformation(String filePath, String rootNode);
+**26. public List < MachineSelector > getDeviceSetupInformation(String filePath, String rootNode);**
 ###### This function return a list of device information from XML file. [___filePath___] take XML file location, [___rootNode___] take root node.
 
 **27. public XmlNodeList getDatabaseSetupInformation(String filePath, String rootNode, String selectedSubNode);**
