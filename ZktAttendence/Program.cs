@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Drawing.Text;
+using System.Threading;
+using System.Windows.Forms;
 using System.Xml;
 using ZktAttendence.Test;
 using ZktAttendence.Utilitis;
@@ -17,7 +19,15 @@ namespace ZktAttendence
 
         static void Main(string[] args)
         {
-            new ZktAttendence.view.ConsoleViewV2(zktFilePath, dbaFilePath).showConsole();
+            // new ZktAttendence.view.ConsoleViewV2(zktFilePath, dbaFilePath).showConsole();
+
+
+            while (true)
+            {
+                Console.WriteLine(Cursor.Position.ToString());
+                Thread.Sleep(600);
+            }
+            
             Console.ReadLine();
         }
 
