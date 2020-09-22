@@ -22,13 +22,16 @@ namespace ZktAttendence
             // new ZktAttendence.view.ConsoleViewV2(zktFilePath, dbaFilePath).showConsole();
 
 
-            while (true)
+            /*while (true)
             {
                 Console.WriteLine(Cursor.Position.ToString());
                 Thread.Sleep(600);
-            }
-            
-            Console.ReadLine();
+            }*/
+
+            Application.EnableVisualStyles();
+            Application.Run(new TestForm());
+
+            //Console.ReadLine();
         }
 
     }
