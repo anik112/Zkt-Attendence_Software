@@ -6,7 +6,7 @@
    <Modules>
     <Module Name="zktattendence.exe">
      <Messages>
-      <Message TypeName="MarkWindowsFormsEntryPointsWithStaThread" Category="Microsoft.Usage" CheckId="CA2232" Status="Active" Created="2020-09-22 12:17:41Z" FixCategory="NonBreaking">
+      <Message TypeName="MarkWindowsFormsEntryPointsWithStaThread" Category="Microsoft.Usage" CheckId="CA2232" Status="Active" Created="2020-09-23 12:06:30Z" FixCategory="NonBreaking">
        <Issue Certainty="95" Level="Error">Mark the entry point method 'Program.Main(string[])' in assembly 'ZktAttendence.exe' with an STAThreadAttribute.</Issue>
       </Message>
      </Messages>
@@ -17,8 +17,8 @@
          <Members>
           <Member Name="#consoleProcessForAttendence(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2020-09-22 12:17:41Z" FixCategory="DependsOnFix">
-             <Issue Certainty="75" Level="Warning" Path="F:\C#_Project\ZktAttendence\Core" File="AttendenceDataWriteInTxt.cs" Line="166">Object 'file' can be disposed more than once in method 'AttendenceDataWriteInTxt.consoleProcessForAttendence(string)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 166</Issue>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2020-09-23 12:06:30Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="F:\C#_Project\ZktAttendence\Core" File="AttendenceDataWriteInTxt.cs" Line="167">Object 'file' can be disposed more than once in method 'AttendenceDataWriteInTxt.consoleProcessForAttendence(string)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 167</Issue>
             </Message>
            </Messages>
           </Member>
@@ -35,7 +35,7 @@
   <Rule TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202">
    <Name>Do not dispose objects multiple times</Name>
    <Description>A correctly implemented Dispose method can be called multiple times without throwing an exception. However, this is not guaranteed and to avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.</Description>
-   <Resolution Name="Default">Object {0} can be disposed more than once in method {1}. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 166</Resolution>
+   <Resolution Name="Default">Object {0} can be disposed more than once in method {1}. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 167</Resolution>
    <Owner>RuleOwner</Owner>
    <Url>http://msdn.microsoft.com/library/ms182334.aspx</Url>
    <Email />

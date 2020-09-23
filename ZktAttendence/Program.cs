@@ -19,7 +19,7 @@ namespace ZktAttendence
 
         static void Main(string[] args)
         {
-            // new ZktAttendence.view.ConsoleViewV2(zktFilePath, dbaFilePath).showConsole();
+           new ZktAttendence.view.ConsoleViewV2(zktFilePath, dbaFilePath).showConsole();
 
 
             /*while (true)
@@ -28,9 +28,9 @@ namespace ZktAttendence
                 Thread.Sleep(600);
             }*/
 
-            Application.EnableVisualStyles();
+           /* Application.EnableVisualStyles();
             Application.Run(new TestForm());
-
+*/
             //Console.ReadLine();
         }
 

@@ -116,6 +116,7 @@ namespace ZktAttendence.Core
                         foreach (AttendenceInfo machinAttendence in userAttndData)
                         {
                             String chekingData = machinAttendence.DateTimeRecord;
+                            Console.WriteLine(machinAttendence.MachineNumber + " -> " + chekingData);
                             if (chekingData.Contains(workFromDate) || chekingData.Contains(workToDate))
                             {
                                 //105:00020001990:20191125:195420:11

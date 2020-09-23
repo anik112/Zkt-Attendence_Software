@@ -61,7 +61,7 @@ namespace ZktAttendence.Test
             {
                 String workFromDate = txtFromDateForClear.Text.Substring(2, 2) + "/" + txtFromDateForClear.Text.Substring(0, 2) + "/" + txtFromDateForClear.Text.Substring(4, 4);
                 txtFromDateForClear.Text = workFromDate;
-                txtToDateForCLear.Focus();
+ 
 
             }
         }
@@ -69,21 +69,6 @@ namespace ZktAttendence.Test
         private void txtFromDateForClear_MouseClick(object sender, MouseEventArgs e)
         {
             txtFromDateForClear.Text = String.Empty;
-        }
-
-        private void txtToDateForCLear_MouseClick(object sender, MouseEventArgs e)
-        {
-            txtToDateForCLear.Text = String.Empty;
-        }
-
-        private void txtToDateForCLear_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if(txtFromDate.Text.Length == 8)
-            {
-                String workFromDate = txtToDateForCLear.Text.Substring(2, 2) + "/" + txtToDateForCLear.Text.Substring(0, 2) + "/" + txtToDateForCLear.Text.Substring(4, 4);
-                txtToDateForCLear.Text = workFromDate;
-                btnClear.Focus();
-            }
         }
     }
 }
