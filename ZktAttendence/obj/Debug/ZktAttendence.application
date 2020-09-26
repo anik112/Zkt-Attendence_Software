@@ -7,14 +7,14 @@
     <framework targetVersion="4.7.2" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="ZktAttendence.exe.manifest" size="5017">
+    <dependentAssembly dependencyType="install" codebase="ZktAttendence.exe.manifest" size="5018">
       <assemblyIdentity name="ZktAttendence.exe" version="1.0.0.0" publicKeyToken="0000000000000000" language="en-US" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>fAJFsQkrp54ris1Y8f2CpkFUhTmcap13hDXomwvbTag=</dsig:DigestValue>
+        <dsig:DigestValue>eGAmFVb63T1PIYSdri+Xb5yi4nzeSZ12FS83bDZVdMI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

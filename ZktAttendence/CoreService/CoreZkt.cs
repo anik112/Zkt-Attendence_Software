@@ -17,6 +17,8 @@ namespace ZktAttendence.Core_Service
         List<UserInfo> GetUserInformation(CZKEM objCzkem, int machineNumber);
         // Get Attendence Data from Buffer .
         ICollection<AttendenceInfo> GetAttendenceLogData(CZKEM objZkt, int machineNumber);
+        // Clear log
+        bool clearLogData(CZKEM objZkt, int machineNumber);
         // get machineNumber
         int GetMachineNumber(CZKEM objZkt);
 

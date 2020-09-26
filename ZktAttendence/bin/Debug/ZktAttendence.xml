@@ -8,7 +8,7 @@
             Main working function in this program. this function pull data from machine buffer
             and push into database.
         </member>
-        <member name="M:ZktAttendence.Core.AttendenceDataWriteInTxt.consoleProcessForAttendence(System.String)">
+        <member name="M:ZktAttendence.Core.AttendenceDataWriteInTxt.consoleProcessForAttendence(System.String,System.String,System.String)">
             Main working function in this program. this function pull data from machine buffer
             and push into database.
         </member>

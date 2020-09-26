@@ -10,11 +10,11 @@ namespace ZktAttendence.Utilitis
 
         public DateTime DateOnlyRecord
         {
-            get { return DateTime.Parse(DateTime.Parse(DateTimeRecord).ToString("yyyy-MM-dd")); }
+            get { return DateTime.Parse(DateTime.Parse(DateTimeRecord).ToString("MM/dd/yyyy")); }
         }
         public DateTime TimeOnlyRecord
         {
-            get { return DateTime.Parse(DateTime.Parse(DateTimeRecord).ToString("hh:mm:ss tt")); }
+            get { return DateTime.Parse(DateTime.Parse(DateTimeRecord).ToString("HH:mm:ss")); }
         }
 
         public string getIndRegID()

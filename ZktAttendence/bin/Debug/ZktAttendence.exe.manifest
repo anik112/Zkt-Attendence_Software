@@ -55,14 +55,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ZktAttendence.exe" size="94704">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ZktAttendence.exe" size="155120">
       <assemblyIdentity name="ZktAttendence" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>bu2lMlxhqzYZtejsQORowOOxV+DOvIi0VCJ3UiM81yc=</dsig:DigestValue>
+        <dsig:DigestValue>rRdZpOCcMwauJJVbfHEGfA4J76Ewu6iicFfp12Uywwo=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

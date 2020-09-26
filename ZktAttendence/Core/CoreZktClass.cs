@@ -9,6 +9,14 @@ namespace ZktAttendence.Core
 {
     class CoreZktClass : CoreZkt
     {
+        public bool clearLogData(CZKEM objZkt, int machineNumber)
+        {
+            if (objZkt.ClearGLog(machineNumber))
+            {
+                return true;
+            }
+            return false;
+        }
 
         // Attendence Data from Buffer
         public ICollection<AttendenceInfo> GetAttendenceLogData(CZKEM objZkt, int machineNumber)
@@ -35,6 +43,7 @@ namespace ZktAttendence.Core
                 {
                     // make date from long time and date [ format like 05/29/2015 05:50:06 ]
                     string inputDate = new DateTime(dwYear, dwMonth, dwDay, dwHour, dwMinute, dwSecond).ToString("MM/dd/yyyy HH:mm:ss");
+                    Console.WriteLine(">> " + inputDate);
                     // call MachineInfo call and access there propraty
                     AttendenceInfo objAttendenceInf = new AttendenceInfo();
                     objAttendenceInf.MachineNumber = machineNumber; // set machine number
@@ -227,5 +236,6 @@ namespace ZktAttendence.Core
             }
             return null;
         }
+
     }
 }
