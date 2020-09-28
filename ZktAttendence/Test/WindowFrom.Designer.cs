@@ -1,6 +1,6 @@
 ﻿namespace ZktAttendence.Test
 {
-    partial class TestForm
+    partial class WindowFrom
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TestForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WindowFrom));
             this.groupPan01 = new System.Windows.Forms.GroupBox();
             this.btnClear = new System.Windows.Forms.Button();
             this.txtDateForClear = new System.Windows.Forms.TextBox();
@@ -41,6 +41,7 @@
             this.txtFromDate = new System.Windows.Forms.TextBox();
             this.lblFromDate = new System.Windows.Forms.Label();
             this.txtShowMsg = new System.Windows.Forms.RichTextBox();
+            this.checkBoxSelected = new System.Windows.Forms.CheckBox();
             this.groupPan01.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -48,6 +49,7 @@
             // 
             // groupPan01
             // 
+            this.groupPan01.Controls.Add(this.checkBoxSelected);
             this.groupPan01.Controls.Add(this.btnClear);
             this.groupPan01.Controls.Add(this.txtDateForClear);
             this.groupPan01.Controls.Add(this.label2);
@@ -62,13 +64,15 @@
             // btnClear
             // 
             this.btnClear.AccessibleName = "btnClear";
+            this.btnClear.BackColor = System.Drawing.SystemColors.Control;
             this.btnClear.Font = new System.Drawing.Font("Lucida Sans", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.ForeColor = System.Drawing.Color.Crimson;
             this.btnClear.Location = new System.Drawing.Point(161, 64);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(104, 33);
             this.btnClear.TabIndex = 5;
             this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // txtDateForClear
@@ -121,13 +125,14 @@
             // dgnBtnProcess
             // 
             this.dgnBtnProcess.AccessibleName = "btnProcess";
+            this.dgnBtnProcess.BackColor = System.Drawing.SystemColors.Control;
             this.dgnBtnProcess.Font = new System.Drawing.Font("Lucida Sans", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgnBtnProcess.Location = new System.Drawing.Point(10, 9);
+            this.dgnBtnProcess.Location = new System.Drawing.Point(3, 9);
             this.dgnBtnProcess.Name = "dgnBtnProcess";
-            this.dgnBtnProcess.Size = new System.Drawing.Size(83, 32);
+            this.dgnBtnProcess.Size = new System.Drawing.Size(96, 32);
             this.dgnBtnProcess.TabIndex = 3;
             this.dgnBtnProcess.Text = "Process";
-            this.dgnBtnProcess.UseVisualStyleBackColor = true;
+            this.dgnBtnProcess.UseVisualStyleBackColor = false;
             this.dgnBtnProcess.Click += new System.EventHandler(this.dgnBtnProcess_Click);
             // 
             // txtToDate
@@ -181,6 +186,18 @@
             this.txtShowMsg.TabIndex = 13;
             this.txtShowMsg.Text = "";
             // 
+            // checkBoxSelected
+            // 
+            this.checkBoxSelected.AutoSize = true;
+            this.checkBoxSelected.BackColor = System.Drawing.Color.Cyan;
+            this.checkBoxSelected.Font = new System.Drawing.Font("Lucida Sans", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxSelected.Location = new System.Drawing.Point(22, 73);
+            this.checkBoxSelected.Name = "checkBoxSelected";
+            this.checkBoxSelected.Size = new System.Drawing.Size(91, 16);
+            this.checkBoxSelected.TabIndex = 6;
+            this.checkBoxSelected.Text = "Are U Sure?";
+            this.checkBoxSelected.UseVisualStyleBackColor = false;
+            // 
             // TestForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -191,6 +208,7 @@
             this.Controls.Add(this.groupPan01);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Location = new System.Drawing.Point(150, 50);
             this.Name = "TestForm";
             this.Text = "Download Attendence";
             this.Load += new System.EventHandler(this.TestForm_Load);
@@ -216,5 +234,6 @@
         private System.Windows.Forms.TextBox txtFromDate;
         private System.Windows.Forms.Label lblFromDate;
         private System.Windows.Forms.RichTextBox txtShowMsg;
+        private System.Windows.Forms.CheckBox checkBoxSelected;
     }
 }

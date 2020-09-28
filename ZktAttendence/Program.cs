@@ -29,7 +29,7 @@ namespace ZktAttendence
             }*/
 
             Application.EnableVisualStyles();
-            Application.Run(new TestForm(zktFilePath));
+            Application.Run(new WindowFrom(zktFilePath));
 
             //Console.ReadLine();
         }

@@ -39,4 +39,4 @@ F:\C#_Project\ZktAttendence\obj\Debug\ZktAttendence.application
 F:\C#_Project\ZktAttendence\obj\Debug\ZktAttendence.csproj.CopyComplete
 F:\C#_Project\ZktAttendence\obj\Debug\ZktAttendence.exe
 F:\C#_Project\ZktAttendence\obj\Debug\ZktAttendence.pdb
-F:\C#_Project\ZktAttendence\obj\Debug\ZktAttendence.Test.TestForm.resources
+F:\C#_Project\ZktAttendence\obj\Debug\ZktAttendence.Test.WindowFrom.resources

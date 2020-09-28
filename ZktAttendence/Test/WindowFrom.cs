@@ -8,7 +8,7 @@ using ZktAttendence.Utilitis;
 
 namespace ZktAttendence.Test
 {
-    public partial class TestForm : Form
+    public partial class WindowFrom : Form
     {
         private CoreZkt zkt; // make zkt libs object
         private CZKEM objZkt;  // make zkt libs object
@@ -17,7 +17,7 @@ namespace ZktAttendence.Test
         private String workToDate = String.Empty; // declare to date variable
         private String workFromDate = String.Empty; // decalre from date variable
 
-        public TestForm(String setupFilePath)
+        public WindowFrom(String setupFilePath)
         {
             InitializeComponent();
             this.zktFilePath = setupFilePath;
@@ -39,9 +39,7 @@ namespace ZktAttendence.Test
                 tempDateParts = workToDate.Split('/');
                 tempToDate = tempDateParts[1] + tempDateParts[0] + tempDateParts[2];
 
-                txtShowMsg.Text += "\n>> -- "+ workFromDate+" TO "+workToDate+" -- <<\n";
-                txtShowMsg.Invalidate();
-                txtShowMsg.Update();
+                setMsgInBox("\n>> -- " + workFromDate + " TO " + workToDate + " -- <<\n");
 
                 /**
                 * From this part i get all device from stored file and store in a array.
@@ -58,18 +56,12 @@ namespace ZktAttendence.Test
                                                                 // patch machine information
                 foreach (MachineSelector selector in getMachineList)
                 {
-                    Console.ForegroundColor = ConsoleColor.White;
-                    txtShowMsg.Text+=("\nDevice Number " + selector.getMachineNumber() + " - IP: " + selector.getIpAddress());
-                    //txtShowMsg.Invalidate();
-                    txtShowMsg.Update();
+                    setMsgInBox("\nDevice Number " + selector.getMachineNumber() + " - IP: " + selector.getIpAddress());
 
                     // get device connection using UTP protocol
                     if (zkt.GetConnection(objZkt, selector.getIpAddress(), selector.getPortNumber()))
                     {
-                        Console.ForegroundColor = ConsoleColor.Green;
-                        txtShowMsg.Text+=("\n*** Device is connected ***\n");
-                        txtShowMsg.Invalidate();
-                        txtShowMsg.Update();
+                        setMsgInBox("\n*** Device is connected ***\n");
 
                         ICollection<AttendenceInfo> userAttndData = new List<AttendenceInfo>();// if device connected then make a object array
                                                                                                // get attendence data from device buffer
@@ -110,22 +102,16 @@ namespace ZktAttendence.Test
                                     continue;
                                 }
                             }
-                            txtShowMsg.Text+=("\nProcess: " + recordCount + " Data\n"); // write text in console
-                            txtShowMsg.Invalidate();
-                            txtShowMsg.Update();
+                            setMsgInBox("\nProcess: " + recordCount + " Data\n");
                         }
                         catch (Exception ex)
                         {
-                            txtShowMsg.Text += ("\n\n" + ex.Message+"\n\n");
-                            txtShowMsg.Invalidate();
-                            txtShowMsg.Update();
+                            setMsgInBox("\n\n" + ex.Message + "\n\n");
                         }
                     }
                     else
                     {
-                        txtShowMsg.Text += ("\n*** Device is disconnected ***\n");
-                        txtShowMsg.Invalidate();
-                        txtShowMsg.Update();
+                        setMsgInBox("\n*** Device is disconnected ***\n");
                     }
                 }
 
@@ -136,11 +122,14 @@ namespace ZktAttendence.Test
                 txtShowMsg.Invalidate();
                 txtShowMsg.Update();
 
+                txtShowMsg.Focus();
+                txtShowMsg.SelectionStart = txtShowMsg.Text.Length;
+
                 MessageBox.Show("Please Check In D:\\DATA\\"+tempToDate+DateTime.Now.ToString("hhmm"));
             }
             else
             {
-                txtShowMsg.Text += ("\nPlease set the date properly and try again.");
+                setMsgInBox("\nPlease set the date properly and try again.");
             }
 
             
@@ -196,41 +185,47 @@ namespace ZktAttendence.Test
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            try
+            CZKEM objZktV2 = new CZKEM(); // create object of Lib class
+
+            if (checkBoxSelected.Checked == true)
             {
-                List<MachineSelector> getMachineList = new List<MachineSelector>(); // call the array for store device info
-                getMachineList = new SetupUtility().getDeviceSetupInformation(zktFilePath, "deviceSetupInfo"); // get all device info in array
-
-                foreach (MachineSelector selector in getMachineList)
+                try
                 {
-                    txtShowMsg.Text += ("\nDevice Number " + selector.getMachineNumber() + " - IP: " + selector.getIpAddress());
-                    txtShowMsg.Invalidate();
-                    txtShowMsg.Update();
+                    List<MachineSelector> getMachineList = new List<MachineSelector>(); // call the array for store device info
+                    getMachineList = new SetupUtility().getDeviceSetupInformation(zktFilePath, "deviceSetupInfo"); // get all device info in array
 
-                    if (zkt.GetConnection(objZkt, selector.getIpAddress(), selector.getPortNumber()))
+                    foreach (MachineSelector selector in getMachineList)
                     {
-                        if (zkt.clearLogData(objZkt, selector.getMachineNumber()))
+                        setMsgInBox("\nDevice Number " + selector.getMachineNumber() + " - IP: " + selector.getIpAddress());
+
+                        if (zkt.GetConnection(objZktV2, selector.getIpAddress(), selector.getPortNumber()))
                         {
-                            txtShowMsg.Text += "\n*** Device Log Clear Successfull ***\n";
-                            txtShowMsg.Invalidate();
-                            txtShowMsg.Update();
+                            if (zkt.clearLogData(objZktV2, selector.getMachineNumber()))
+                            {
+                                setMsgInBox("\n*** Device Log Clear Successfull ***\n");
+                            }
+                        }
+                        else
+                        {
+                            setMsgInBox("\n*** Can't Clear Log Data ***\n");
                         }
                     }
-                    else
-                    {
-                        txtShowMsg.Text += "\n*** Can't Clear Log Data ***\n";
-                        txtShowMsg.Invalidate();
-                        txtShowMsg.Update();
-                    }
                 }
-            }
-            catch(Exception ex)
-            {
-                txtShowMsg.Text += ("\n\n" + ex.Message + "\n\n");
-                txtShowMsg.Invalidate();
-                txtShowMsg.Update();
-            }
-               
+                catch (Exception ex)
+                {
+                    setMsgInBox("\n\n" + ex.Message + "\n\n");
+                }
+            } 
+            
+        }
+        private void setMsgInBox(String msg)
+        {
+            txtShowMsg.Text += msg;
+            txtShowMsg.Invalidate();
+            txtShowMsg.Update();
+
+            txtShowMsg.Focus();
+            txtShowMsg.SelectionStart = txtShowMsg.Text.Length;
         }
 
         private void TestForm_Load(object sender, EventArgs e)

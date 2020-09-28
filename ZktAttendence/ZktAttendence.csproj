@@ -143,11 +143,11 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="Test\TestForm.cs">
+    <Compile Include="Test\WindowFrom.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Test\TestForm.Designer.cs">
-      <DependentUpon>TestForm.cs</DependentUpon>
+    <Compile Include="Test\WindowFrom.Designer.cs">
+      <DependentUpon>WindowFrom.cs</DependentUpon>
     </Compile>
     <Compile Include="Test\XMLtest.cs" />
     <Compile Include="Utilitis\DatabaseConnection.cs" />
@@ -202,8 +202,8 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Test\TestForm.resx">
-      <DependentUpon>TestForm.cs</DependentUpon>
+    <EmbeddedResource Include="Test\WindowFrom.resx">
+      <DependentUpon>WindowFrom.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

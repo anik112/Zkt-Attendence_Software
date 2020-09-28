@@ -47,18 +47,18 @@
               resource lookups using this strongly typed resource class.
             </summary>
         </member>
-        <member name="F:ZktAttendence.Test.TestForm.components">
+        <member name="F:ZktAttendence.Test.WindowFrom.components">
             <summary>
             Required designer variable.
             </summary>
         </member>
-        <member name="M:ZktAttendence.Test.TestForm.Dispose(System.Boolean)">
+        <member name="M:ZktAttendence.Test.WindowFrom.Dispose(System.Boolean)">
             <summary>
             Clean up any resources being used.
             </summary>
             <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         </member>
-        <member name="M:ZktAttendence.Test.TestForm.InitializeComponent">
+        <member name="M:ZktAttendence.Test.WindowFrom.InitializeComponent">
             <summary>
             Required method for Designer support - do not modify
             the contents of this method with the code editor.
