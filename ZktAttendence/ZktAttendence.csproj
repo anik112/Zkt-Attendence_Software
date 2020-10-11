@@ -78,7 +78,7 @@
     </StartupObject>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>logo02.ico</ApplicationIcon>
+    <ApplicationIcon>logo03.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <NoWin32Manifest>true</NoWin32Manifest>
@@ -208,6 +208,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="logo02.ico" />
+    <Content Include="logo03.ico" />
     <Content Include="logo_m3X_icon.ico" />
   </ItemGroup>
   <ItemGroup>
