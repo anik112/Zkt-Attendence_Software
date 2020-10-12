@@ -109,10 +109,10 @@ namespace ZktAttendence.Test
 
                         if (zkt.GetConnection(objZktV2, selector.getIpAddress(), selector.getPortNumber()))
                         {
-                            /*if (zkt.clearLogData(objZktV2, selector.getMachineNumber()))
+                            if (zkt.clearLogData(objZktV2, selector.getMachineNumber()))
                             {
                                 MessageBox.Show("Device Log Clear Successfull");
-                            }*/
+                            }
                         }
                         else
                         {

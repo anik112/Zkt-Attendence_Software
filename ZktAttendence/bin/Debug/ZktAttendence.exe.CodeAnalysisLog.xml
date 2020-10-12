@@ -6,7 +6,7 @@
    <Modules>
     <Module Name="zktattendence.exe">
      <Messages>
-      <Message TypeName="MarkWindowsFormsEntryPointsWithStaThread" Category="Microsoft.Usage" CheckId="CA2232" Status="Active" Created="2020-10-11 12:03:43Z" FixCategory="NonBreaking">
+      <Message TypeName="MarkWindowsFormsEntryPointsWithStaThread" Category="Microsoft.Usage" CheckId="CA2232" Status="Active" Created="2020-10-12 03:17:22Z" FixCategory="NonBreaking">
        <Issue Certainty="95" Level="Error">Mark the entry point method 'Program.Main(string[])' in assembly 'ZktAttendence.exe' with an STAThreadAttribute.</Issue>
       </Message>
      </Messages>
@@ -17,7 +17,7 @@
          <Members>
           <Member Name="#consoleProcessForAttendence(System.String,System.String,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2020-10-11 12:03:43Z" FixCategory="DependsOnFix">
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2020-10-12 03:17:22Z" FixCategory="DependsOnFix">
              <Issue Certainty="75" Level="Warning" Path="F:\C#_Project\ZktAttendence\Core" File="AttendenceDataWriteInTxt.cs" Line="123">Object 'file' can be disposed more than once in method 'AttendenceDataWriteInTxt.consoleProcessForAttendence(string, string, string)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 123</Issue>
             </Message>
            </Messages>
@@ -32,7 +32,7 @@
          <Members>
           <Member Name="#processStart()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2020-10-11 12:03:43Z" FixCategory="DependsOnFix">
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2020-10-12 03:17:22Z" FixCategory="DependsOnFix">
              <Issue Certainty="75" Level="Warning" Path="F:\C#_Project\ZktAttendence\Test" File="WindowFrom.cs" Line="278">Object 'file' can be disposed more than once in method 'WindowFrom.processStart()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 278</Issue>
              <Issue Certainty="75" Level="Warning" Path="F:\C#_Project\ZktAttendence\Test" File="WindowFrom.cs" Line="278">Object 'file' can be disposed more than once in method 'WindowFrom.processStart()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 278</Issue>
             </Message>
