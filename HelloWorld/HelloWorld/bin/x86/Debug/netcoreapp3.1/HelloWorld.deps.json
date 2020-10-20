@@ -9,8 +9,7 @@
       "HelloWorld/1.0.0": {
         "dependencies": {
           "Microsoft.CodeAnalysis.FxCopAnalyzers": "2.9.6",
-          "System.IO.Ports": "4.7.0",
-          "Interop.zkemkeeper": "1.0.0.0"
+          "System.IO.Ports": "4.7.0"
         },
         "runtime": {
           "HelloWorld.dll": {}
@@ -117,15 +116,7 @@
           "System.Security.Principal.Windows": "4.7.0"
         }
       },
-      "System.Security.Principal.Windows/4.7.0": {},
-      "Interop.zkemkeeper/1.0.0.0": {
-        "runtime": {
-          "Interop.zkemkeeper.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
-        }
-      }
+      "System.Security.Principal.Windows/4.7.0": {}
     }
   },
   "libraries": {
@@ -238,11 +229,6 @@
       "sha512": "sha512-ojD0PX0XhneCsUbAZVKdb7h/70vyYMDYs85lwEI+LngEONe/17A0cFaRFqZU+sOEidcVswYWikYOQ9PPfjlbtQ==",
       "path": "system.security.principal.windows/4.7.0",
       "hashPath": "system.security.principal.windows.4.7.0.nupkg.sha512"
-    },
-    "Interop.zkemkeeper/1.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
     }
   }
 }

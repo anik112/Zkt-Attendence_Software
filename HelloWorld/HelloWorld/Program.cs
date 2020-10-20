@@ -1,5 +1,4 @@
 ﻿using System;
-using zkemkeeper;
 using System.Text;
 using System.Collections.Generic;
 using HelloWorld.dlls;
@@ -17,7 +16,7 @@ namespace HelloWorld
         static void Main()
         {
 
-            String time = Console.ReadLine();
+            /*String time = Console.ReadLine();
             DirectoryInfo directory = new DirectoryInfo("C:\\Windows\\TestWork\\"); //  D:\\Aniks-temp\\
             FileInfo[] files = directory.GetFiles();
 
@@ -48,11 +47,12 @@ namespace HelloWorld
 
                     break;
                 }
-            }
+            }*/
 
-            /*Process process = Process.Start("D:\\RTA600E SDK\\rta600v10.exe");
+            Process process = Process.Start("D:\\RTA600E SDK\\rta600v10.exe");
             process.WaitForExit();
-            Console.WriteLine("Execute OK... !");*/
+            Console.WriteLine("Execute OK... !");
+
             //SerialPort port = new SerialPort("COM2", 9600, Parity.Even, 8, StopBits.One);
             /*try
             {
@@ -75,9 +75,9 @@ namespace HelloWorld
         }
 
 
-        public void runApps()
+        /*public void runApps()
         {
-            /*
+            *//*
             int id = int.Parse(Console.ReadLine());
             Console.WriteLine("Hello World! - am anik & My ID is :"+id);
 
@@ -105,7 +105,7 @@ namespace HelloWorld
             }
             TestDat user = new TestDat(100);
             Console.WriteLine(user.getId());
-            */
+            *//*
 
             string ipAddress = string.Empty;
             int portNo = 0;
@@ -201,7 +201,7 @@ namespace HelloWorld
                     //---------------------------- Get Use Id dtls -------------------------------------
 
                     Program p = new Program();
-                    /*
+                    *//*
                     Console.WriteLine("=> USER ID ----------------------- <=");
                     ICollection<UserIdinfo> lstUserIDInfo = new List<UserIdinfo>();
                     lstUserIDInfo = p.GetAllUserID(cZKEM, outDwMachineNumber);
@@ -215,7 +215,7 @@ namespace HelloWorld
                         Console.WriteLine("Enable: " + u.Enabled);
                         Console.WriteLine("Privilege: " + u.Privelage);
                         Console.WriteLine("================");
-                    }*/
+                    }*//*
 
                     //--------------------------- Get user info dtls -------------------------------------
 
@@ -270,10 +270,10 @@ namespace HelloWorld
             }
         }
 
-        /*
+        *//*
          * GETALLUSERID(CZKEM X,INT Z);
          * This function help's us to get device information from device;
-         */
+         *//*
         public ICollection<UserIdinfo> GetAllUserID(CZKEM objZkeeper, int machineNumber)
         {
             int dwEnrollNumber = 0;
@@ -423,7 +423,7 @@ namespace HelloWorld
             }
 
             return lstEnrollData;
-        }
+        }*/
 
     }
 
