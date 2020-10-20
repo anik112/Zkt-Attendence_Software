@@ -40,3 +40,24 @@ F:\C#_Project\ZktAttendence\obj\Debug\ZktAttendence.exe
 F:\C#_Project\ZktAttendence\obj\Debug\ZktAttendence.pdb
 F:\C#_Project\ZktAttendence\obj\Debug\ZktAttendence.Test.WindowFrom.resources
 F:\C#_Project\ZktAttendence\obj\Debug\ZktAttendence.csprojAssemblyReference.cache
+F:\C#_Project\ZktAttendence V0.002\bin\Debug\ZktAttendence.exe.config
+F:\C#_Project\ZktAttendence V0.002\bin\Debug\ZktAttendence.exe.manifest
+F:\C#_Project\ZktAttendence V0.002\bin\Debug\ZktAttendence.application
+F:\C#_Project\ZktAttendence V0.002\bin\Debug\ZktAttendence.xml
+F:\C#_Project\ZktAttendence V0.002\bin\Debug\ZktAttendence.exe
+F:\C#_Project\ZktAttendence V0.002\bin\Debug\ZktAttendence.pdb
+F:\C#_Project\ZktAttendence V0.002\bin\Debug\ZktAttendence.exe.CodeAnalysisLog.xml
+F:\C#_Project\ZktAttendence V0.002\bin\Debug\ZktAttendence.exe.lastcodeanalysissucceeded
+F:\C#_Project\ZktAttendence V0.002\bin\Debug\Oracle.DataAccess.dll
+F:\C#_Project\ZktAttendence V0.002\obj\Debug\ZktAttendence.csprojAssemblyReference.cache
+F:\C#_Project\ZktAttendence V0.002\obj\Debug\Interop.zkemkeeper.dll
+F:\C#_Project\ZktAttendence V0.002\obj\Debug\ZktAttendence.csproj.ResolveComReference.cache
+F:\C#_Project\ZktAttendence V0.002\obj\Debug\ZktAttendence.Properties.Resources.resources
+F:\C#_Project\ZktAttendence V0.002\obj\Debug\ZktAttendence.Test.WindowFrom.resources
+F:\C#_Project\ZktAttendence V0.002\obj\Debug\ZktAttendence.csproj.GenerateResource.cache
+F:\C#_Project\ZktAttendence V0.002\obj\Debug\ZktAttendence.csproj.CoreCompileInputs.cache
+F:\C#_Project\ZktAttendence V0.002\obj\Debug\ZktAttendence.exe.manifest
+F:\C#_Project\ZktAttendence V0.002\obj\Debug\ZktAttendence.application
+F:\C#_Project\ZktAttendence V0.002\obj\Debug\ZktAttendence.csproj.CopyComplete
+F:\C#_Project\ZktAttendence V0.002\obj\Debug\ZktAttendence.exe
+F:\C#_Project\ZktAttendence V0.002\obj\Debug\ZktAttendence.pdb

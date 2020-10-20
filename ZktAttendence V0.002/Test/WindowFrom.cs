@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
 using zkemkeeper;
@@ -24,6 +25,7 @@ namespace ZktAttendence.Test
             this.zktFilePath = setupFilePath;
             txtFromDate.Select();
             txtDateForClear.Text = DateTime.Now.ToString("MM/dd/yyyy");
+            txtDateOfRTA.Text = DateTime.Now.ToString("MM/dd/yyyy");
         }
 
         private void dgnBtnProcess_Click(object sender, EventArgs e)
@@ -37,10 +39,8 @@ namespace ZktAttendence.Test
             {
                 setMsgInBox("\nPlease set the date properly and try again.");
             }
-
             
         }
-
 
 
         private void txtToDate_KeyPress(object sender, KeyPressEventArgs e)
@@ -291,6 +291,12 @@ namespace ZktAttendence.Test
             txtShowMsg.Text += ("\n>> -- Done -- <<\n");
         }
 
-
+        private void btnProcessRTA_Click(object sender, EventArgs e)
+        {
+            setMsgInBox("\n>> -- Starting Download From RTA -- <<\n");
+            Process process = Process.Start("D:\\RTA600E SDK\\rta600v10.exe");
+            process.WaitForExit();
+            setMsgInBox("\n>> -- Downloaded -- <<\n");
+        }
     }
 }
