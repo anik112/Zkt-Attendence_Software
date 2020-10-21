@@ -294,7 +294,7 @@ namespace ZktAttendence.Test
         private void btnProcessRTA_Click(object sender, EventArgs e)
         {
             setMsgInBox("\n>> -- Starting Download From RTA -- <<\n");
-            Process process = Process.Start("D:\\RTA600E SDK\\rta600v10.exe");
+            Process process = Process.Start("RTA600.exe");
             process.WaitForExit();
             setMsgInBox("\n>> -- Downloaded -- <<\n");
         }

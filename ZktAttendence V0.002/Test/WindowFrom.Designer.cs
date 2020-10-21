@@ -36,6 +36,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnProcessRTA = new System.Windows.Forms.Button();
             this.txtDateOfRTA = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -46,15 +48,13 @@
             this.txtFromDate = new System.Windows.Forms.TextBox();
             this.lblFromDate = new System.Windows.Forms.Label();
             this.txtShowMsg = new System.Windows.Forms.RichTextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnProcessRTA = new System.Windows.Forms.Button();
             btnClear = new System.Windows.Forms.Button();
             this.groupPan01.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnClear
@@ -96,9 +96,9 @@
             this.checkBoxSelected.Location = new System.Drawing.Point(6, 70);
             this.checkBoxSelected.Name = "checkBoxSelected";
             this.checkBoxSelected.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.checkBoxSelected.Size = new System.Drawing.Size(177, 17);
+            this.checkBoxSelected.Size = new System.Drawing.Size(181, 17);
             this.checkBoxSelected.TabIndex = 6;
-            this.checkBoxSelected.Text = "Do you want to Clear? ";
+            this.checkBoxSelected.Text = "Do you want to Clear ? ";
             this.checkBoxSelected.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.checkBoxSelected.UseVisualStyleBackColor = false;
             // 
@@ -134,7 +134,7 @@
             this.groupBox1.Size = new System.Drawing.Size(328, 163);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Download Data";
+            this.groupBox1.Text = "Data Download";
             // 
             // groupBox3
             // 
@@ -147,6 +147,29 @@
             this.groupBox3.TabIndex = 16;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "From RTA 600";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.panel1.Controls.Add(this.btnProcessRTA);
+            this.panel1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.panel1.Location = new System.Drawing.Point(8, 81);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(109, 43);
+            this.panel1.TabIndex = 8;
+            // 
+            // btnProcessRTA
+            // 
+            this.btnProcessRTA.BackColor = System.Drawing.SystemColors.Control;
+            this.btnProcessRTA.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnProcessRTA.Font = new System.Drawing.Font("Lucida Sans", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProcessRTA.Location = new System.Drawing.Point(8, 5);
+            this.btnProcessRTA.Name = "btnProcessRTA";
+            this.btnProcessRTA.Size = new System.Drawing.Size(93, 33);
+            this.btnProcessRTA.TabIndex = 8;
+            this.btnProcessRTA.Text = "Process";
+            this.btnProcessRTA.UseVisualStyleBackColor = false;
+            this.btnProcessRTA.Click += new System.EventHandler(this.btnProcessRTA_Click);
             // 
             // txtDateOfRTA
             // 
@@ -195,7 +218,7 @@
             this.dgnBtnProcess.AccessibleName = "btnProcess";
             this.dgnBtnProcess.BackColor = System.Drawing.SystemColors.Control;
             this.dgnBtnProcess.Font = new System.Drawing.Font("Lucida Sans", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgnBtnProcess.Location = new System.Drawing.Point(21, 5);
+            this.dgnBtnProcess.Location = new System.Drawing.Point(19, 5);
             this.dgnBtnProcess.Name = "dgnBtnProcess";
             this.dgnBtnProcess.Size = new System.Drawing.Size(111, 33);
             this.dgnBtnProcess.TabIndex = 3;
@@ -250,41 +273,18 @@
             this.txtShowMsg.BackColor = System.Drawing.SystemColors.Info;
             this.txtShowMsg.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtShowMsg.Font = new System.Drawing.Font("Lucida Console", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtShowMsg.Location = new System.Drawing.Point(5, 286);
+            this.txtShowMsg.Location = new System.Drawing.Point(12, 286);
             this.txtShowMsg.Name = "txtShowMsg";
             this.txtShowMsg.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
-            this.txtShowMsg.Size = new System.Drawing.Size(335, 151);
+            this.txtShowMsg.Size = new System.Drawing.Size(328, 134);
             this.txtShowMsg.TabIndex = 13;
             this.txtShowMsg.Text = "";
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.panel1.Controls.Add(this.btnProcessRTA);
-            this.panel1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.panel1.Location = new System.Drawing.Point(8, 81);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(109, 43);
-            this.panel1.TabIndex = 8;
-            // 
-            // btnProcessRTA
-            // 
-            this.btnProcessRTA.BackColor = System.Drawing.SystemColors.Control;
-            this.btnProcessRTA.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnProcessRTA.Font = new System.Drawing.Font("Lucida Sans", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProcessRTA.Location = new System.Drawing.Point(8, 5);
-            this.btnProcessRTA.Name = "btnProcessRTA";
-            this.btnProcessRTA.Size = new System.Drawing.Size(93, 33);
-            this.btnProcessRTA.TabIndex = 8;
-            this.btnProcessRTA.Text = "Process";
-            this.btnProcessRTA.UseVisualStyleBackColor = false;
-            this.btnProcessRTA.Click += new System.EventHandler(this.btnProcessRTA_Click);
             // 
             // WindowFrom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(351, 447);
+            this.ClientSize = new System.Drawing.Size(351, 432);
             this.Controls.Add(this.txtShowMsg);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupPan01);
@@ -298,10 +298,10 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.panel1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.panel2.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

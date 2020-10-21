@@ -62,28 +62,10 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>QVh09kA9zrste41BQnUk6vsvnDY23MHH7mJGLYSUIeQ=</dsig:DigestValue>
+        <dsig:DigestValue>gb97QFlo5nclE8jLjAiw6knux1WgRPrai/FI2Ige33E=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="logo_m3X_icon.ico" size="58196">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>F7cHiivC08sL806pmXWdI06+SAl+EPAhD8nrZ4+WPxg=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="logo02.ico" size="55770">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>F222N927AK58/YzUxaM4NGlAEYuuWKGIYo/r2bAn5MA=</dsig:DigestValue>
-    </hash>
-  </file>
   <file name="logo03.ico" size="63531">
     <hash>
       <dsig:Transforms>
