@@ -220,7 +220,8 @@ namespace ZktAttendence.Test
                                     if (user.dwEnrollNumber == machinAttendence.IndRegID)
                                     {
                                         // Write file in selected file location
-                                        writer.WriteLine($"{machinAttendence.MachineNumber}:{user.name}:{finalDateWithFormat}:{finalTimeWithFormat}:11");
+                                        //writer.WriteLine($"{machinAttendence.MachineNumber}:{user.name}:{finalDateWithFormat}:{finalTimeWithFormat}:11"); // Change in 10-10-2020
+                                        writer.WriteLine($"{machinAttendence.MachineNumber}:{machinAttendence.IndRegID.ToString().PadLeft(10, '0')}:{finalDateWithFormat}:{finalTimeWithFormat}:11"); // chnage in 16-11-2020
                                         //Console.WriteLine(">>>>> " + machinAttendence.MachineNumber + " >>" + user.name + " >>" + machinAttendence.IndRegID);
                                     }
                                 }
@@ -242,13 +243,15 @@ namespace ZktAttendence.Test
                                     String finalDateWithFormat = datePart[2] + datePart[0] + datePart[1];
                                     String[] timePart = part[1].Split(':'); // '19:54:20' to {19,54,20}
                                     String finalTimeWithFormat = timePart[0] + timePart[1] + timePart[2];
-
+                                    
                                     foreach (UserInfo user in userList)
                                     {
                                         if (user.dwEnrollNumber == machinAttendence.IndRegID)
                                         {
                                             // Write file in selected file location
-                                            writer.WriteLine($"{machinAttendence.MachineNumber}:{user.name}:{finalDateWithFormat}:{finalTimeWithFormat}:11");
+                                            //writer.WriteLine($"{machinAttendence.MachineNumber}:{user.name}:{finalDateWithFormat}:{finalTimeWithFormat}:11"); // Change in 10-10-2020
+                                            writer.WriteLine($"{machinAttendence.MachineNumber}:{machinAttendence.IndRegID.ToString().PadLeft(10, '0')}:{finalDateWithFormat}:{finalTimeWithFormat}:11"); // chnage in 16-11-2020
+                                            //writer.WriteLine(">>>>> " + machinAttendence.MachineNumber + " >>" + user.name + " >>" + machinAttendence.IndRegID.ToString().PadLeft(10,'0') +" >> "+machinAttendence.DateOnlyRecord);
                                             //Console.WriteLine(">>>>> " + machinAttendence.MachineNumber + " >>" + user.name + " >>" + machinAttendence.IndRegID);
                                         }
                                     }
