@@ -29,17 +29,25 @@ namespace ZktAttendence.Test
         }
 
         private void dgnBtnProcess_Click(object sender, EventArgs e)
-        {        
+        {
 
-            if (txtFromDate.Text != String.Empty && txtToDate.Text != String.Empty)
-            {
-                processStart();
-            }
-            else
-            {
-                setMsgInBox("\nPlease set the date properly and try again.");
-            }
-            
+            /* if (txtFromDate.Text != String.Empty && txtToDate.Text != String.Empty)
+             {
+                 processStart();
+             }
+             else
+             {
+                 setMsgInBox("\nPlease set the date properly and try again.");
+             }*/
+
+            DateTime fromdt = DateTime.Parse("15/10/2020");
+
+            txtShowMsg.Text = fromdt.ToString("MM/dd/yyyy");
+
+/*            foreach (String s in findDateRange(workFromDate, workToDate)){
+                txtShowMsg.Text = s + '\n';
+            }*/
+
         }
 
 
@@ -181,8 +189,9 @@ namespace ZktAttendence.Test
                  file = new FileStream($"D:\\DATA\\{tempToDate}{DateTime.Now.ToString("hhmm")}.txt", FileMode.Create, FileAccess.Write); // Make file path for store data
             }
             StreamWriter writer = new StreamWriter(file); // open file by file writer
-            List<UserInfo> userList = new List<UserInfo>(); // store all user in list
+            //List<UserInfo> userList = new List<UserInfo>(); // store all user in list
                                                             // patch machine information
+                                                            // Last update - 17-11-2020
             foreach (MachineSelector selector in getMachineList)
             {
                 setMsgInBox("\nDevice Number " + selector.getMachineNumber() + " - IP: " + selector.getIpAddress());
@@ -195,7 +204,7 @@ namespace ZktAttendence.Test
                     ICollection<AttendenceInfo> userAttndData = new List<AttendenceInfo>();// if device connected then make a object array
                                                                                            // get attendence data from device buffer
                     userAttndData = zkt.GetAttendenceLogData(objZkt, selector.getMachineNumber());
-                    userList.AddRange(zkt.GetUserInformation(objZkt, selector.getMachineNumber()));
+                    //userList.AddRange(zkt.GetUserInformation(objZkt, selector.getMachineNumber())); // Last update - 17-11-2020
 
                     int recordCount = 0;// record counter
 
@@ -214,8 +223,11 @@ namespace ZktAttendence.Test
                                 String finalDateWithFormat = datePart[2] + datePart[0] + datePart[1];
                                 String[] timePart = part[1].Split(':'); // '19:54:20' to {19,54,20}
                                 String finalTimeWithFormat = timePart[0] + timePart[1] + timePart[2];
-                                
-                                foreach (UserInfo user in userList)
+
+                                writer.WriteLine($"{machinAttendence.MachineNumber}:{machinAttendence.IndRegID.ToString().PadLeft(10, '0')}:{finalDateWithFormat}:{finalTimeWithFormat}:11"); // chnage in 16-11-2020
+
+                                // last update - 17-11-2020
+                                /*foreach (UserInfo user in userList)
                                 {
                                     if (user.dwEnrollNumber == machinAttendence.IndRegID)
                                     {
@@ -224,7 +236,7 @@ namespace ZktAttendence.Test
                                         writer.WriteLine($"{machinAttendence.MachineNumber}:{machinAttendence.IndRegID.ToString().PadLeft(10, '0')}:{finalDateWithFormat}:{finalTimeWithFormat}:11"); // chnage in 16-11-2020
                                         //Console.WriteLine(">>>>> " + machinAttendence.MachineNumber + " >>" + user.name + " >>" + machinAttendence.IndRegID);
                                     }
-                                }
+                                }*/
                             }
                             setMsgInBox("\nData Backup Successful\n");
                         }
@@ -244,17 +256,20 @@ namespace ZktAttendence.Test
                                     String[] timePart = part[1].Split(':'); // '19:54:20' to {19,54,20}
                                     String finalTimeWithFormat = timePart[0] + timePart[1] + timePart[2];
                                     
-                                    foreach (UserInfo user in userList)
-                                    {
-                                        if (user.dwEnrollNumber == machinAttendence.IndRegID)
-                                        {
-                                            // Write file in selected file location
-                                            //writer.WriteLine($"{machinAttendence.MachineNumber}:{user.name}:{finalDateWithFormat}:{finalTimeWithFormat}:11"); // Change in 10-10-2020
-                                            writer.WriteLine($"{machinAttendence.MachineNumber}:{machinAttendence.IndRegID.ToString().PadLeft(10, '0')}:{finalDateWithFormat}:{finalTimeWithFormat}:11"); // chnage in 16-11-2020
-                                            //writer.WriteLine(">>>>> " + machinAttendence.MachineNumber + " >>" + user.name + " >>" + machinAttendence.IndRegID.ToString().PadLeft(10,'0') +" >> "+machinAttendence.DateOnlyRecord);
-                                            //Console.WriteLine(">>>>> " + machinAttendence.MachineNumber + " >>" + user.name + " >>" + machinAttendence.IndRegID);
-                                        }
-                                    }
+                                    writer.WriteLine($"{machinAttendence.MachineNumber}:{machinAttendence.IndRegID.ToString().PadLeft(10, '0')}:{finalDateWithFormat}:{finalTimeWithFormat}:11"); // chnage in 16-11-2020
+
+                                    // last update - 17-11-2020
+                                    /* foreach (UserInfo user in userList)
+                                     {
+                                         if (user.dwEnrollNumber == machinAttendence.IndRegID)
+                                         {
+                                             // Write file in selected file location
+                                             //writer.WriteLine($"{machinAttendence.MachineNumber}:{user.name}:{finalDateWithFormat}:{finalTimeWithFormat}:11"); // Change in 10-10-2020
+                                             writer.WriteLine($"{machinAttendence.MachineNumber}:{machinAttendence.IndRegID.ToString().PadLeft(10, '0')}:{finalDateWithFormat}:{finalTimeWithFormat}:11"); // chnage in 16-11-2020
+                                             //writer.WriteLine(">>>>> " + machinAttendence.MachineNumber + " >>" + user.name + " >>" + machinAttendence.IndRegID.ToString().PadLeft(10,'0') +" >> "+machinAttendence.DateOnlyRecord);
+                                             //Console.WriteLine(">>>>> " + machinAttendence.MachineNumber + " >>" + user.name + " >>" + machinAttendence.IndRegID);
+                                         }
+                                     }*/
 
                                     recordCount++;
                                 }
@@ -300,6 +315,23 @@ namespace ZktAttendence.Test
             Process process = Process.Start("RTA600.exe");
             process.WaitForExit();
             setMsgInBox("\n>> -- Downloaded -- <<\n");
+        }
+
+        private List<String> findDateRange(String fromDate, String toDate)
+        {
+            List<String> dateList = new List<String>();
+            dateList.Add(fromDate);
+            dateList.Add(toDate);
+
+            DateTime fromdt = DateTime.Parse(fromDate);
+            DateTime todt = DateTime.Parse(toDate);
+
+            for(DateTime dt=fromdt; dt<todt; dt.AddDays(1))
+            {
+                dateList.Add(dt.ToString("MM/dd/yyyy"));
+            }
+
+            return dateList;
         }
     }
 }
