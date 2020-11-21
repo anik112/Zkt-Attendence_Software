@@ -49,7 +49,6 @@ F:\C#_Project\ZktAttendence V0.002\bin\Debug\ZktAttendence.pdb
 F:\C#_Project\ZktAttendence V0.002\bin\Debug\ZktAttendence.exe.CodeAnalysisLog.xml
 F:\C#_Project\ZktAttendence V0.002\bin\Debug\ZktAttendence.exe.lastcodeanalysissucceeded
 F:\C#_Project\ZktAttendence V0.002\bin\Debug\Oracle.DataAccess.dll
-F:\C#_Project\ZktAttendence V0.002\obj\Debug\ZktAttendence.csprojAssemblyReference.cache
 F:\C#_Project\ZktAttendence V0.002\obj\Debug\Interop.zkemkeeper.dll
 F:\C#_Project\ZktAttendence V0.002\obj\Debug\ZktAttendence.csproj.ResolveComReference.cache
 F:\C#_Project\ZktAttendence V0.002\obj\Debug\ZktAttendence.Properties.Resources.resources

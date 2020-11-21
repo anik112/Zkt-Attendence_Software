@@ -37,6 +37,8 @@ namespace ZktAttendence.Core
                 return false;
             }
 
+            
+
             /**
              * From this part i get all device from stored file and store in a array.
              * then i traversing this array and get one by one device info.

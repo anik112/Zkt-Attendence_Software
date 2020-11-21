@@ -19,7 +19,7 @@ namespace ZktAttendence
 
         static void Main(string[] args)
         {
-            //new ZktAttendence.view.ConsoleViewV2(zktFilePath, dbaFilePath).showConsole();
+            //new ZktAttendence.Test.WindowFrom(zktFilePath).Visible = true;
 
 
             /*while (true)

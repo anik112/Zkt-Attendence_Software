@@ -40,13 +40,24 @@ namespace ZktAttendence.Test
                  setMsgInBox("\nPlease set the date properly and try again.");
              }*/
 
-            DateTime fromdt = DateTime.Parse("15/10/2020");
+            string[] workDates = new string[30];
+            int index = 0;
+            workDates[0] = (txtFromDate.Text);
+            while (!workDates[index].Equals(txtToDate.Text))
+            {
+                string[] dts = workDates[index].Split('/');
+                workDates[index + 1] = dts[0] + "/" + (int.Parse(dts[1]) + 1).ToString().PadLeft(2, '0') + "/" + dts[2];
+                index++;
+            }
 
-            txtShowMsg.Text = fromdt.ToString("MM/dd/yyyy");
+            for(int i = 0; i < workDates.Length; i++)
+            {
+                Console.WriteLine(workDates[i]);
+            }
 
-/*            foreach (String s in findDateRange(workFromDate, workToDate)){
-                txtShowMsg.Text = s + '\n';
-            }*/
+            /*            foreach (String s in findDateRange(workFromDate, workToDate)){
+                            txtShowMsg.Text = s + '\n';
+                        }*/
 
         }
 
@@ -155,7 +166,20 @@ namespace ZktAttendence.Test
 
             workFromDate = txtFromDate.Text;
             workToDate = txtToDate.Text;
-            
+
+
+
+            string[] workDates = new string[30];
+            int index = 0;
+            workDates[0] = (workFromDate);
+            workDates[1] = (workToDate);
+            while (!workDates[index].Equals(workToDate))
+            {
+                string[] dts = workDates[index].Split('/');
+                workDates[index + 1] = dts[0] + "/" + (int.Parse(dts[1]) + 1).ToString().PadLeft(2, '0') + "/" + dts[2];
+                index++;
+            }
+
 
             if (isClear)
             {
@@ -246,6 +270,8 @@ namespace ZktAttendence.Test
                             foreach (AttendenceInfo machinAttendence in userAttndData)
                             {
                                 String chekingData = machinAttendence.DateTimeRecord;
+
+                                
 
                                 if (chekingData.Contains(workFromDate) || chekingData.Contains(workToDate))
                                 {
