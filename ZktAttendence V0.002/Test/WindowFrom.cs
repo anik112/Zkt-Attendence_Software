@@ -31,33 +31,16 @@ namespace ZktAttendence.Test
         private void dgnBtnProcess_Click(object sender, EventArgs e)
         {
 
-            /* if (txtFromDate.Text != String.Empty && txtToDate.Text != String.Empty)
-             {
-                 processStart();
-             }
-             else
-             {
-                 setMsgInBox("\nPlease set the date properly and try again.");
-             }*/
-
-            string[] workDates = new string[30];
-            int index = 0;
-            workDates[0] = (txtFromDate.Text);
-            while (!workDates[index].Equals(txtToDate.Text))
-            {
-                string[] dts = workDates[index].Split('/');
-                workDates[index + 1] = dts[0] + "/" + (int.Parse(dts[1]) + 1).ToString().PadLeft(2, '0') + "/" + dts[2];
-                index++;
+            if ((txtFromDate.Text != String.Empty) 
+                && (txtToDate.Text != String.Empty)
+                && (int.Parse(txtFromDate.Text.Substring(3, 2)) < int.Parse(txtToDate.Text.Substring(3, 2)))
+            ){
+                processStart();
             }
-
-            for(int i = 0; i < workDates.Length; i++)
+            else
             {
-                Console.WriteLine(workDates[i]);
+                setMsgInBox("\nPlease set the date properly and try again.");
             }
-
-            /*            foreach (String s in findDateRange(workFromDate, workToDate)){
-                            txtShowMsg.Text = s + '\n';
-                        }*/
 
         }
 
@@ -168,12 +151,12 @@ namespace ZktAttendence.Test
             workToDate = txtToDate.Text;
 
 
-
+            // get list of date which is in from - to date. Date range
+            /* Last update 22-11-2020 */
             string[] workDates = new string[30];
             int index = 0;
-            workDates[0] = (workFromDate);
-            workDates[1] = (workToDate);
-            while (!workDates[index].Equals(workToDate))
+            workDates[0] = (txtFromDate.Text);
+            while (!workDates[index].Equals(txtToDate.Text))
             {
                 string[] dts = workDates[index].Split('/');
                 workDates[index + 1] = dts[0] + "/" + (int.Parse(dts[1]) + 1).ToString().PadLeft(2, '0') + "/" + dts[2];
@@ -216,6 +199,7 @@ namespace ZktAttendence.Test
             //List<UserInfo> userList = new List<UserInfo>(); // store all user in list
                                                             // patch machine information
                                                             // Last update - 17-11-2020
+
             foreach (MachineSelector selector in getMachineList)
             {
                 setMsgInBox("\nDevice Number " + selector.getMachineNumber() + " - IP: " + selector.getIpAddress());
@@ -271,35 +255,41 @@ namespace ZktAttendence.Test
                             {
                                 String chekingData = machinAttendence.DateTimeRecord;
 
-                                
+                                bool isFalse = false;
+                                for (int i = 0; (i < workDates.Length) && (workDates[i] != null); i++)
+                                { 
+                                    if (chekingData.Contains(workDates[i]))
+                                    {
+                                        //105:00020001990:20191125:195420:11
+                                        String[] part = chekingData.Split(' '); // string like '19:54:20 2020/08/20'
+                                        String[] datePart = part[0].Split('/'); // '2020/08/20' to {2020,08,20}
+                                        String finalDateWithFormat = datePart[2] + datePart[0] + datePart[1];
+                                        String[] timePart = part[1].Split(':'); // '19:54:20' to {19,54,20}
+                                        String finalTimeWithFormat = timePart[0] + timePart[1] + timePart[2];
 
-                                if (chekingData.Contains(workFromDate) || chekingData.Contains(workToDate))
-                                {
-                                    //105:00020001990:20191125:195420:11
-                                    String[] part = chekingData.Split(' '); // string like '19:54:20 2020/08/20'
-                                    String[] datePart = part[0].Split('/'); // '2020/08/20' to {2020,08,20}
-                                    String finalDateWithFormat = datePart[2] + datePart[0] + datePart[1];
-                                    String[] timePart = part[1].Split(':'); // '19:54:20' to {19,54,20}
-                                    String finalTimeWithFormat = timePart[0] + timePart[1] + timePart[2];
-                                    
-                                    writer.WriteLine($"{machinAttendence.MachineNumber}:{machinAttendence.IndRegID.ToString().PadLeft(10, '0')}:{finalDateWithFormat}:{finalTimeWithFormat}:11"); // chnage in 16-11-2020
+                                        writer.WriteLine($"{machinAttendence.MachineNumber}:{machinAttendence.IndRegID.ToString().PadLeft(10, '0')}:{finalDateWithFormat}:{finalTimeWithFormat}:11"); // chnage in 16-11-2020
 
-                                    // last update - 17-11-2020
-                                    /* foreach (UserInfo user in userList)
-                                     {
-                                         if (user.dwEnrollNumber == machinAttendence.IndRegID)
-                                         {
-                                             // Write file in selected file location
-                                             //writer.WriteLine($"{machinAttendence.MachineNumber}:{user.name}:{finalDateWithFormat}:{finalTimeWithFormat}:11"); // Change in 10-10-2020
-                                             writer.WriteLine($"{machinAttendence.MachineNumber}:{machinAttendence.IndRegID.ToString().PadLeft(10, '0')}:{finalDateWithFormat}:{finalTimeWithFormat}:11"); // chnage in 16-11-2020
-                                             //writer.WriteLine(">>>>> " + machinAttendence.MachineNumber + " >>" + user.name + " >>" + machinAttendence.IndRegID.ToString().PadLeft(10,'0') +" >> "+machinAttendence.DateOnlyRecord);
-                                             //Console.WriteLine(">>>>> " + machinAttendence.MachineNumber + " >>" + user.name + " >>" + machinAttendence.IndRegID);
-                                         }
-                                     }*/
+                                        // last update - 17-11-2020
+                                        /*foreach (UserInfo user in userList)
+                                        {
+                                            if (user.dwEnrollNumber == machinAttendence.IndRegID)
+                                            {
+                                                // Write file in selected file location
+                                                //writer.WriteLine($"{machinAttendence.MachineNumber}:{user.name}:{finalDateWithFormat}:{finalTimeWithFormat}:11"); // Change in 10-10-2020
+                                                writer.WriteLine($"{machinAttendence.MachineNumber}:{machinAttendence.IndRegID.ToString().PadLeft(10, '0')}:{finalDateWithFormat}:{finalTimeWithFormat}:11"); // chnage in 16-11-2020                                                                                                                                                         //writer.WriteLine(">>>>> " + machinAttendence.MachineNumber + " >>" + user.name + " >>" + machinAttendence.IndRegID.ToString().PadLeft(10,'0') +" >> "+machinAttendence.DateOnlyRecord);
+                                                //Console.WriteLine(">>>>> " + machinAttendence.MachineNumber + " >>" + user.name + " >>" + machinAttendence.IndRegID);
+                                            }
+                                        }*/
 
-                                    recordCount++;
+                                        recordCount++;
+                                    }
+                                    else
+                                    {
+                                        isFalse = true;
+                                    }
                                 }
-                                else
+                                
+                                if(isFalse)
                                 {
                                     continue;
                                 }

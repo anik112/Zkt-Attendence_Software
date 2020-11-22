@@ -19,8 +19,6 @@ namespace ZktAttendence
 
         static void Main(string[] args)
         {
-            //new ZktAttendence.Test.WindowFrom(zktFilePath).Visible = true;
-
 
             /*while (true)
             {
