@@ -33,9 +33,16 @@ namespace ZktAttendence.Test
 
             if ((txtFromDate.Text != String.Empty) 
                 && (txtToDate.Text != String.Empty)
-                && (int.Parse(txtFromDate.Text.Substring(3, 2)) < int.Parse(txtToDate.Text.Substring(3, 2)))
+                && (int.Parse(txtFromDate.Text.Substring(0, 2)) <= int.Parse(txtToDate.Text.Substring(0, 2)))
             ){
-                processStart();
+                int errorStatus = processStart();
+                if (errorStatus == 1001)
+                {
+                    setMsgInBox("\nPlease set the date between 30 days.");
+                }else if(errorStatus== 1021)
+                {
+                    setMsgInBox("\nInternal error occurred when data registering in file.");
+                }
             }
             else
             {
@@ -98,7 +105,16 @@ namespace ZktAttendence.Test
             if (checkBoxSelected.Checked == true)
             {
                 isClear = true;
-                processStart();
+
+                int errorStatus = processStart();
+                if (errorStatus == 1001)
+                {
+                    setMsgInBox("\nPlease set the date between 30 days.");
+                }
+                else if (errorStatus == 1021)
+                {
+                    setMsgInBox("\nInternal error occurred when data registering in file.");
+                }
 
                 try
                 {
@@ -140,7 +156,7 @@ namespace ZktAttendence.Test
         }
 
 
-        private void processStart()
+        private int processStart()
         {
             zkt = new Core.CoreZktClass(); // create object of Core class
             objZkt = new CZKEM(); // create object of Lib class
@@ -152,15 +168,20 @@ namespace ZktAttendence.Test
 
 
             // get list of date which is in from - to date. Date range
-            /* Last update 22-11-2020 */
-            string[] workDates = new string[30];
+            /* Last update 22-11-2020, 02-12-2020 */
+            string[] workDates = new string[32];
             int index = 0;
             workDates[0] = (txtFromDate.Text);
+            DateTime fromdt = DateTime.Parse(txtFromDate.Text);
             while (!workDates[index].Equals(txtToDate.Text))
             {
-                string[] dts = workDates[index].Split('/');
-                workDates[index + 1] = dts[0] + "/" + (int.Parse(dts[1]) + 1).ToString().PadLeft(2, '0') + "/" + dts[2];
+                fromdt = fromdt.AddDays(1);
+                workDates[index + 1] = fromdt.Date.ToString("MM/dd/yyyy");
                 index++;
+                if (index > 31)
+                {
+                    return 1001;
+                }
             }
 
 
@@ -189,7 +210,7 @@ namespace ZktAttendence.Test
             FileStream file;
             if (isClear)
             {
-                file = new FileStream($"D:\\DATA\\{DateTime.Now.ToString("MMddyyyhhmm")}-CL.txt", FileMode.Create, FileAccess.Write); // Make file path for store data
+                file = new FileStream($"D:\\DATA\\{DateTime.Now.ToString("ddMMyyyhhmm")}-CL.txt", FileMode.Create, FileAccess.Write); // Make file path for store data
             }
             else
             {
@@ -215,7 +236,6 @@ namespace ZktAttendence.Test
                     //userList.AddRange(zkt.GetUserInformation(objZkt, selector.getMachineNumber())); // Last update - 17-11-2020
 
                     int recordCount = 0;// record counter
-
                     try
                     {
                         
@@ -299,7 +319,8 @@ namespace ZktAttendence.Test
                     }
                     catch (Exception ex)
                     {
-                        setMsgInBox("\n\n" + ex.Message + "\n\n");
+                        Console.WriteLine(ex.Message);
+                        return 1021;
                     }
                 }
                 else
@@ -323,6 +344,7 @@ namespace ZktAttendence.Test
             }
 
             txtShowMsg.Text += ("\n>> -- Done -- <<\n");
+            return 0;
         }
 
         private void btnProcessRTA_Click(object sender, EventArgs e)
@@ -333,6 +355,7 @@ namespace ZktAttendence.Test
             setMsgInBox("\n>> -- Downloaded -- <<\n");
         }
 
+        // find the range of date
         private List<String> findDateRange(String fromDate, String toDate)
         {
             List<String> dateList = new List<String>();
@@ -344,6 +367,7 @@ namespace ZktAttendence.Test
 
             for(DateTime dt=fromdt; dt<todt; dt.AddDays(1))
             {
+                Console.WriteLine(dt.ToString("MM/dd/yyyy"));
                 dateList.Add(dt.ToString("MM/dd/yyyy"));
             }
 
