@@ -21,7 +21,7 @@ namespace ZktAttendence.Test
         public WindowFrom(String setupFilePath)
         {
             InitializeComponent();
-            this.zktFilePath = setupFilePath;
+            this.zktFilePath = "SetupMachineList.xml";
             txtFromDate.Select();
             txtDateForClear.Text = DateTime.Now.ToString("MM/dd/yyyy");
         }

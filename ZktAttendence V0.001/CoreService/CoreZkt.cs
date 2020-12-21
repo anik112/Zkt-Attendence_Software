@@ -7,8 +7,9 @@ namespace ZktAttendence.Core_Service
     interface CoreZkt
     {
 
-        // Get Connection with Device.
         bool GetConnection(CZKEM cZKEM, string ipAddress, int portNo);
+        // Get Connection with Device.
+        bool GetConnection(CZKEM cZKEM, string ipAddress, int portNo, int CommKey);
         // Get Device infomation form device.
         string GetDeviceInformation(CZKEM objZkeeper, int machineNumber);
         // Get User Id List from Device.

@@ -7,6 +7,7 @@ namespace ZktAttendence.Utilitis
         private int machineNumber = 0;
         private String ipAddress = String.Empty;
         private int portNumber = 0;
+        private int comPass = 0;
 
         public int getMachineNumber()
         {
@@ -39,5 +40,14 @@ namespace ZktAttendence.Utilitis
             this.portNumber = number;
         }
 
+        public int getcomPass()
+        {
+            return this.comPass;
+        }
+
+        public void setcomPass(int password)
+        {
+            this.comPass = password;
+        }
     }
 }

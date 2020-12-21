@@ -32,8 +32,10 @@ namespace ZktAttendence
                 //int port = 4370;
                 Console.Write("Port Number: ");
                 int port = int.Parse(Console.ReadLine());
+                Console.Write("Password: ");
+                int pass = int.Parse(Console.ReadLine());
 
-                if (zkt.GetConnection(objZkt, ipAdd, port))
+                if (zkt.GetConnection(objZkt, ipAdd, port, pass))
                 {
                     Console.WriteLine("Device Connected. !");
                 }

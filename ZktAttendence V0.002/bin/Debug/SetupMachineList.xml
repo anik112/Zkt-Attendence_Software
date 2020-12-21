@@ -4,10 +4,12 @@
     <machineNo>121</machineNo>
     <ipAddress>192.168.1.201</ipAddress>
     <port>1515</port>
+    <pass>0</pass>
   </device0>
   <device1>
     <machineNo>122</machineNo>
     <ipAddress>192.168.1.204</ipAddress>
     <port>1515</port>
+    <pass>0</pass>
   </device1>
 </deviceSetupInfo>

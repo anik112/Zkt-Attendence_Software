@@ -62,25 +62,59 @@ namespace ZktAttendence.Core
             return null;
         }
 
-        
+
 
         // Device Connection
         public bool GetConnection(CZKEM cZKEM, string ipAddress, int portNo)
         {
             try
             {
+                if (cZKEM.SetCommPassword(1))
+                {
+                    // Connection with Device
+                    if (cZKEM.Connect_Net(ipAddress, portNo))
+                    {
+                        return true; // return true
+                        Console.WriteLine("Connected-- ");
+                    }
+                    else
+                    {
+                        return false; // return false
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            return false;
+        }
+
+        public bool GetConnection(CZKEM cZKEM, string ipAddress, int portNo, int CommKey)
+        {
+            try
+            {
                 /*
                  * Connect_Net()
                  * We get device connection using this method.**/
-                bool check = cZKEM.Connect_Net(ipAddress, portNo); // Connection with Device
-                if (check)
+                if (cZKEM.SetCommPassword(CommKey))
                 {
-                    return true; // return true
+                    // Connection with Device
+                    if (cZKEM.Connect_Net(ipAddress, portNo))
+                    {
+                        return true; // return true
+                        Console.WriteLine("Connected-- ");
+                    }
+                    else
+                    {
+                        return false; // return false
+                    }
                 }
                 else
                 {
-                    return false; // return false
+                    return false;
                 }
+
 
             }
             catch (Exception e)

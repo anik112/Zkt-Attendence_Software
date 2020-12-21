@@ -90,6 +90,32 @@ namespace ZktAttendence.Core
             return false;
         }
 
+        public bool GetConnection(CZKEM cZKEM, string ipAddress, int portNo, int comPass)
+        {
+            try
+            {
+                /*
+                 * Connect_Net()
+                 * We get device connection using this method.**/
+                if (cZKEM.SetCommPassword(comPass))
+                {
+                    if(cZKEM.Connect_Net(ipAddress, portNo))
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            return false;
+        }
+
 
 
         // Device Information

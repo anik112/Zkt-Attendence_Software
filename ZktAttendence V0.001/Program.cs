@@ -28,10 +28,14 @@ namespace ZktAttendence
                 Thread.Sleep(600);
             }*/
 
-            Application.EnableVisualStyles();
-            Application.Run(new WindowFrom(zktFilePath));
+            //Application.EnableVisualStyles();
+            //Application.Run(new WindowFrom(zktFilePath));
 
-            //Console.ReadLine();
+            Master mst = new Master();
+            mst.DriverMethod();
+
+
+            Console.ReadLine();
         }
 
     }

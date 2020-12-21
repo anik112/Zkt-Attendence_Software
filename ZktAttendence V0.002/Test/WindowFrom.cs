@@ -218,15 +218,15 @@ namespace ZktAttendence.Test
             }
             StreamWriter writer = new StreamWriter(file); // open file by file writer
             //List<UserInfo> userList = new List<UserInfo>(); // store all user in list
-                                                            // patch machine information
-                                                            // Last update - 17-11-2020
+                                                             //  patch machine information
+                                                            //   Last update - 17-11-2020
 
             foreach (MachineSelector selector in getMachineList)
             {
                 setMsgInBox("\nDevice Number " + selector.getMachineNumber() + " - IP: " + selector.getIpAddress());
 
                 // get device connection using UTP protocol
-                if (zkt.GetConnection(objZkt, selector.getIpAddress(), selector.getPortNumber()))
+                if (zkt.GetConnection(objZkt, selector.getIpAddress(), selector.getPortNumber(), selector.getcomPass()))
                 {
                     setMsgInBox("\n*** Device is connected ***\n");
 

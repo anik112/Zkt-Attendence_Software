@@ -112,6 +112,7 @@ namespace ZktAttendence.Utilitis
                         machineSelector.setIpAddress(xmlNode.SelectSingleNode("ipAddress").InnerText);
                         //Console.WriteLine("Ip address: "+machineSelector.getIpAddress());
                         machineSelector.setPortNumber(Convert.ToInt32(xmlNode.SelectSingleNode("port").InnerText));
+                        machineSelector.setcomPass(Convert.ToInt32(xmlNode.SelectSingleNode("pass").InnerText));
                     }
 
                     machineList.Add(machineSelector);
