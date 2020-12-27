@@ -22,6 +22,14 @@ namespace ZktAttendence.Test
         public WindowFrom(String setupFilePath)
         {
             InitializeComponent();
+
+            for(int i = 0; i < 5; i++)
+            {
+                CheckBox box = new CheckBox();
+                tablePan.Controls.Add(box);
+            }
+
+
             this.zktFilePath = setupFilePath;
             txtFromDate.Select();
             txtDateForClear.Text = DateTime.Now.ToString("MM/dd/yyyy");
@@ -105,7 +113,7 @@ namespace ZktAttendence.Test
             if (checkBoxSelected.Checked == true)
             {
                 isClear = true;
-
+                // if any error arries 
                 int errorStatus = processStart();
                 if (errorStatus == 1001)
                 {
