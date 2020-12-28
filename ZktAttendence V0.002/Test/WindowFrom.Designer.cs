@@ -48,9 +48,8 @@
             this.txtFromDate = new System.Windows.Forms.TextBox();
             this.lblFromDate = new System.Windows.Forms.Label();
             this.txtShowMsg = new System.Windows.Forms.RichTextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
             this.tablePan = new System.Windows.Forms.Panel();
+            this.isDeselectAll = new System.Windows.Forms.CheckBox();
             btnClear = new System.Windows.Forms.Button();
             this.groupPan01.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -283,38 +282,44 @@
             this.txtShowMsg.TabIndex = 13;
             this.txtShowMsg.Text = "";
             // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Lucida Console", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(505, 404);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(131, 25);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "Download";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // vScrollBar1
-            // 
-            this.vScrollBar1.Location = new System.Drawing.Point(657, 16);
-            this.vScrollBar1.Name = "vScrollBar1";
-            this.vScrollBar1.Size = new System.Drawing.Size(20, 377);
-            this.vScrollBar1.TabIndex = 16;
-            // 
             // tablePan
             // 
-            this.tablePan.Location = new System.Drawing.Point(350, 21);
+            this.tablePan.AutoScroll = true;
+            this.tablePan.BackColor = System.Drawing.Color.GhostWhite;
+            this.tablePan.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tablePan.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.tablePan.Font = new System.Drawing.Font("Lucida Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tablePan.Location = new System.Drawing.Point(350, 35);
             this.tablePan.Name = "tablePan";
-            this.tablePan.Size = new System.Drawing.Size(307, 371);
+            this.tablePan.Padding = new System.Windows.Forms.Padding(5, 10, 5, 10);
+            this.tablePan.Size = new System.Drawing.Size(197, 385);
             this.tablePan.TabIndex = 17;
+            this.tablePan.MouseEnter += new System.EventHandler(this.tablePan_MouseEnter);
+            // 
+            // isDeselectAll
+            // 
+            this.isDeselectAll.AccessibleName = "deselectCheckBox";
+            this.isDeselectAll.BackColor = System.Drawing.Color.SandyBrown;
+            this.isDeselectAll.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.isDeselectAll.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.isDeselectAll.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.isDeselectAll.Location = new System.Drawing.Point(350, 8);
+            this.isDeselectAll.Name = "isDeselectAll";
+            this.isDeselectAll.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.isDeselectAll.Size = new System.Drawing.Size(197, 21);
+            this.isDeselectAll.TabIndex = 18;
+            this.isDeselectAll.Text = "Deselect All";
+            this.isDeselectAll.UseVisualStyleBackColor = false;
+            this.isDeselectAll.Click += new System.EventHandler(this.checkBox1_Click);
             // 
             // WindowFrom
             // 
+            this.AccessibleName = "deselectCheckBox";
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(685, 432);
+            this.ClientSize = new System.Drawing.Size(554, 432);
+            this.Controls.Add(this.isDeselectAll);
             this.Controls.Add(this.tablePan);
-            this.Controls.Add(this.vScrollBar1);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.txtShowMsg);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupPan01);
@@ -322,7 +327,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Location = new System.Drawing.Point(150, 50);
             this.Name = "WindowFrom";
-            this.Text = "Vistasoft IT Bangladesh Ltd.";
+            this.Text = "Deselect All";
             this.groupPan01.ResumeLayout(false);
             this.groupPan01.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -355,8 +360,7 @@
         private System.Windows.Forms.Label lblFromDate;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnProcessRTA;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.VScrollBar vScrollBar1;
         private System.Windows.Forms.Panel tablePan;
+        private System.Windows.Forms.CheckBox isDeselectAll;
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 using zkemkeeper;
@@ -18,36 +19,39 @@ namespace ZktAttendence.Test
         private String workToDate = String.Empty; // declare to date variable
         private String workFromDate = String.Empty; // decalre from date variable
         private bool isClear = false;
+        private List<MachineSelector> getMachineList = new List<MachineSelector>(); // call the array for store device info
+        private List<MachineSelector> selectedMachineList = new List<MachineSelector>(); // call the array for store device info
+        private CheckBox[] box;
 
         public WindowFrom(String setupFilePath)
         {
             InitializeComponent();
-
-            for(int i = 0; i < 5; i++)
-            {
-                CheckBox box = new CheckBox();
-                tablePan.Controls.Add(box);
-            }
-
-
-            this.zktFilePath = setupFilePath;
-            txtFromDate.Select();
+            this.zktFilePath = setupFilePath; // set ZKT path
+            viewMachineList(); // view machine list in panel
+            txtFromDate.Select(); // set date
             txtDateForClear.Text = DateTime.Now.ToString("MM/dd/yyyy");
             txtDateOfRTA.Text = DateTime.Now.ToString("MM/dd/yyyy");
         }
 
         private void dgnBtnProcess_Click(object sender, EventArgs e)
         {
+            /*
+             * Check From date is not empty
+             * Check To date is not empty
+             * Chekc from date month is not upper then to date month
+             */
 
             if ((txtFromDate.Text != String.Empty) 
                 && (txtToDate.Text != String.Empty)
                 && (int.Parse(txtFromDate.Text.Substring(0, 2)) <= int.Parse(txtToDate.Text.Substring(0, 2)))
-            ){
+            ) {
+                setSelectedMachineList();
                 int errorStatus = processStart();
                 if (errorStatus == 1001)
                 {
                     setMsgInBox("\nPlease set the date between 30 days.");
-                }else if(errorStatus== 1021)
+                }
+                else if (errorStatus == 1021)
                 {
                     setMsgInBox("\nInternal error occurred when data registering in file.");
                 }
@@ -112,6 +116,8 @@ namespace ZktAttendence.Test
 
             if (checkBoxSelected.Checked == true)
             {
+                setSelectedMachineList();
+
                 isClear = true;
                 // if any error arries 
                 int errorStatus = processStart();
@@ -129,7 +135,7 @@ namespace ZktAttendence.Test
                     List<MachineSelector> getMachineList = new List<MachineSelector>(); // call the array for store device info
                     getMachineList = new SetupUtility().getDeviceSetupInformation(zktFilePath, "deviceSetupInfo"); // get all device info in array
 
-                    foreach (MachineSelector selector in getMachineList)
+                    foreach (MachineSelector selector in selectedMachineList)
                     {
                         setMsgInBox("\nDevice Number " + selector.getMachineNumber() + " - IP: " + selector.getIpAddress());
 
@@ -212,9 +218,6 @@ namespace ZktAttendence.Test
             * then i execute 'GetAttendenceLogData(objZkt, selector.getMachineNumber())' this function for
             * get attendence.
              */
-            List<MachineSelector> getMachineList = new List<MachineSelector>(); // call the array for store device info
-
-            getMachineList = new SetupUtility().getDeviceSetupInformation(zktFilePath, "deviceSetupInfo"); // get all device info in array
             FileStream file;
             if (isClear)
             {
@@ -229,7 +232,7 @@ namespace ZktAttendence.Test
                                                              //  patch machine information
                                                             //   Last update - 17-11-2020
 
-            foreach (MachineSelector selector in getMachineList)
+            foreach (MachineSelector selector in selectedMachineList)
             {
                 setMsgInBox("\nDevice Number " + selector.getMachineNumber() + " - IP: " + selector.getIpAddress());
 
@@ -380,6 +383,80 @@ namespace ZktAttendence.Test
             }
 
             return dateList;
+        }
+
+        private void checkBox1_Click(object sender, EventArgs e)
+        {
+            if (isDeselectAll.Checked)
+            {
+                for (int i = 0; i < box.Length; i++)
+                {
+                    box[i].Checked = false;
+                }
+            }
+        }
+
+        private void setSelectedMachineList()
+        {
+            selectedMachineList.Clear();
+
+            for (int i = 0; i < box.Length; i++)
+            {
+                if (box[i].Checked && (!isDeselectAll.Checked))
+                {
+                    foreach (MachineSelector s in getMachineList)
+                    {
+                        if (s.getIpAddress() == box[i].Name)
+                        {
+                            selectedMachineList.Add(s);
+                        }
+                    }
+                }
+            }
+
+            if (selectedMachineList.Count == 0)
+            {
+                selectedMachineList = getMachineList;
+                viewMachineList();
+            }
+
+
+            foreach (MachineSelector r in selectedMachineList)
+            {
+                Console.WriteLine(">> " + r.getIpAddress());
+            }
+            Console.WriteLine(selectedMachineList.Count);
+        }
+
+        private void viewMachineList()
+        {
+            tablePan.Controls.Clear();
+            getMachineList = new SetupUtility().getDeviceSetupInformation(zktFilePath, "deviceSetupInfo"); // get all device info in array
+            box = new CheckBox[getMachineList.Count];
+            int i = 0;
+            foreach (MachineSelector selector in getMachineList)
+            {
+                box[i] = new CheckBox();
+                box[i].AutoSize = true;
+                box[i].Cursor = System.Windows.Forms.Cursors.Hand;
+                box[i].BackColor = System.Drawing.Color.LightSkyBlue;
+                box[i].Location = new System.Drawing.Point(5, i * 25);
+                box[i].Name = selector.getIpAddress();
+                box[i].Size = new System.Drawing.Size(80, 17);
+                box[i].Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+                box[i].Text = selector.getIpAddress() + " - " + selector.getMachineNumber();
+                box[i].UseVisualStyleBackColor = false;
+                box[i].TextAlign = ContentAlignment.MiddleLeft;
+                box[i].CheckAlign = ContentAlignment.MiddleLeft;
+                tablePan.Controls.Add(box[i]);
+                i++;
+            }
+        }
+
+
+        private void tablePan_MouseEnter(object sender, EventArgs e)
+        {
+            isDeselectAll.Checked = false;
         }
     }
 }
