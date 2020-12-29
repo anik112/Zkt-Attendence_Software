@@ -360,9 +360,22 @@ namespace ZktAttendence.Test
 
         private void btnProcessRTA_Click(object sender, EventArgs e)
         {
-            setMsgInBox("\n>> -- Starting Download From RTA -- <<\n");
+            setMsgInBox("\n>> -- Starting Download From RTA -- <<\n\n");
             Process process = Process.Start("RTA600.exe");
             process.WaitForExit();
+
+            string logPath = System.IO.Path.Combine(Environment.CurrentDirectory, "log.txt");
+            StreamReader reader = new StreamReader(logPath);
+            string line;
+            while ((line = reader.ReadLine()) != null)
+            {
+                if(line.Substring(0,21)== "Open COM Port Success")
+                {
+                    setMsgInBox("\n");
+                }
+                setMsgInBox(line + "\n");
+            }
+            reader.Close();
             setMsgInBox("\n>> -- Downloaded -- <<\n");
         }
 
@@ -457,6 +470,12 @@ namespace ZktAttendence.Test
         private void tablePan_MouseEnter(object sender, EventArgs e)
         {
             isDeselectAll.Checked = false;
+        }
+
+        private void WindowFrom_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            string logPath = System.IO.Path.Combine(Environment.CurrentDirectory, "log.txt");
+            File.Delete(logPath);
         }
     }
 }

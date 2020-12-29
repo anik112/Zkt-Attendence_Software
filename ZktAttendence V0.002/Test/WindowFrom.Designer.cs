@@ -328,6 +328,7 @@
             this.Location = new System.Drawing.Point(150, 50);
             this.Name = "WindowFrom";
             this.Text = "Deselect All";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.WindowFrom_FormClosing);
             this.groupPan01.ResumeLayout(false);
             this.groupPan01.PerformLayout();
             this.groupBox1.ResumeLayout(false);
