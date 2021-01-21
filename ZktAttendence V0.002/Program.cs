@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing.Text;
+using System.IO;
 using System.Threading;
 using System.Windows.Forms;
 using System.Xml;
@@ -28,7 +29,6 @@ namespace ZktAttendence
 
             Application.EnableVisualStyles();
             Application.Run(new WindowFrom(zktFilePath));
-
             //Console.ReadLine();
         }
 

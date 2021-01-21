@@ -369,7 +369,7 @@ namespace ZktAttendence.Test
             string line;
             while ((line = reader.ReadLine()) != null)
             {
-                if(line.Substring(0,21)== "Open COM Port Success")
+                if(line.Contains("Open COM Port Success"))
                 {
                     setMsgInBox("\n");
                 }
