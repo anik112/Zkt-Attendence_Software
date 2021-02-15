@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ZktAttendence</name>
+    </assembly>
+    <members>
+        <member name="M:ZktAttendence.Core.AttendenceDataWriteInDatabase.writeAttendenceInDatabase">
+            Main working function in this program. this function pull data from machine buffer
+            and push into database.
+        </member>
+        <member name="M:ZktAttendence.Core.AttendenceDataWriteInTxt.consoleProcessForAttendence(System.String)">
+            Main working function in this program. this function pull data from machine buffer
+            and push into database.
+        </member>
+        <member name="M:ZktAttendence.Core.UpdateInDatabase.getUserInfoFromDatabase(Oracle.DataAccess.Client.OracleConnection)">
+            this method use for get user information from database.
+        </member>
+        <member name="M:ZktAttendence.Core.UpdateInDatabase.storeLogDataInDatabase(System.Decimal,System.String,System.String,Oracle.DataAccess.Client.OracleConnection)">
+            This method use for store attendence log information in database.
+        </member>
+        <member name="M:ZktAttendence.Core.UpdateInDatabase.getMachineListFromDatabase(Oracle.DataAccess.Client.OracleConnection)">
+            this method use for get machine information from daatabase.
+        </member>
+        <member name="M:ZktAttendence.Core.UpdateInDatabase.setMachineInfoIntoDatabase(System.Int32,System.String,System.Int32,Oracle.DataAccess.Client.OracleConnection)">
+            this method work for store data in database.
+        </member>
+        <member name="M:ZktAttendence.Core.UpdateInDatabase.getSelectedTimeDateFromDatabase(System.String,Oracle.DataAccess.Client.OracleConnection)">
+            This method work for take existing date list from databse
+        </member>
+        <member name="M:ZktAttendence.Master.DriverMethod">
+            this is a test perpose function for checking
+            Old function
+        </member>
+        <member name="T:ZktAttendence.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:ZktAttendence.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:ZktAttendence.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="F:ZktAttendence.view.test.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:ZktAttendence.view.test.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:ZktAttendence.view.test.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+    </members>
+</doc>

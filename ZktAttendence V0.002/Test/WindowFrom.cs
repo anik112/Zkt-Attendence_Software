@@ -190,7 +190,7 @@ namespace ZktAttendence.Test
             while (!workDates[index].Equals(txtToDate.Text))
             {
                 fromdt = fromdt.AddDays(1);
-                workDates[index + 1] = fromdt.Date.ToString("MM/dd/yyyy");
+                workDates[index + 1] = fromdt.Date.ToString("MM/dd/yyyy"); //fromdt.Date.ToString("MM/dd/yyyy");
                 index++;
                 if (index > 31)
                 {

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Table>
+  <Product>
+    <Product_id>1</Product_id>
+    <Product_name>Product 1</Product_name>
+    <Product_price>1000</Product_price>
+  </Product>
+  <Product>
+    <Product_id>2</Product_id>
+    <Product_name>Product 2</Product_name>
+    <Product_price>2000</Product_price>
+  </Product>
+  <Product>
+    <Product_id>3</Product_id>
+    <Product_name>Product 3</Product_name>
+    <Product_price>3000</Product_price>
+  </Product>
+  <Product>
+    <Product_id>4</Product_id>
+    <Product_name>Product 4</Product_name>
+    <Product_price>4000</Product_price>
+  </Product>
+</Table>
