@@ -208,7 +208,7 @@ namespace ZktAttendence.Test
             else
             {
                 tempDateParts = workToDate.Split('/');
-                tempToDate = tempDateParts[1] + tempDateParts[0] + tempDateParts[2];
+                tempToDate = tempDateParts[0] + tempDateParts[1] + tempDateParts[2];
                 setMsgInBox("\n>> -- " + workFromDate + " TO " + workToDate + " -- <<\n");
             }
 
@@ -292,9 +292,10 @@ namespace ZktAttendence.Test
                                     if (chekingData.Contains(workDates[i]))
                                     {
                                         //105:00020001990:20191125:195420:11
-                                        String[] part = chekingData.Split(' '); // string like '19:54:20 2020/08/20'
+                                        String[] part = chekingData.Split(' '); // string like '19:54:20 2020/08/20' // 22/05/2021 07:10:19
                                         String[] datePart = part[0].Split('/'); // '2020/08/20' to {2020,08,20}
-                                        String finalDateWithFormat = datePart[2] + datePart[0] + datePart[1];
+                                        //setMsgInBox($"\n{chekingData}\n");
+                                        String finalDateWithFormat = datePart[2] + datePart[1] + datePart[0];
                                         String[] timePart = part[1].Split(':'); // '19:54:20' to {19,54,20}
                                         String finalTimeWithFormat = timePart[0] + timePart[1] + timePart[2];
 
