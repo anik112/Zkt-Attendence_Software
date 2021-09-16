@@ -153,15 +153,59 @@ Class: UserInfo Fun: public string getDwEnrollNumber();
 Describe The Program
 ====================
 
-- **Program.cs file is the main runable file where have: ** 
+- Program.cs file is the main runable file where have:
 ```
 private static String zktFilePath = System.IO.Path.Combine(Environment.CurrentDirectory, "SetupMachineList.xml");
 private static String dbaFilePath = System.IO.Path.Combine(Environment.CurrentDirectory, "Setup.xml");
+
+This code user for load the XML files.
 ```
+```
+Application.Run(new WindowFrom(zktFilePath));
 
+This code run the main function with load XML file.
+```
+- WindowFrom.cs file have full design of application.
+- CoreZkt.cs file is main interface class of this application.
+- CoreZktClass.cs in this file have some useable functions which is help to get device connection and device information: 
+```
+GetAttendenceLogData(CZKEM objZkt, int machineNumber);
+GetConnection(CZKEM cZKEM, string ipAddress, int portNo);
+GetConnection(CZKEM cZKEM, string ipAddress, int portNo, int comPass);
+GetDeviceInformation(CZKEM objZkeeper, int machineNumber);
+GetUserIdList(CZKEM objZkeeper, int machineNumber);
+GetUserInformation(CZKEM objCzkem, int machineNumber);
+```
+- AttendenceDataWriteInTxt.cs this file have core function which is help to get attendence data from device and write in text file:
+```
+consoleProcessForAttendence(String zktSetupPath, String workFromDate, String workToDate);
 
+This function get data from Device;
+```
+```
+userAttndData = zkt.GetAttendenceLogData(objZkt, selector.getMachineNumber());
+// This code get data from zkt device using SDK;
+userList.AddRange(zkt.GetUserInformation(objZkt, selector.getMachineNumber()));
+// This code add recived data into array list;
+```
+```
+//This is output format of data 105:00020001990:20191125:195420:11
 
+String[] part = chekingData.Split(' '); // string like '19:54:20 2020/08/20'
+// This code split the data date and time data by white space;
 
+String[] datePart = part[0].Split('/'); // '2020/08/20' to {2020,08,20}
+// This code split the only date by slash;
+
+String finalDateWithFormat = datePart[2] + datePart[0] + datePart[1];
+// This code make final output format of date;
+
+String[] timePart = part[1].Split(':'); // '19:54:20' to {19,54,20}
+// This code split the only time data by semicolon;
+
+String finalTimeWithFormat = timePart[0] + timePart[1] + timePart[2];
+// This code format final output format of time;
+```
 
 Discussion Of Functions
 =======================
