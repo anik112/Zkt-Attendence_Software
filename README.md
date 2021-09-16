@@ -150,8 +150,21 @@ Class: UserInfo Fun: public string getDwEnrollNumber();
 
 ```
 
-Discussion
-==========
+Describe The Program
+====================
+
+- **Program.cs file is the main runable file where have: ** 
+```
+private static String zktFilePath = System.IO.Path.Combine(Environment.CurrentDirectory, "SetupMachineList.xml");
+private static String dbaFilePath = System.IO.Path.Combine(Environment.CurrentDirectory, "Setup.xml");
+```
+
+
+
+
+
+Discussion Of Functions
+=======================
 
 **1. static void Main(String args[]);**
 ###### This is main function of this application. This function load when we execute the program. Frist it get the XML file path by ' System.IO.Path.Combine(Environment.CurrentDirectory, "SetupMachineList.xml") ' this statements then run main view class.
