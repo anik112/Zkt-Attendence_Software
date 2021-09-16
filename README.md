@@ -153,17 +153,19 @@ Class: UserInfo Fun: public string getDwEnrollNumber();
 Describe The Program
 ====================
 
+- 'zkemkeeper' this is SDK file of zkt attendence device. Please add this SDK in references of project if it doesn't have.
+
 - Program.cs file is the main runable file where have:
 ```
 private static String zktFilePath = System.IO.Path.Combine(Environment.CurrentDirectory, "SetupMachineList.xml");
 private static String dbaFilePath = System.IO.Path.Combine(Environment.CurrentDirectory, "Setup.xml");
 
-This code user for load the XML files.
+//This code user for load the XML files.
 ```
 ```
 Application.Run(new WindowFrom(zktFilePath));
 
-This code run the main function with load XML file.
+//This code run the main function with load XML file.
 ```
 - WindowFrom.cs file have full design of application.
 - CoreZkt.cs file is main interface class of this application.
@@ -180,7 +182,7 @@ GetUserInformation(CZKEM objCzkem, int machineNumber);
 ```
 consoleProcessForAttendence(String zktSetupPath, String workFromDate, String workToDate);
 
-This function get data from Device;
+//This function get data from Device;
 ```
 ```
 userAttndData = zkt.GetAttendenceLogData(objZkt, selector.getMachineNumber());
@@ -206,6 +208,11 @@ String[] timePart = part[1].Split(':'); // '19:54:20' to {19,54,20}
 String finalTimeWithFormat = timePart[0] + timePart[1] + timePart[2];
 // This code format final output format of time;
 ```
+```
+writer.WriteLine($"{machinAttendence.MachineNumber}:{user.name}:{finalDateWithFormat}:{finalTimeWithFormat}:11");
+// This code add final output data in text using file writer class;
+```
+- 
 
 Discussion Of Functions
 =======================
