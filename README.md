@@ -32,7 +32,41 @@ Prerequisite
 - *Microsoft .net framework 4.5*
 
 #### First you need to register the SDK in your System. For register the SDK you simple ___Register_SDK.bat___ in ___RegSDK___ folder. you need to install ___Microsoft .net framework 4.5___
-#### Set the computer time in HH:mm A/P & date in MM/dd/yyyy format.
+#### Set the computer time in HH:mm A/P & date in dd/MM/yyyy format.
+
+Installation
+============
+- 1. Install ___Microsoft framework 4.5 or higher___
+- 2. Install ___ZKT 5.0 Attendance Managemnet Software___
+- 3. Set the system date format to DD/MM/YYYY
+- 4. Add the device list in ___SetupMachineList.xls___ file
+- 5. Create a shortcut of Att.exe and past it on desktop
+- 6. Run the application
+
+
+XML File Writting Rules
+=======================
+
+```
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<deviceSetupInfo>
+  <device0>
+    <machineNo>121</machineNo>
+    <ipAddress>192.168.1.201</ipAddress>
+    <port>1515</port>
+    <pass>0</pass>
+  </device0>
+  <device1>
+    <machineNo>122</machineNo>
+    <ipAddress>192.168.1.204</ipAddress>
+    <port>1515</port>
+    <pass>0</pass>
+  </device1>
+</deviceSetupInfo>
+````
+In this content we can see some tage which is ___<device0>___,___<machineNo>___,____<ipAddress>____,___<port>___,___<pass>___ ;
+
+
 
 
 Content
