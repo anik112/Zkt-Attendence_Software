@@ -64,7 +64,7 @@ XML File Writting Rules
   </device1>
 </deviceSetupInfo>
 ````
-In this content we can see some tage which is ___<device0>___,___<machineNo>___,____<ipAddress>____,___<port>___,___<pass>___ ;
+In this content we can see some tage which is ```<device0>```, ```<machineNo>``` , ```<ipAddress>``` , ```<port>```,```<pass>``` ;
 
 
 
