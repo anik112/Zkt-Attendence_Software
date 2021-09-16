@@ -36,16 +36,18 @@ Prerequisite
 
 Installation
 ============
-- 1. Install ___Microsoft framework 4.5 or higher___
-- 2. Install ___ZKT 5.0 Attendance Managemnet Software___
-- 3. Set the system date format to DD/MM/YYYY
-- 4. Add the device list in ___SetupMachineList.xls___ file
-- 5. Create a shortcut of Att.exe and past it on desktop
-- 6. Run the application
+- Install ___Microsoft framework 4.5 or higher___
+- Install ___ZKT 5.0 Attendance Managemnet Software___
+- Set the system date format to DD/MM/YYYY
+- Add the device list in ___SetupMachineList.xls___ file
+- Create a shortcut of Att.exe and past it on desktop
+- Run the application
 
 
 XML File Writting Rules
 =======================
+
+Please first open the ZKT 5.0 software. Add the device ip and check the connection is ok or not. After that we add the device ip in XML file.
 
 ```
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
@@ -66,7 +68,18 @@ XML File Writting Rules
 ````
 In this content we can see some tage which is ```<device0>```, ```<machineNo>``` , ```<ipAddress>``` , ```<port>```,```<pass>``` ;
 
+**1. ```<device0>``` In this tage we write the device index. If we have 2 device then we can write:
+     for 1st device ```<device0> some code </device0>```; 
+     for 2nd device ```<device1> some code </device1>```;
+**2. ```<machineNo>``` In this tage we write the machine number of device. if we have 2 device the we can write:
+     for 1st device ```<machineNo>101</machineNo>```;
+     for 2nd device ```<machineNo>102</machineNo>```;
 
+**3. ```<ipAddress>``` In this tag we wite the device ip number. If we have 2 device then we can write:
+     for 1st device ```<ipAddress>192.168.1.201</ipAddress>```;
+     for 2nd device ```<ipAddress>192.168.1.202</ipAddress>```;
+**4. ```<port>``` In this tag we write device port. The default port is 1515.
+**5. ```<pass>``` In this tag we write device password. If device have any communication paswword.
 
 
 Content
