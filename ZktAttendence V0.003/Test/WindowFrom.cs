@@ -43,9 +43,9 @@ namespace ZktAttendence.Test
 
             if ((txtFromDate.Text != String.Empty) 
                 && (txtToDate.Text != String.Empty)
-                && (int.Parse(txtFromDate.Text.Substring(3, 2)) <= int.Parse(txtToDate.Text.Substring(3, 2)))
+                //&& (int.Parse(txtFromDate.Text.Substring(3, 2)) <= int.Parse(txtToDate.Text.Substring(3, 2)))
             ) {
-                //Console.WriteLine(txtFromDate.Text.Substring(3, 2));
+                Console.WriteLine(txtFromDate.Text.Substring(3, 2));
                 setSelectedMachineList();
                 int errorStatus = processStart();
                 if (errorStatus == 1001)
@@ -197,6 +197,7 @@ namespace ZktAttendence.Test
                 {
                     return 1001;
                 }
+                Console.WriteLine("=>"+fromdt);
             }
 
 
