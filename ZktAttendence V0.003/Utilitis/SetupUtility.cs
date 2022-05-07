@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Windows.Forms;
 using System.Xml;
 using System.Xml.Linq;
 
@@ -113,6 +114,7 @@ namespace ZktAttendence.Utilitis
                         //Console.WriteLine("Ip address: "+machineSelector.getIpAddress());
                         machineSelector.setPortNumber(Convert.ToInt32(xmlNode.SelectSingleNode("port").InnerText));
                         machineSelector.setcomPass(Convert.ToInt32(xmlNode.SelectSingleNode("pass").InnerText));
+                        machineSelector.setAddress(xmlNode.SelectSingleNode("location").InnerText);
                     }
 
                     machineList.Add(machineSelector);
@@ -122,6 +124,7 @@ namespace ZktAttendence.Utilitis
             }
             catch (Exception e)
             {
+                MessageBox.Show("SetupUtility sys: " + e.Message + " > " + e.StackTrace);
                 Console.WriteLine("SetupUtility sys: " + e.Message+" > "+ e.StackTrace);
                 Console.ReadLine();
             }

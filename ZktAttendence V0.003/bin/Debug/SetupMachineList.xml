@@ -5,6 +5,7 @@
     <ipAddress>192.168.0.101</ipAddress>
     <port>4370</port>
     <pass>0</pass>
+    <location>Frist Floor</location>
   </device0>
 
   <device1>
@@ -12,6 +13,7 @@
     <ipAddress>192.168.0.102</ipAddress>
     <port>4370</port>
     <pass>0</pass>
+    <location>Frist Floor</location>
   </device1>
 
 <device2>
@@ -19,6 +21,7 @@
     <ipAddress>192.168.0.103</ipAddress>
     <port>4370</port>
     <pass>0</pass>
+    <location>Frist Floor</location>
   </device2>
 
 <device3>
@@ -26,6 +29,7 @@
     <ipAddress>192.168.0.104</ipAddress>
     <port>4370</port>
     <pass>0</pass>
+    <location>Frist Floor</location>
   </device3>
 
 <device4>
@@ -33,6 +37,7 @@
     <ipAddress>192.168.0.105</ipAddress>
     <port>4370</port>
     <pass>0</pass>
+    <location>Frist Floor</location>
   </device4>
 
   <device5>
@@ -40,6 +45,7 @@
     <ipAddress>192.168.0.106</ipAddress>
     <port>4370</port>
     <pass>0</pass>
+    <location>Frist Floor</location>
   </device5>
 
 <device6>
@@ -47,6 +53,7 @@
     <ipAddress>192.168.0.107</ipAddress>
     <port>4370</port>
     <pass>0</pass>
+    <location>Frist Floor</location>
   </device6>
 
 <device7>
@@ -54,6 +61,7 @@
     <ipAddress>192.168.0.108</ipAddress>
     <port>4370</port>
     <pass>0</pass>
+    <location>Frist Floor</location>
   </device7>
 
 <device8>
@@ -61,6 +69,7 @@
     <ipAddress>192.168.0.109</ipAddress>
     <port>4370</port>
     <pass>0</pass>
+    <location>Frist Floor</location>
   </device8>
 
 <device9>
@@ -68,6 +77,7 @@
     <ipAddress>192.168.0.110</ipAddress>
     <port>4370</port>
     <pass>0</pass>
+    <location>Frist Floor</location>
   </device9>
 
 <device10>
@@ -75,6 +85,7 @@
     <ipAddress>192.168.0.111</ipAddress>
     <port>4370</port>
     <pass>0</pass>
+    <location>Frist Floor</location>
   </device10>
 
 <device11>
@@ -82,6 +93,7 @@
     <ipAddress>192.168.0.112</ipAddress>
     <port>4370</port>
     <pass>0</pass>
+    <location>Frist Floor</location>
   </device11>
 
 <device12>
@@ -89,6 +101,7 @@
     <ipAddress>192.168.0.113</ipAddress>
     <port>4370</port>
     <pass>0</pass>
+    <location>Frist Floor</location>
   </device12>
 
 <device13>
@@ -96,6 +109,7 @@
     <ipAddress>192.168.0.114</ipAddress>
     <port>4370</port>
     <pass>0</pass>
+    <location>Frist Floor</location>
   </device13>
 
 <device14>
@@ -103,6 +117,7 @@
     <ipAddress>192.168.0.115</ipAddress>
     <port>4370</port>
     <pass>0</pass>
+    <location>Frist Floor</location>
   </device14>
 
 <device15>
@@ -110,6 +125,7 @@
     <ipAddress>192.168.0.116</ipAddress>
     <port>4370</port>
     <pass>0</pass>
+    <location>Frist Floor</location>
   </device15>
 
 <device16>
@@ -117,6 +133,7 @@
     <ipAddress>192.168.0.117</ipAddress>
     <port>4370</port>
     <pass>0</pass>
+    <location>Frist Floor</location>
   </device16>
 
 <device17>
@@ -124,6 +141,7 @@
     <ipAddress>192.168.0.118</ipAddress>
     <port>4370</port>
     <pass>0</pass>
+    <location>Frist Floor</location>
   </device17>
 
 <device18>
@@ -131,6 +149,7 @@
     <ipAddress>192.168.0.119</ipAddress>
     <port>4370</port>
     <pass>0</pass>
+    <location>Frist Floor</location>
   </device18>
 
 <device19>
@@ -138,6 +157,7 @@
     <ipAddress>192.168.0.149</ipAddress>
     <port>4370</port>
     <pass>0</pass>
+    <location>Frist Floor</location>
   </device19>
 
 <device20>
@@ -145,6 +165,7 @@
     <ipAddress>192.168.0.121</ipAddress>
     <port>4370</port>
     <pass>0</pass>
+    <location>Frist Floor</location>
   </device20>
 
 <device21>
@@ -152,6 +173,7 @@
     <ipAddress>192.168.0.122</ipAddress>
     <port>4370</port>
     <pass>0</pass>
+    <location>Frist Floor</location>
   </device21>
 
 <device22>
@@ -159,6 +181,7 @@
     <ipAddress>192.168.0.123</ipAddress>
     <port>4370</port>
     <pass>0</pass>
+    <location>Frist Floor</location>
   </device22>
 
 <device23>
@@ -166,6 +189,7 @@
     <ipAddress>192.168.0.197</ipAddress>
     <port>4370</port>
     <pass>0</pass>
+    <location>Frist Floor</location>
   </device23>
 
 <device24>
@@ -173,6 +197,7 @@
     <ipAddress>192.168.0.124</ipAddress>
     <port>4370</port>
     <pass>0</pass>
+    <location>Frist Floor</location>
   </device24>
 
 <device25>
@@ -180,6 +205,7 @@
     <ipAddress>192.168.0.239</ipAddress>
     <port>4370</port>
     <pass>0</pass>
+    <location>Frist Floor</location>
   </device25>
 
 <device26>
@@ -187,6 +213,7 @@
     <ipAddress>192.168.0.136</ipAddress>
     <port>4370</port>
     <pass>0</pass>
+    <location>Frist Floor</location>
   </device26>
 
 <device27>
@@ -194,6 +221,7 @@
     <ipAddress>192.168.0.129</ipAddress>
     <port>4370</port>
     <pass>0</pass>
+    <location>Frist Floor</location>
   </device27>
 
 <device28>
@@ -201,6 +229,7 @@
     <ipAddress>192.168.0.142</ipAddress>
     <port>4370</port>
     <pass>0</pass>
+    <location>Frist Floor</location>
   </device28>
 
 <device29>
@@ -208,6 +237,7 @@
     <ipAddress>192.168.0.158</ipAddress>
     <port>4370</port>
     <pass>0</pass>
+    <location>Frist Floor</location>
   </device29>
 
 <device30>
@@ -215,6 +245,7 @@
     <ipAddress>192.168.0.163</ipAddress>
     <port>4370</port>
     <pass>0</pass>
+    <location>Frist Floor</location>
   </device30>
 
 <device31>
@@ -222,6 +253,7 @@
     <ipAddress>192.168.0.151</ipAddress>
     <port>4370</port>
     <pass>0</pass>
+    <location>Frist Floor</location>
   </device31>
 
 </deviceSetupInfo>

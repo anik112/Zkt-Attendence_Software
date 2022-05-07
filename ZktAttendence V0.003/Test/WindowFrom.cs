@@ -236,7 +236,7 @@ namespace ZktAttendence.Test
 
             foreach (MachineSelector selector in selectedMachineList)
             {
-                setMsgInBox("\nDevice Number " + selector.getMachineNumber() + " - IP: " + selector.getIpAddress());
+                setMsgInBox("\nDevice Number " + selector.getMachineNumber() + " - IP: " + selector.getIpAddress() + " - " + selector.getAddress());
 
                 // get device connection using UTP protocol
                 if (zkt.GetConnection(objZkt, selector.getIpAddress(), selector.getPortNumber(), selector.getcomPass()))
@@ -460,7 +460,7 @@ namespace ZktAttendence.Test
                 box[i].Name = selector.getIpAddress();
                 box[i].Size = new System.Drawing.Size(80, 17);
                 box[i].Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-                box[i].Text = selector.getIpAddress() + " - " + selector.getMachineNumber();
+                box[i].Text = selector.getIpAddress() + " - "+selector.getAddress()+" - " + selector.getMachineNumber();
                 box[i].UseVisualStyleBackColor = false;
                 box[i].TextAlign = ContentAlignment.MiddleLeft;
                 box[i].CheckAlign = ContentAlignment.MiddleLeft;
