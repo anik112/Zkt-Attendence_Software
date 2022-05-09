@@ -50,6 +50,7 @@
             this.txtShowMsg = new System.Windows.Forms.RichTextBox();
             this.tablePan = new System.Windows.Forms.Panel();
             this.isDeselectAll = new System.Windows.Forms.CheckBox();
+            this.isSelectAll = new System.Windows.Forms.CheckBox();
             btnClear = new System.Windows.Forms.Button();
             this.groupPan01.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -280,14 +281,14 @@
             this.txtShowMsg.Location = new System.Drawing.Point(553, 8);
             this.txtShowMsg.Name = "txtShowMsg";
             this.txtShowMsg.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
-            this.txtShowMsg.Size = new System.Drawing.Size(328, 412);
+            this.txtShowMsg.Size = new System.Drawing.Size(354, 412);
             this.txtShowMsg.TabIndex = 13;
             this.txtShowMsg.Text = "";
             // 
             // tablePan
             // 
             this.tablePan.AutoScroll = true;
-            this.tablePan.BackColor = System.Drawing.Color.GhostWhite;
+            this.tablePan.BackColor = System.Drawing.Color.LightYellow;
             this.tablePan.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.tablePan.Cursor = System.Windows.Forms.Cursors.Hand;
             this.tablePan.Font = new System.Drawing.Font("Lucida Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -302,24 +303,41 @@
             // 
             this.isDeselectAll.AccessibleName = "deselectCheckBox";
             this.isDeselectAll.BackColor = System.Drawing.Color.SandyBrown;
-            this.isDeselectAll.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.isDeselectAll.CheckAlign = System.Drawing.ContentAlignment.TopLeft;
             this.isDeselectAll.Cursor = System.Windows.Forms.Cursors.Hand;
             this.isDeselectAll.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.isDeselectAll.Location = new System.Drawing.Point(12, 191);
+            this.isDeselectAll.Location = new System.Drawing.Point(411, 191);
             this.isDeselectAll.Name = "isDeselectAll";
             this.isDeselectAll.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.isDeselectAll.Size = new System.Drawing.Size(134, 21);
+            this.isDeselectAll.Size = new System.Drawing.Size(136, 21);
             this.isDeselectAll.TabIndex = 18;
             this.isDeselectAll.Text = "Deselect All";
             this.isDeselectAll.UseVisualStyleBackColor = false;
             this.isDeselectAll.Click += new System.EventHandler(this.checkBox1_Click);
+            // 
+            // isSelectAll
+            // 
+            this.isSelectAll.AccessibleName = "selectCheckBox";
+            this.isSelectAll.BackColor = System.Drawing.Color.SandyBrown;
+            this.isSelectAll.CheckAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.isSelectAll.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.isSelectAll.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.isSelectAll.Location = new System.Drawing.Point(12, 191);
+            this.isSelectAll.Name = "isSelectAll";
+            this.isSelectAll.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.isSelectAll.Size = new System.Drawing.Size(116, 21);
+            this.isSelectAll.TabIndex = 19;
+            this.isSelectAll.Text = "Select All";
+            this.isSelectAll.UseVisualStyleBackColor = false;
+            this.isSelectAll.Click += new System.EventHandler(this.isSelectAll_Click);
             // 
             // WindowFrom
             // 
             this.AccessibleName = "deselectCheckBox";
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(887, 432);
+            this.ClientSize = new System.Drawing.Size(911, 432);
+            this.Controls.Add(this.isSelectAll);
             this.Controls.Add(this.isDeselectAll);
             this.Controls.Add(this.tablePan);
             this.Controls.Add(this.txtShowMsg);
@@ -365,5 +383,6 @@
         private System.Windows.Forms.Button btnProcessRTA;
         private System.Windows.Forms.Panel tablePan;
         private System.Windows.Forms.CheckBox isDeselectAll;
+        private System.Windows.Forms.CheckBox isSelectAll;
     }
 }

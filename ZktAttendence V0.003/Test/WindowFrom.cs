@@ -405,6 +405,8 @@ namespace ZktAttendence.Test
         {
             if (isDeselectAll.Checked)
             {
+                isSelectAll.Checked = false;
+
                 for (int i = 0; i < box.Length; i++)
                 {
                     box[i].Checked = false;
@@ -455,11 +457,13 @@ namespace ZktAttendence.Test
                 box[i] = new CheckBox();
                 box[i].AutoSize = true;
                 box[i].Cursor = System.Windows.Forms.Cursors.Hand;
-                box[i].BackColor = System.Drawing.Color.LightSkyBlue;
+                //box[i].BackColor = System.Drawing.Color.LightSkyBlue;
                 box[i].Location = new System.Drawing.Point(5, i * 25);
                 box[i].Name = selector.getIpAddress();
                 box[i].Size = new System.Drawing.Size(80, 17);
                 box[i].Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+                box[i].Font = new Font(FontFamily.GenericMonospace, 9f);
+                //box[i].ForeColor = Color.DarkMagenta;
                 box[i].Text = selector.getIpAddress() + " - "+selector.getAddress()+" - " + selector.getMachineNumber();
                 box[i].UseVisualStyleBackColor = false;
                 box[i].TextAlign = ContentAlignment.MiddleLeft;
@@ -479,6 +483,19 @@ namespace ZktAttendence.Test
         {
             string logPath = System.IO.Path.Combine(Environment.CurrentDirectory, "log.txt");
             File.Delete(logPath);
+        }
+
+        private void isSelectAll_Click(object sender, EventArgs e)
+        {
+            if (isSelectAll.Checked)
+            {
+                isDeselectAll.Checked = false;
+
+                for (int i = 0; i < box.Length; i++)
+                {
+                    box[i].Checked = true;
+                }
+            }
         }
     }
 }
