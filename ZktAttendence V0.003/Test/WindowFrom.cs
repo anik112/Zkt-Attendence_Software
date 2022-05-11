@@ -452,6 +452,7 @@ namespace ZktAttendence.Test
             getMachineList = new SetupUtility().getDeviceSetupInformation(zktFilePath, "deviceSetupInfo"); // get all device info in array
             box = new CheckBox[getMachineList.Count];
             int i = 0;
+            int deviceCount = 1;
             foreach (MachineSelector selector in getMachineList)
             {
                 box[i] = new CheckBox();
@@ -464,12 +465,13 @@ namespace ZktAttendence.Test
                 box[i].Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
                 box[i].Font = new Font(FontFamily.GenericMonospace, 9f);
                 //box[i].ForeColor = Color.DarkMagenta;
-                box[i].Text = selector.getIpAddress() + " - "+selector.getAddress()+" - " + selector.getMachineNumber();
+                box[i].Text = deviceCount.ToString().PadLeft(2) + " | " + selector.getIpAddress() + " - "+selector.getAddress()+" - " + selector.getMachineNumber();
                 box[i].UseVisualStyleBackColor = false;
                 box[i].TextAlign = ContentAlignment.MiddleLeft;
                 box[i].CheckAlign = ContentAlignment.MiddleLeft;
                 tablePan.Controls.Add(box[i]);
                 i++;
+                deviceCount++;
             }
         }
 
@@ -496,6 +498,12 @@ namespace ZktAttendence.Test
                     box[i].Checked = true;
                 }
             }
+        }
+
+        private void menuFileAddDevice_Click(object sender, EventArgs e)
+        {
+            AddDevice addDevice = new AddDevice();
+            addDevice.Show();
         }
     }
 }

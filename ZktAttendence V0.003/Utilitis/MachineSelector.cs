@@ -5,10 +5,10 @@ namespace ZktAttendence.Utilitis
     class MachineSelector
     {
         private int machineNumber = 0;
-        private String ipAddress = String.Empty;
+        private String ipAddress = "";
         private int portNumber = 0;
         private int comPass = 0;
-        private String address = String.Empty;
+        private String address = "";
 
         public int getMachineNumber()
         {

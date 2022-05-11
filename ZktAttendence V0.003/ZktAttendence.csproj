@@ -146,6 +146,12 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Test\AddDevice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Test\AddDevice.Designer.cs">
+      <DependentUpon>AddDevice.cs</DependentUpon>
+    </Compile>
     <Compile Include="Test\WindowFrom.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -156,6 +162,7 @@
     <Compile Include="Utilitis\DatabaseConnection.cs" />
     <Compile Include="Utilitis\DatabaseInfo.cs" />
     <Compile Include="Utilitis\AttendenceInfo.cs" />
+    <Compile Include="Utilitis\DeviceAddInXML.cs" />
     <Compile Include="Utilitis\MachineSelector.cs" />
     <Compile Include="Test\TestCodeDocument.cs" />
     <Compile Include="Utilitis\SetupUtility.cs" />
@@ -193,6 +200,9 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Test\AddDevice.resx">
+      <DependentUpon>AddDevice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Test\WindowFrom.resx">
       <DependentUpon>WindowFrom.cs</DependentUpon>

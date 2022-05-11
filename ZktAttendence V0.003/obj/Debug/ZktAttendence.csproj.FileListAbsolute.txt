@@ -106,10 +106,10 @@ D:\Zkt-Attendence_Software\ZktAttendence V0.003\bin\Debug\ZktAttendence.xml
 D:\Zkt-Attendence_Software\ZktAttendence V0.003\bin\Debug\ZktAttendence.exe
 D:\Zkt-Attendence_Software\ZktAttendence V0.003\bin\Debug\ZktAttendence.pdb
 D:\Zkt-Attendence_Software\ZktAttendence V0.003\bin\Debug\Oracle.DataAccess.dll
-D:\Zkt-Attendence_Software\ZktAttendence V0.003\obj\Debug\ZktAttendence.csproj.AssemblyReference.cache
 D:\Zkt-Attendence_Software\ZktAttendence V0.003\obj\Debug\Interop.zkemkeeper.dll
 D:\Zkt-Attendence_Software\ZktAttendence V0.003\obj\Debug\ZktAttendence.csproj.ResolveComReference.cache
 D:\Zkt-Attendence_Software\ZktAttendence V0.003\obj\Debug\ZktAttendence.Properties.Resources.resources
+D:\Zkt-Attendence_Software\ZktAttendence V0.003\obj\Debug\ZktAttendence.Test.AddDevice.resources
 D:\Zkt-Attendence_Software\ZktAttendence V0.003\obj\Debug\ZktAttendence.Test.WindowFrom.resources
 D:\Zkt-Attendence_Software\ZktAttendence V0.003\obj\Debug\ZktAttendence.csproj.GenerateResource.cache
 D:\Zkt-Attendence_Software\ZktAttendence V0.003\obj\Debug\ZktAttendence.csproj.CoreCompileInputs.cache
@@ -118,3 +118,4 @@ D:\Zkt-Attendence_Software\ZktAttendence V0.003\obj\Debug\ZktAttendence.applicat
 D:\Zkt-Attendence_Software\ZktAttendence V0.003\obj\Debug\ZktAttendence.csproj.CopyComplete
 D:\Zkt-Attendence_Software\ZktAttendence V0.003\obj\Debug\ZktAttendence.exe
 D:\Zkt-Attendence_Software\ZktAttendence V0.003\obj\Debug\ZktAttendence.pdb
+D:\Zkt-Attendence_Software\ZktAttendence V0.003\obj\Debug\ZktAttendence.csproj.AssemblyReference.cache
