@@ -278,22 +278,21 @@
             // 
             // txtShowMsg
             // 
-            this.txtShowMsg.BackColor = System.Drawing.Color.Gray;
+            this.txtShowMsg.BackColor = System.Drawing.Color.LightYellow;
             this.txtShowMsg.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtShowMsg.Font = new System.Drawing.Font("Lucida Console", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtShowMsg.ForeColor = System.Drawing.Color.LightYellow;
+            this.txtShowMsg.ForeColor = System.Drawing.SystemColors.ControlText;
             this.txtShowMsg.Location = new System.Drawing.Point(553, 38);
             this.txtShowMsg.Name = "txtShowMsg";
             this.txtShowMsg.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
             this.txtShowMsg.Size = new System.Drawing.Size(354, 412);
             this.txtShowMsg.TabIndex = 13;
-            this.txtShowMsg.Text = "";
+            this.txtShowMsg.Text = "Console";
             // 
             // tablePan
             // 
             this.tablePan.AutoScroll = true;
             this.tablePan.BackColor = System.Drawing.Color.LightYellow;
-            this.tablePan.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.tablePan.Cursor = System.Windows.Forms.Cursors.Hand;
             this.tablePan.Font = new System.Drawing.Font("Lucida Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tablePan.Location = new System.Drawing.Point(12, 237);
