@@ -20,39 +20,28 @@ namespace ZktAttendence.Utilitis
         }
 
         // Work pandding in this function............
-        public void writeOperation()
+        public void writeOperation(List<MachineSelector> selectors, String filePath)
         {
-            // read xml file
-            XmlDocument xmlDocument = new XmlDocument();
-            xmlDocument.Load(filePath);
-            XmlNodeList nodeList = xmlDocument.SelectNodes($"/{rootNode}");
+            XmlWriter writer = XmlWriter.Create(filePath);
 
-            int nodeCount = 0;
-            while (true)
+            int i = 0;
+
+            writer.WriteStartElement("deviceSetupInfo");
+            foreach (MachineSelector s in selectors)
             {
-                XmlNodeList innerNode = xmlDocument.SelectNodes($"/{rootNode}/device{nodeCount}");
-                if (innerNode.Count <= 0)
-                {
-                    break;
-                }
-
-                MachineSelector machineSelector = new MachineSelector();
-                foreach (XmlNode xmlNode in innerNode)
-                {
-                    machineSelector.setMachineNumber(Convert.ToInt32(xmlNode.SelectSingleNode("machineNo").InnerText));
-                    //Console.WriteLine("Machine No: " + machineSelector.getMachineNumber());
-                    machineSelector.setIpAddress(xmlNode.SelectSingleNode("ipAddress").InnerText);
-                    //Console.WriteLine("Ip address: "+machineSelector.getIpAddress());
-                    machineSelector.setPortNumber(Convert.ToInt32(xmlNode.SelectSingleNode("port").InnerText));
-                    machineSelector.setcomPass(Convert.ToInt32(xmlNode.SelectSingleNode("pass").InnerText));
-                    machineSelector.setAddress(xmlNode.SelectSingleNode("location").InnerText);
-                }
-
-                nodeCount++;
+                writer.WriteStartElement("device" + i);
+                writer.WriteElementString("machineNo", s.getMachineNumber().ToString());
+                writer.WriteElementString("ipAddress", s.getIpAddress());
+                writer.WriteElementString("port", s.getPortNumber().ToString());
+                writer.WriteElementString("pass", s.getcomPass().ToString());
+                writer.WriteElementString("location", s.getAddress());
+                writer.WriteEndElement();
+                i++;
             }
+            writer.WriteEndElement();
+            writer.Flush();
 
         }
-
 
         public void writeMachineListInXML(int machineNo, String ipAddress, int port, String password, String location, XmlTextWriter xmlTextWriter)
         {

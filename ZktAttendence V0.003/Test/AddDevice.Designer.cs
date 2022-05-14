@@ -30,6 +30,7 @@ namespace ZktAttendence.Test
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnAddDevice = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.txtLocation = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -38,8 +39,7 @@ namespace ZktAttendence.Test
             this.txtIpAddress = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtMachineNo = new System.Windows.Forms.TextBox();
-            this.btnAddDevice = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.showPanel = new System.Windows.Forms.Panel();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,6 +62,17 @@ namespace ZktAttendence.Test
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add Device";
             // 
+            // btnAddDevice
+            // 
+            this.btnAddDevice.Location = new System.Drawing.Point(292, 101);
+            this.btnAddDevice.Name = "btnAddDevice";
+            this.btnAddDevice.Size = new System.Drawing.Size(96, 27);
+            this.btnAddDevice.TabIndex = 16;
+            this.btnAddDevice.Text = "&Save";
+            this.btnAddDevice.UseVisualStyleBackColor = true;
+            this.btnAddDevice.Visible = false;
+            this.btnAddDevice.Click += new System.EventHandler(this.btnAddDevice_Click);
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -79,7 +90,6 @@ namespace ZktAttendence.Test
             this.txtLocation.Name = "txtLocation";
             this.txtLocation.Size = new System.Drawing.Size(177, 20);
             this.txtLocation.TabIndex = 14;
-            this.txtLocation.Visible = false;
             // 
             // label3
             // 
@@ -98,7 +108,6 @@ namespace ZktAttendence.Test
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(177, 20);
             this.txtPassword.TabIndex = 12;
-            this.txtPassword.Visible = false;
             // 
             // label2
             // 
@@ -117,7 +126,6 @@ namespace ZktAttendence.Test
             this.txtIpAddress.Name = "txtIpAddress";
             this.txtIpAddress.Size = new System.Drawing.Size(177, 20);
             this.txtIpAddress.TabIndex = 10;
-            this.txtIpAddress.Visible = false;
             // 
             // label1
             // 
@@ -136,32 +144,21 @@ namespace ZktAttendence.Test
             this.txtMachineNo.Name = "txtMachineNo";
             this.txtMachineNo.Size = new System.Drawing.Size(177, 20);
             this.txtMachineNo.TabIndex = 8;
-            this.txtMachineNo.Visible = false;
             // 
-            // btnAddDevice
+            // showPanel
             // 
-            this.btnAddDevice.Location = new System.Drawing.Point(292, 101);
-            this.btnAddDevice.Name = "btnAddDevice";
-            this.btnAddDevice.Size = new System.Drawing.Size(96, 27);
-            this.btnAddDevice.TabIndex = 16;
-            this.btnAddDevice.Text = "&Save";
-            this.btnAddDevice.UseVisualStyleBackColor = true;
-            this.btnAddDevice.Visible = false;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.Info;
-            this.panel1.Location = new System.Drawing.Point(13, 154);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(519, 277);
-            this.panel1.TabIndex = 9;
+            this.showPanel.BackColor = System.Drawing.SystemColors.Info;
+            this.showPanel.Location = new System.Drawing.Point(13, 154);
+            this.showPanel.Name = "showPanel";
+            this.showPanel.Size = new System.Drawing.Size(519, 277);
+            this.showPanel.TabIndex = 9;
             // 
             // AddDevice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(544, 443);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.showPanel);
             this.Controls.Add(this.groupBox1);
             this.Name = "AddDevice";
             this.Text = "Copyright @ 2009 Maintenance By DATADSS";
@@ -183,6 +180,6 @@ namespace ZktAttendence.Test
         private System.Windows.Forms.TextBox txtIpAddress;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtMachineNo;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel showPanel;
     }
 }
