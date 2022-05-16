@@ -120,7 +120,7 @@ namespace ZktAttendence.Utilitis
                     machineList.Add(machineSelector);
                     nodeCount++;
                 }
-
+                xmlDocument.Save(filePath);
             }
             catch (Exception e)
             {
@@ -128,6 +128,7 @@ namespace ZktAttendence.Utilitis
                 Console.WriteLine("SetupUtility sys: " + e.Message+" > "+ e.StackTrace);
                 Console.ReadLine();
             }
+            
             return machineList;
         }
 

@@ -55,29 +55,28 @@ namespace ZktAttendence.Test
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtMachineNo);
             this.groupBox1.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(75, 12);
+            this.groupBox1.Location = new System.Drawing.Point(5, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(399, 136);
+            this.groupBox1.Size = new System.Drawing.Size(542, 136);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add Device";
             // 
             // btnAddDevice
             // 
-            this.btnAddDevice.Location = new System.Drawing.Point(292, 101);
+            this.btnAddDevice.Location = new System.Drawing.Point(374, 101);
             this.btnAddDevice.Name = "btnAddDevice";
             this.btnAddDevice.Size = new System.Drawing.Size(96, 27);
             this.btnAddDevice.TabIndex = 16;
             this.btnAddDevice.Text = "&Save";
             this.btnAddDevice.UseVisualStyleBackColor = true;
-            this.btnAddDevice.Visible = false;
             this.btnAddDevice.Click += new System.EventHandler(this.btnAddDevice_Click);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Lucida Sans", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 111);
+            this.label4.Location = new System.Drawing.Point(94, 111);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(62, 12);
             this.label4.TabIndex = 15;
@@ -86,7 +85,7 @@ namespace ZktAttendence.Test
             // txtLocation
             // 
             this.txtLocation.Font = new System.Drawing.Font("Lucida Sans", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLocation.Location = new System.Drawing.Point(94, 108);
+            this.txtLocation.Location = new System.Drawing.Point(176, 108);
             this.txtLocation.Name = "txtLocation";
             this.txtLocation.Size = new System.Drawing.Size(177, 20);
             this.txtLocation.TabIndex = 14;
@@ -95,7 +94,7 @@ namespace ZktAttendence.Test
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Lucida Sans", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 85);
+            this.label3.Location = new System.Drawing.Point(94, 85);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(66, 12);
             this.label3.TabIndex = 13;
@@ -104,7 +103,7 @@ namespace ZktAttendence.Test
             // txtPassword
             // 
             this.txtPassword.Font = new System.Drawing.Font("Lucida Sans", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(94, 82);
+            this.txtPassword.Location = new System.Drawing.Point(176, 82);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(177, 20);
             this.txtPassword.TabIndex = 12;
@@ -113,7 +112,7 @@ namespace ZktAttendence.Test
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Lucida Sans", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 59);
+            this.label2.Location = new System.Drawing.Point(94, 59);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(19, 12);
             this.label2.TabIndex = 11;
@@ -122,7 +121,7 @@ namespace ZktAttendence.Test
             // txtIpAddress
             // 
             this.txtIpAddress.Font = new System.Drawing.Font("Lucida Sans", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIpAddress.Location = new System.Drawing.Point(94, 56);
+            this.txtIpAddress.Location = new System.Drawing.Point(176, 56);
             this.txtIpAddress.Name = "txtIpAddress";
             this.txtIpAddress.Size = new System.Drawing.Size(177, 20);
             this.txtIpAddress.TabIndex = 10;
@@ -131,7 +130,7 @@ namespace ZktAttendence.Test
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Lucida Sans", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 33);
+            this.label1.Location = new System.Drawing.Point(94, 33);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(79, 12);
             this.label1.TabIndex = 9;
@@ -140,24 +139,25 @@ namespace ZktAttendence.Test
             // txtMachineNo
             // 
             this.txtMachineNo.Font = new System.Drawing.Font("Lucida Sans", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMachineNo.Location = new System.Drawing.Point(94, 30);
+            this.txtMachineNo.Location = new System.Drawing.Point(176, 30);
             this.txtMachineNo.Name = "txtMachineNo";
             this.txtMachineNo.Size = new System.Drawing.Size(177, 20);
             this.txtMachineNo.TabIndex = 8;
             // 
             // showPanel
             // 
+            this.showPanel.AutoScroll = true;
             this.showPanel.BackColor = System.Drawing.SystemColors.Info;
-            this.showPanel.Location = new System.Drawing.Point(13, 154);
+            this.showPanel.Location = new System.Drawing.Point(5, 154);
             this.showPanel.Name = "showPanel";
-            this.showPanel.Size = new System.Drawing.Size(519, 277);
+            this.showPanel.Size = new System.Drawing.Size(542, 349);
             this.showPanel.TabIndex = 9;
             // 
             // AddDevice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(544, 443);
+            this.ClientSize = new System.Drawing.Size(550, 507);
             this.Controls.Add(this.showPanel);
             this.Controls.Add(this.groupBox1);
             this.Name = "AddDevice";

@@ -502,7 +502,7 @@ namespace ZktAttendence.Test
 
         private void menuFileAddDevice_Click(object sender, EventArgs e)
         {
-            AddDevice addDevice = new AddDevice();
+            AddDevice addDevice = new AddDevice(zktFilePath);
             addDevice.Show();
         }
     }

@@ -361,7 +361,7 @@
             // 
             this.menuFileAddDevice.AccessibleName = "menuFileAddDevice";
             this.menuFileAddDevice.Name = "menuFileAddDevice";
-            this.menuFileAddDevice.Size = new System.Drawing.Size(138, 22);
+            this.menuFileAddDevice.Size = new System.Drawing.Size(180, 22);
             this.menuFileAddDevice.Text = "&Add Device";
             this.menuFileAddDevice.Click += new System.EventHandler(this.menuFileAddDevice_Click);
             // 
