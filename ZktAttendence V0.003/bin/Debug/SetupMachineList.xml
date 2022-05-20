@@ -1,1 +1,269 @@
-﻿<?xml version="1.0" encoding="utf-8"?><deviceSetupInfo><device0><machineNo>101</machineNo><ipAddress>192.168.0.101</ipAddress><port>4370</port><pass>0</pass><location>Frist Floor</location></device0><device1><machineNo>102</machineNo><ipAddress>192.168.0.102</ipAddress><port>4370</port><pass>0</pass><location>Frist Floor</location></device1><device2><machineNo>103</machineNo><ipAddress>192.168.0.103</ipAddress><port>4370</port><pass>0</pass><location>Frist Floor Frist Floor Frist Floor</location></device2><device3><machineNo>104</machineNo><ipAddress>192.168.0.104</ipAddress><port>4370</port><pass>0</pass><location>Frist Floor</location></device3><device4><machineNo>105</machineNo><ipAddress>192.168.0.105</ipAddress><port>4370</port><pass>0</pass><location>Frist Floor</location></device4><device5><machineNo>106</machineNo><ipAddress>192.168.0.106</ipAddress><port>4370</port><pass>0</pass><location>Frist Floor</location></device5><device6><machineNo>107</machineNo><ipAddress>192.168.0.107</ipAddress><port>4370</port><pass>0</pass><location>Frist Floor</location></device6><device7><machineNo>108</machineNo><ipAddress>192.168.0.108</ipAddress><port>4370</port><pass>0</pass><location>Frist Floor</location></device7><device8><machineNo>109</machineNo><ipAddress>192.168.0.109</ipAddress><port>4370</port><pass>0</pass><location>Frist Floor</location></device8><device9><machineNo>110</machineNo><ipAddress>192.168.0.110</ipAddress><port>4370</port><pass>0</pass><location>Frist Floor</location></device9><device10><machineNo>111</machineNo><ipAddress>192.168.0.111</ipAddress><port>4370</port><pass>0</pass><location>Frist Floor</location></device10><device11><machineNo>112</machineNo><ipAddress>192.168.0.112</ipAddress><port>4370</port><pass>0</pass><location>Frist Floor</location></device11><device12><machineNo>113</machineNo><ipAddress>192.168.0.113</ipAddress><port>4370</port><pass>0</pass><location>Frist Floor</location></device12><device13><machineNo>114</machineNo><ipAddress>192.168.0.114</ipAddress><port>4370</port><pass>0</pass><location>Frist Floor</location></device13><device14><machineNo>115</machineNo><ipAddress>192.168.0.115</ipAddress><port>4370</port><pass>0</pass><location>Frist Floor</location></device14><device15><machineNo>116</machineNo><ipAddress>192.168.0.116</ipAddress><port>4370</port><pass>0</pass><location>Frist Floor</location></device15><device16><machineNo>117</machineNo><ipAddress>192.168.0.117</ipAddress><port>4370</port><pass>0</pass><location>Frist Floor</location></device16><device17><machineNo>118</machineNo><ipAddress>192.168.0.118</ipAddress><port>4370</port><pass>0</pass><location>Frist Floor</location></device17><device18><machineNo>119</machineNo><ipAddress>192.168.0.119</ipAddress><port>4370</port><pass>0</pass><location>Frist Floor</location></device18><device19><machineNo>120</machineNo><ipAddress>192.168.0.149</ipAddress><port>4370</port><pass>0</pass><location>Frist Floor</location></device19><device20><machineNo>121</machineNo><ipAddress>192.168.0.121</ipAddress><port>4370</port><pass>0</pass><location>Frist Floor</location></device20><device21><machineNo>122</machineNo><ipAddress>192.168.0.122</ipAddress><port>4370</port><pass>0</pass><location>Frist Floor</location></device21><device22><machineNo>123</machineNo><ipAddress>192.168.0.123</ipAddress><port>4370</port><pass>0</pass><location>Frist Floor</location></device22><device23><machineNo>124</machineNo><ipAddress>192.168.0.197</ipAddress><port>4370</port><pass>0</pass><location>Frist Floor</location></device23><device24><machineNo>125</machineNo><ipAddress>192.168.0.124</ipAddress><port>4370</port><pass>0</pass><location>Frist Floor</location></device24><device25><machineNo>126</machineNo><ipAddress>192.168.0.239</ipAddress><port>4370</port><pass>0</pass><location>Frist Floor</location></device25><device26><machineNo>127</machineNo><ipAddress>192.168.0.136</ipAddress><port>4370</port><pass>0</pass><location>Frist Floor</location></device26><device27><machineNo>128</machineNo><ipAddress>192.168.0.129</ipAddress><port>4370</port><pass>0</pass><location>Frist Floor</location></device27><device28><machineNo>129</machineNo><ipAddress>192.168.0.142</ipAddress><port>4370</port><pass>0</pass><location>Frist Floor</location></device28><device29><machineNo>130</machineNo><ipAddress>192.168.0.158</ipAddress><port>4370</port><pass>0</pass><location>Frist Floor</location></device29><device30><machineNo>131</machineNo><ipAddress>192.168.0.163</ipAddress><port>4370</port><pass>0</pass><location>Frist Floor</location></device30><device31><machineNo>132</machineNo><ipAddress>192.168.0.151</ipAddress><port>4370</port><pass>0</pass><location>Frist Floor</location></device31><device32><machineNo>139</machineNo><ipAddress>121.11.11.121</ipAddress><port>0</port><pass>0</pass><location>hello</location></device32><device33><machineNo>155</machineNo><ipAddress>11.11.11.11</ipAddress><port>0</port><pass>0</pass><location>yyyyyy</location></device33><device34><machineNo>30</machineNo><ipAddress>22.22.22.22</ipAddress><port>0</port><pass>0</pass><location>read</location></device34><device35><machineNo>303</machineNo><ipAddress>333.333.333.333</ipAddress><port>0</port><pass>0</pass><location>hyead</location></device35><device36><machineNo>1</machineNo><ipAddress>1</ipAddress><port>0</port><pass>1</pass><location>1</location></device36><device37><machineNo>2</machineNo><ipAddress>2</ipAddress><port>0</port><pass>2</pass><location>2</location></device37></deviceSetupInfo>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<deviceSetupInfo>
+  <device0>
+    <machineNo>101</machineNo>
+    <ipAddress>192.168.0.101</ipAddress>
+    <port>4370</port>
+    <pass>0</pass>
+    <location>Frist Floor</location>
+  </device0>
+  <device1>
+    <machineNo>102</machineNo>
+    <ipAddress>192.168.0.102</ipAddress>
+    <port>4370</port>
+    <pass>0</pass>
+    <location>Frist Floor</location>
+  </device1>
+  <device2>
+    <machineNo>103</machineNo>
+    <ipAddress>192.168.0.103</ipAddress>
+    <port>4370</port>
+    <pass>0</pass>
+    <location>Frist Floor Frist Floor Frist Floor</location>
+  </device2>
+  <device3>
+    <machineNo>104</machineNo>
+    <ipAddress>192.168.0.104</ipAddress>
+    <port>4370</port>
+    <pass>0</pass>
+    <location>Frist Floor</location>
+  </device3>
+  <device4>
+    <machineNo>105</machineNo>
+    <ipAddress>192.168.0.105</ipAddress>
+    <port>4370</port>
+    <pass>0</pass>
+    <location>Frist Floor</location>
+  </device4>
+  <device5>
+    <machineNo>106</machineNo>
+    <ipAddress>192.168.0.106</ipAddress>
+    <port>4370</port>
+    <pass>0</pass>
+    <location>Frist Floor</location>
+  </device5>
+  <device6>
+    <machineNo>107</machineNo>
+    <ipAddress>192.168.0.107</ipAddress>
+    <port>4370</port>
+    <pass>0</pass>
+    <location>Frist Floor</location>
+  </device6>
+  <device7>
+    <machineNo>108</machineNo>
+    <ipAddress>192.168.0.108</ipAddress>
+    <port>4370</port>
+    <pass>0</pass>
+    <location>Frist Floor</location>
+  </device7>
+  <device8>
+    <machineNo>109</machineNo>
+    <ipAddress>192.168.0.109</ipAddress>
+    <port>4370</port>
+    <pass>0</pass>
+    <location>Frist Floor</location>
+  </device8>
+  <device9>
+    <machineNo>110</machineNo>
+    <ipAddress>192.168.0.110</ipAddress>
+    <port>4370</port>
+    <pass>0</pass>
+    <location>Frist Floor</location>
+  </device9>
+  <device10>
+    <machineNo>111</machineNo>
+    <ipAddress>192.168.0.111</ipAddress>
+    <port>4370</port>
+    <pass>0</pass>
+    <location>Frist Floor</location>
+  </device10>
+  <device11>
+    <machineNo>112</machineNo>
+    <ipAddress>192.168.0.112</ipAddress>
+    <port>4370</port>
+    <pass>0</pass>
+    <location>Frist Floor</location>
+  </device11>
+  <device12>
+    <machineNo>113</machineNo>
+    <ipAddress>192.168.0.113</ipAddress>
+    <port>4370</port>
+    <pass>0</pass>
+    <location>Frist Floor</location>
+  </device12>
+  <device13>
+    <machineNo>114</machineNo>
+    <ipAddress>192.168.0.114</ipAddress>
+    <port>4370</port>
+    <pass>0</pass>
+    <location>Frist Floor</location>
+  </device13>
+  <device14>
+    <machineNo>115</machineNo>
+    <ipAddress>192.168.0.115</ipAddress>
+    <port>4370</port>
+    <pass>0</pass>
+    <location>Frist Floor</location>
+  </device14>
+  <device15>
+    <machineNo>116</machineNo>
+    <ipAddress>192.168.0.116</ipAddress>
+    <port>4370</port>
+    <pass>0</pass>
+    <location>Frist Floor</location>
+  </device15>
+  <device16>
+    <machineNo>117</machineNo>
+    <ipAddress>192.168.0.117</ipAddress>
+    <port>4370</port>
+    <pass>0</pass>
+    <location>Frist Floor</location>
+  </device16>
+  <device17>
+    <machineNo>118</machineNo>
+    <ipAddress>192.168.0.118</ipAddress>
+    <port>4370</port>
+    <pass>0</pass>
+    <location>Frist Floor</location>
+  </device17>
+  <device18>
+    <machineNo>119</machineNo>
+    <ipAddress>192.168.0.119</ipAddress>
+    <port>4370</port>
+    <pass>0</pass>
+    <location>Frist Floor</location>
+  </device18>
+  <device19>
+    <machineNo>120</machineNo>
+    <ipAddress>192.168.0.149</ipAddress>
+    <port>4370</port>
+    <pass>0</pass>
+    <location>Frist Floor</location>
+  </device19>
+  <device20>
+    <machineNo>121</machineNo>
+    <ipAddress>192.168.0.121</ipAddress>
+    <port>4370</port>
+    <pass>0</pass>
+    <location>Frist Floor</location>
+  </device20>
+  <device21>
+    <machineNo>122</machineNo>
+    <ipAddress>192.168.0.122</ipAddress>
+    <port>4370</port>
+    <pass>0</pass>
+    <location>Frist Floor</location>
+  </device21>
+  <device22>
+    <machineNo>123</machineNo>
+    <ipAddress>192.168.0.123</ipAddress>
+    <port>4370</port>
+    <pass>0</pass>
+    <location>Frist Floor</location>
+  </device22>
+  <device23>
+    <machineNo>124</machineNo>
+    <ipAddress>192.168.0.197</ipAddress>
+    <port>4370</port>
+    <pass>0</pass>
+    <location>Frist Floor</location>
+  </device23>
+  <device24>
+    <machineNo>125</machineNo>
+    <ipAddress>192.168.0.124</ipAddress>
+    <port>4370</port>
+    <pass>0</pass>
+    <location>Frist Floor</location>
+  </device24>
+  <device25>
+    <machineNo>126</machineNo>
+    <ipAddress>192.168.0.239</ipAddress>
+    <port>4370</port>
+    <pass>0</pass>
+    <location>Frist Floor</location>
+  </device25>
+  <device26>
+    <machineNo>127</machineNo>
+    <ipAddress>192.168.0.136</ipAddress>
+    <port>4370</port>
+    <pass>0</pass>
+    <location>Frist Floor</location>
+  </device26>
+  <device27>
+    <machineNo>128</machineNo>
+    <ipAddress>192.168.0.129</ipAddress>
+    <port>4370</port>
+    <pass>0</pass>
+    <location>Frist Floor</location>
+  </device27>
+  <device28>
+    <machineNo>129</machineNo>
+    <ipAddress>192.168.0.142</ipAddress>
+    <port>4370</port>
+    <pass>0</pass>
+    <location>Frist Floor</location>
+  </device28>
+  <device29>
+    <machineNo>130</machineNo>
+    <ipAddress>192.168.0.158</ipAddress>
+    <port>4370</port>
+    <pass>0</pass>
+    <location>Frist Floor</location>
+  </device29>
+  <device30>
+    <machineNo>131</machineNo>
+    <ipAddress>192.168.0.163</ipAddress>
+    <port>4370</port>
+    <pass>0</pass>
+    <location>Frist Floor</location>
+  </device30>
+  <device31>
+    <machineNo>132</machineNo>
+    <ipAddress>192.168.0.151</ipAddress>
+    <port>4370</port>
+    <pass>0</pass>
+    <location>Frist Floor</location>
+  </device31>
+  <device32>
+    <machineNo>139</machineNo>
+    <ipAddress>121.11.11.121</ipAddress>
+    <port>0</port>
+    <pass>0</pass>
+    <location>hello</location>
+  </device32>
+  <device33>
+    <machineNo>155</machineNo>
+    <ipAddress>11.11.11.11</ipAddress>
+    <port>0</port>
+    <pass>0</pass>
+    <location>yyyyyy</location>
+  </device33>
+  <device34>
+    <machineNo>30</machineNo>
+    <ipAddress>22.22.22.22</ipAddress>
+    <port>0</port>
+    <pass>0</pass>
+    <location>read</location>
+  </device34>
+  <device35>
+    <machineNo>303</machineNo>
+    <ipAddress>333.333.333.333</ipAddress>
+    <port>0</port>
+    <pass>0</pass>
+    <location>hyead</location>
+  </device35>
+  <device36>
+    <machineNo>1</machineNo>
+    <ipAddress>1</ipAddress>
+    <port>0</port>
+    <pass>1</pass>
+    <location>1</location>
+  </device36>
+  <device37>
+    <machineNo>2</machineNo>
+    <ipAddress>2</ipAddress>
+    <port>0</port>
+    <pass>2</pass>
+    <location>2</location>
+  </device37>
+</deviceSetupInfo>

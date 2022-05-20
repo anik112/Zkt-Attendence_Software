@@ -19,12 +19,12 @@ namespace ZktAttendence.Test
         private String filePath="";
         private List<MachineSelector> getStroedMachineList = new List<MachineSelector>();
 
-        public AddDevice(List<MachineSelector> list, String path)
+        public AddDevice(String path)
         {
             InitializeComponent();
             this.filePath = path;
-            viewMachineList(filePath, list);
-            this.getStroedMachineList = list;
+            this.getStroedMachineList =  new SetupUtility().getDeviceSetupInformation(filePath, "deviceSetupInfo"); // get all device info in array
+            viewMachineList(filePath, getStroedMachineList);
         }
 
         private void btnAddDevice_Click(object sender, EventArgs e)
