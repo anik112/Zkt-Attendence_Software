@@ -181,7 +181,6 @@ namespace ZktAttendence.Test
             workFromDate = txtFromDate.Text;
             workToDate = txtToDate.Text;
 
-
             // get list of date which is in from - to date. Date range
             /* Last update 22-11-2020, 02-12-2020 */
             string[] workDates = new string[32];
@@ -213,7 +212,6 @@ namespace ZktAttendence.Test
                 tempToDate = tempDateParts[0] + tempDateParts[1] + tempDateParts[2];
                 setMsgInBox("\n>> -- " + workFromDate + " TO " + workToDate + " -- <<\n");
             }
-
             /**
             * From this part i get all device from stored file and store in a array.
             * then i traversing this array and get one by one device info.
@@ -223,7 +221,7 @@ namespace ZktAttendence.Test
             FileStream file;
             if (isClear)
             {
-                file = new FileStream($"D:\\DATA\\{DateTime.Now.ToString("ddMMyyyhhmm")}-CL.txt", FileMode.Create, FileAccess.Write); // Make file path for store data
+                file = new FileStream($"D:\\DATA\\{DateTime.Now.ToString("ddMMyyyyhhmm")}-CL.txt", FileMode.Create, FileAccess.Write); // Make file path for store data
             }
             else
             {
@@ -247,7 +245,7 @@ namespace ZktAttendence.Test
                                                                                            // get attendence data from device buffer
                     userAttndData = zkt.GetAttendenceLogData(objZkt, selector.getMachineNumber());
                     //userList.AddRange(zkt.GetUserInformation(objZkt, selector.getMachineNumber())); // Last update - 17-11-2020
-
+                    
                     int recordCount = 0;// record counter
                     try
                     {
@@ -302,7 +300,7 @@ namespace ZktAttendence.Test
                                         String finalTimeWithFormat = timePart[0] + timePart[1] + timePart[2];
 
                                         writer.WriteLine($"{machinAttendence.MachineNumber}:{machinAttendence.IndRegID.ToString().PadLeft(10, '0')}:{finalDateWithFormat}:{finalTimeWithFormat}:11"); // chnage in 16-11-2020
-
+                                        //setMsgInBox($"{machinAttendence.MachineNumber}:{machinAttendence.IndRegID.ToString().PadLeft(10, '0')}:{finalDateWithFormat}:{finalTimeWithFormat}:11");
                                         // last update - 17-11-2020
                                         /*foreach (UserInfo user in userList)
                                         {
@@ -333,7 +331,9 @@ namespace ZktAttendence.Test
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine(ex.Message);
+                        //setMsgInBox(ex.Message);
+                        setMsgInBox(ex.ToString());
+                        setMsgInBox(GetLineNumber(ex).ToString());
                         return 1021;
                     }
                 }
@@ -505,5 +505,24 @@ namespace ZktAttendence.Test
             AddDevice addDevice = new AddDevice(zktFilePath);
             addDevice.Show();
         }
+
+        private int GetLineNumber(Exception ex)
+        {
+
+            const string lineSearch = ":line ";
+            var index = ex.StackTrace.LastIndexOf(lineSearch);
+            int ln = 0;
+            if (index != -1)
+            {
+
+
+                var lineNumberText = ex.StackTrace.Substring(index + lineSearch.Length);
+                string lnum = System.Text.RegularExpressions.Regex.Match(lineNumberText, @"\d+").Value;
+                int.TryParse(lnum, out ln);
+
+            }
+            return ln;
+        }
+
     }
 }

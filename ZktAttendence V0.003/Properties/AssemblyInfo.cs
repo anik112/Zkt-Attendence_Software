@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("ZktAttendence")]
 [assembly: AssemblyDescription("Get Attendence From ZKTeco Device. For Good Performance Use ZKT-F18 Device.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Vistasoft IT Bangladesh")]
+[assembly: AssemblyCompany("Data DSS")]
 [assembly: AssemblyProduct("ZktAttendence")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]

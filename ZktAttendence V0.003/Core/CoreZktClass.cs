@@ -52,7 +52,6 @@ namespace ZktAttendence.Core
 
                     lstAttndData.Add(objAttendenceInf); // finaly add machineInfo object in array
                 }
-
                 return lstAttndData; // return array
             }
             catch (Exception e)

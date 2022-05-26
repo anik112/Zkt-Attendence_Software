@@ -118,3 +118,4 @@ D:\Zkt-Attendence_Software\ZktAttendence V0.003\obj\Debug\ZktAttendence.applicat
 D:\Zkt-Attendence_Software\ZktAttendence V0.003\obj\Debug\ZktAttendence.csproj.CopyComplete
 D:\Zkt-Attendence_Software\ZktAttendence V0.003\obj\Debug\ZktAttendence.exe
 D:\Zkt-Attendence_Software\ZktAttendence V0.003\obj\Debug\ZktAttendence.pdb
+D:\Zkt-Attendence_Software\ZktAttendence V0.003\obj\Debug\ZktAttendence.csproj.AssemblyReference.cache
