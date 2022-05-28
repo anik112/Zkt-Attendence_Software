@@ -300,7 +300,7 @@ namespace ZktAttendence.Test
                                         String finalTimeWithFormat = timePart[0] + timePart[1] + timePart[2];
 
                                         writer.WriteLine($"{machinAttendence.MachineNumber}:{machinAttendence.IndRegID.ToString().PadLeft(10, '0')}:{finalDateWithFormat}:{finalTimeWithFormat}:11"); // chnage in 16-11-2020
-                                        //setMsgInBox($"{machinAttendence.MachineNumber}:{machinAttendence.IndRegID.ToString().PadLeft(10, '0')}:{finalDateWithFormat}:{finalTimeWithFormat}:11");
+                                        // setMsgInBox($"{machinAttendence.MachineNumber}:{machinAttendence.IndRegID.ToString().PadLeft(10, '0')}:{finalDateWithFormat}:{finalTimeWithFormat}:11");
                                         // last update - 17-11-2020
                                         /*foreach (UserInfo user in userList)
                                         {

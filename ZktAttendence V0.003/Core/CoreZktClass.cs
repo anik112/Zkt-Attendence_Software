@@ -24,6 +24,8 @@ namespace ZktAttendence.Core
             try
             {
                 string dwEnrollNumber = ""; // set EnrollNumber
+                //int dwEnrollNumber = 0;
+                int rest = 0;
                 int dwVerifyMode = 0; // set Verify Mode
                 int dwInOutMode = 0; // set in out mode
                 int dwYear = 0; // set year
@@ -38,12 +40,32 @@ namespace ZktAttendence.Core
                 ICollection<AttendenceInfo> lstAttndData = new List<AttendenceInfo>();
                 objZkt.ReadAllGLogData(machineNumber); // call ZKT libery function and set machineNumber
 
+                /*while (objZkt.SSR_GetGeneralLogData(machineNumber, out dwEnrollNumber, out dwVerifyMode, out dwInOutMode, out dwYear, out dwMonth, out dwDay, out dwHour, out dwMinute, out dwSecond, ref dwWorkCode))
+                {
+                    Console.WriteLine(dwYear + " - " + dwMonth + " - " + dwDay + " - " + dwHour + " - " + dwMinute + " - " + dwSecond);
+                    string inputDate = new DateTime(dwYear, dwMonth, dwDay, dwHour, dwMinute, dwSecond).ToString("dd/MM/yyyy HH:mm:ss");
+                    Console.WriteLine("=>> " + inputDate);
+                }
+                Console.WriteLine("Done....!"); 
+                while (objZkt.GetAllGLogData(machineNumber, machineNumber, dwEnrollNumber, machineNumber, dwVerifyMode, dwInOutMode, dwYear, dwMonth, dwDay, dwHour, dwMinute))
+                {
+                    Console.WriteLine(dwYear + " - " + dwMonth + " - " + dwDay + ", - " + dwHour + " - " + dwMinute + " - " + dwSecond);
+                }
+                */
+
+                
                 // call ZKT libery function SSR_GetGeneralLogData(_) and fatch log data from buffer
                 while (objZkt.SSR_GetGeneralLogData(machineNumber, out dwEnrollNumber, out dwVerifyMode, out dwInOutMode, out dwYear, out dwMonth, out dwDay, out dwHour, out dwMinute, out dwSecond, ref dwWorkCode))
                 {
-                    // make date from long time and date [ format like 05/29/2015 05:50:06 ]
-                    string inputDate = new DateTime(dwYear, dwMonth, dwDay, dwHour, dwMinute, dwSecond).ToString("dd/MM/yyyy HH:mm:ss");
-                    Console.WriteLine(">> " + inputDate);
+                    string inputDate = "";
+                    if ((dwYear>=1 && dwYear<=9999) && (dwMonth>=1 && dwMonth<=12) && (dwDay>=1 && dwDay<=31)
+                        && (dwHour>=0 && dwHour<=23) && (dwMinute >= 0 && dwMinute<=59) && (dwSecond>=0 && dwSecond <= 59))
+                    {
+                        // make date from long time and date [ format like 05/29/2015 05:50:06 ]
+                        inputDate = new DateTime(dwYear, dwMonth, dwDay, dwHour, dwMinute, dwSecond).ToString("dd/MM/yyyy HH:mm:ss");
+                        //Console.WriteLine("=>> " + inputDate);
+                    }
+                    
                     // call MachineInfo call and access there propraty
                     AttendenceInfo objAttendenceInf = new AttendenceInfo();
                     objAttendenceInf.MachineNumber = machineNumber; // set machine number
@@ -52,6 +74,7 @@ namespace ZktAttendence.Core
 
                     lstAttndData.Add(objAttendenceInf); // finaly add machineInfo object in array
                 }
+
                 return lstAttndData; // return array
             }
             catch (Exception e)
