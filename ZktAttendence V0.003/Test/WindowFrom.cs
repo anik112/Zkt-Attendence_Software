@@ -367,6 +367,7 @@ namespace ZktAttendence.Test
             Process process = Process.Start("RTA600.exe");
             process.WaitForExit();
 
+            /*
             string logPath = System.IO.Path.Combine(Environment.CurrentDirectory, "log.txt");
             StreamReader reader = new StreamReader(logPath);
             string line;
@@ -379,6 +380,7 @@ namespace ZktAttendence.Test
                 setMsgInBox(line + "\n");
             }
             reader.Close();
+            */
             setMsgInBox("\n>> -- Downloaded -- <<\n");
         }
 
