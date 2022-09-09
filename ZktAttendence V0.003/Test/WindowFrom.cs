@@ -45,6 +45,7 @@ namespace ZktAttendence.Test
                 && (txtToDate.Text != String.Empty)
                 //&& (int.Parse(txtFromDate.Text.Substring(3, 2)) <= int.Parse(txtToDate.Text.Substring(3, 2)))
             ) {
+                Console.WriteLine("In-String Format");
                 Console.WriteLine(txtFromDate.Text.Substring(3, 2));
                 setSelectedMachineList();
                 int errorStatus = processStart();
@@ -173,6 +174,7 @@ namespace ZktAttendence.Test
 
         private int processStart()
         {
+            setMsgInBox("\n>> -- Into Process Function -- <<\n");
             zkt = new Core.CoreZktClass(); // create object of Core class
             objZkt = new CZKEM(); // create object of Lib class
             String[] tempDateParts;
@@ -197,6 +199,7 @@ namespace ZktAttendence.Test
                     return 1001;
                 }
                 Console.WriteLine("=>"+fromdt);
+                //setMsgInBox("\n>> -- Make Index -- <<\n");
             }
 
 
@@ -245,7 +248,9 @@ namespace ZktAttendence.Test
                                                                                            // get attendence data from device buffer
                     userAttndData = zkt.GetAttendenceLogData(objZkt, selector.getMachineNumber());
                     //userList.AddRange(zkt.GetUserInformation(objZkt, selector.getMachineNumber())); // Last update - 17-11-2020
-                    
+
+                    Console.WriteLine(userAttndData);
+
                     int recordCount = 0;// record counter
                     try
                     {
@@ -256,6 +261,9 @@ namespace ZktAttendence.Test
                             foreach (AttendenceInfo machinAttendence in userAttndData)
                             {
                                 String chekingData = machinAttendence.DateTimeRecord;
+
+                                Console.WriteLine(chekingData);
+
                                 //105:00020001990:20191125:195420:11
                                 String[] part = chekingData.Split(' '); // string like '19:54:20 2020/08/20'
                                 String[] datePart = part[0].Split('/'); // '2020/08/20' to {2020,08,20}
@@ -286,11 +294,13 @@ namespace ZktAttendence.Test
                             {
                                 String chekingData = machinAttendence.DateTimeRecord;
 
+                                Console.WriteLine(chekingData);
                                 bool isFalse = false;
                                 for (int i = 0; (i < workDates.Length) && (workDates[i] != null); i++)
                                 { 
                                     if (chekingData.Contains(workDates[i]))
                                     {
+                                        
                                         //105:00020001990:20191125:195420:11
                                         String[] part = chekingData.Split(' '); // string like '19:54:20 2020/08/20' // 22/05/2021 07:10:19
                                         String[] datePart = part[0].Split('/'); // '2020/08/20' to {2020,08,20}
@@ -299,7 +309,7 @@ namespace ZktAttendence.Test
                                         String[] timePart = part[1].Split(':'); // '19:54:20' to {19,54,20}
                                         String finalTimeWithFormat = timePart[0] + timePart[1] + timePart[2];
 
-                                        writer.WriteLine($"{machinAttendence.MachineNumber}:{machinAttendence.IndRegID.ToString().PadLeft(10, '0')}:{finalDateWithFormat}:{finalTimeWithFormat}:11"); // chnage in 16-11-2020
+                                        //writer.WriteLine($"{machinAttendence.MachineNumber}:{machinAttendence.IndRegID.ToString().PadLeft(10, '0')}:{finalDateWithFormat}:{finalTimeWithFormat}:11"); // chnage in 16-11-2020
                                         // setMsgInBox($"{machinAttendence.MachineNumber}:{machinAttendence.IndRegID.ToString().PadLeft(10, '0')}:{finalDateWithFormat}:{finalTimeWithFormat}:11");
                                         // last update - 17-11-2020
                                         /*foreach (UserInfo user in userList)
@@ -332,6 +342,7 @@ namespace ZktAttendence.Test
                     catch (Exception ex)
                     {
                         //setMsgInBox(ex.Message);
+                        //Console.WriteLine(ex.Message);
                         setMsgInBox(ex.ToString());
                         setMsgInBox(GetLineNumber(ex).ToString());
                         return 1021;

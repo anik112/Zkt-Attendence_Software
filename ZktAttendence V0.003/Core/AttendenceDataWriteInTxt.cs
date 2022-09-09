@@ -86,7 +86,7 @@ namespace ZktAttendence.Core
 
                                 foreach (UserInfo user in userList)
                                 {
-                                    if (user.dwEnrollNumber == machinAttendence.IndRegID)
+                                    if (user.dwEnrollNumber.ToString() == machinAttendence.IndRegID )
                                     {
                                         // Write file in selected file location
                                         writer.WriteLine($"{machinAttendence.MachineNumber}:{user.name}:{finalDateWithFormat}:{finalTimeWithFormat}:11");

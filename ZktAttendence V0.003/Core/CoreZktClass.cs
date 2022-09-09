@@ -36,9 +36,25 @@ namespace ZktAttendence.Core
                 int dwSecond = 0; // set second
                 int dwWorkCode = 0; // set work code
 
+                int dwTMachineNumber = 0;
+                int dwEMachineNumber = 0;
+                int dwEnrollNumbers = 0;
+
+                int count = 0;
+
                 // make a arry list for take attendence log from buffer
                 ICollection<AttendenceInfo> lstAttndData = new List<AttendenceInfo>();
                 objZkt.ReadAllGLogData(machineNumber); // call ZKT libery function and set machineNumber
+                objZkt.ReadAllUserID(machineNumber);
+                objZkt.ReadAllTemplate(machineNumber);
+
+                /*
+                while(objZkt.GetAllGLogData(machineNumber,dwTMachineNumber, dwEnrollNumbers, dwEMachineNumber, dwVerifyMode, dwInOutMode, dwYear, dwMonth, dwDay, dwHour, dwMinute))
+                {
+                    Console.WriteLine(dwEnrollNumber + "/" + dwVerifyMode + "/" + dwInOutMode + "/" + dwYear + "/" + dwMonth + "/" + dwDay + "/" + dwHour + "/" + dwMinute + "/" + dwSecond + "/" + dwWorkCode);
+
+                }*/
+
 
                 /*while (objZkt.SSR_GetGeneralLogData(machineNumber, out dwEnrollNumber, out dwVerifyMode, out dwInOutMode, out dwYear, out dwMonth, out dwDay, out dwHour, out dwMinute, out dwSecond, ref dwWorkCode))
                 {
@@ -47,17 +63,18 @@ namespace ZktAttendence.Core
                     Console.WriteLine("=>> " + inputDate);
                 }
                 Console.WriteLine("Done....!"); 
-                while (objZkt.GetAllGLogData(machineNumber, machineNumber, dwEnrollNumber, machineNumber, dwVerifyMode, dwInOutMode, dwYear, dwMonth, dwDay, dwHour, dwMinute))
+                */
+                /*while (objZkt.GetAllGLogData(machineNumber, machineNumber, dwEnrollNumber, machineNumber, dwVerifyMode, dwInOutMode, dwYear, dwMonth, dwDay, dwHour, dwMinute))
                 {
                     Console.WriteLine(dwYear + " - " + dwMonth + " - " + dwDay + ", - " + dwHour + " - " + dwMinute + " - " + dwSecond);
-                }
-                */
+                }*/
+                
 
                 
                 // call ZKT libery function SSR_GetGeneralLogData(_) and fatch log data from buffer
                 while (objZkt.SSR_GetGeneralLogData(machineNumber, out dwEnrollNumber, out dwVerifyMode, out dwInOutMode, out dwYear, out dwMonth, out dwDay, out dwHour, out dwMinute, out dwSecond, ref dwWorkCode))
                 {
-                    string inputDate = "";
+                    /*string inputDate = "";
                     if ((dwYear>=1 && dwYear<=9999) && (dwMonth>=1 && dwMonth<=12) && (dwDay>=1 && dwDay<=31)
                         && (dwHour>=0 && dwHour<=23) && (dwMinute >= 0 && dwMinute<=59) && (dwSecond>=0 && dwSecond <= 59))
                     {
@@ -65,17 +82,37 @@ namespace ZktAttendence.Core
                         inputDate = new DateTime(dwYear, dwMonth, dwDay, dwHour, dwMinute, dwSecond).ToString("dd/MM/yyyy HH:mm:ss");
                         //Console.WriteLine("=>> " + inputDate);
                     }
-                    
-                    // call MachineInfo call and access there propraty
-                    AttendenceInfo objAttendenceInf = new AttendenceInfo();
-                    objAttendenceInf.MachineNumber = machineNumber; // set machine number
-                    objAttendenceInf.IndRegID = int.Parse(dwEnrollNumber); // set takeing attendence user id
-                    objAttendenceInf.DateTimeRecord = inputDate; // set date of attendence
+                    else
+                    {
+                        Console.WriteLine("Problem in date format, check CoreZKtCore class.");
+                    }
+                    */
+                // call MachineInfo call and access there propraty
+                 AttendenceInfo objAttendenceInf = new AttendenceInfo();
+                 objAttendenceInf.MachineNumber = machineNumber; // set machine number
+                 objAttendenceInf.IndRegID = dwEnrollNumber; //int.Parse(dwEnrollNumber); // set takeing attendence user id
+                 //objAttendenceInf.DateTimeRecord = inputDate; // set date of attendence
 
-                    lstAttndData.Add(objAttendenceInf); // finaly add machineInfo object in array
-                }
+                 Console.WriteLine("ID:"+dwEnrollNumber+"/ Mode:"+dwVerifyMode+"/INMODE:" + dwInOutMode + "/Y:" + dwYear + "/M:" + dwMonth + "/D:" + dwDay + "/H:" + dwHour + "/M:" + dwMinute + "/S:" + dwSecond + "/CO:" + dwWorkCode+"/");
+                    count++;
+                 //lstAttndData.Add(objAttendenceInf); // finaly add machineInfo object in array
+             }
 
-                return lstAttndData; // return array
+                Console.WriteLine(count);
+                /*   string sdwEnrollNumber;
+                   string sName;
+                   string sPassword;
+                   int iPrivilege;
+                   bool bEnabled;
+
+                   while (objZkt.SSR_GetAllUserInfo(machineNumber, out sdwEnrollNumber,
+                         out sName, out sPassword, out iPrivilege, out bEnabled))
+                   {
+                       Console.WriteLine(sdwEnrollNumber+"/"+ sName+"/"+ sPassword+"/"+ iPrivilege+"/"+ bEnabled);
+                   }
+                */
+
+                return null; // lstAttndData; // return array
             }
             catch (Exception e)
             {

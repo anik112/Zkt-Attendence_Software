@@ -23,6 +23,7 @@ namespace ZktAttendence
 
         static void Main(string[] args)
         {
+            new Master().DriverMethod();
 
             /*while (true)
             {
@@ -30,8 +31,8 @@ namespace ZktAttendence
                 Thread.Sleep(600);
             }*/
 
-            Application.EnableVisualStyles();
-            Application.Run(new WindowFrom(zktFilePath));
+            //Application.EnableVisualStyles();
+            //Application.Run(new WindowFrom(zktFilePath));
             //Console.ReadLine();
         }
 
