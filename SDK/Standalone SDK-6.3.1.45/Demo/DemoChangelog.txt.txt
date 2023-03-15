@@ -1,0 +1,20 @@
+一、黑白屏C# demo添加的测试功能
+
+1、在userinfo中添加EnableUser函数测试功能
+2、在userinfo中添加ModifyPrivilege函数测试功能
+3、在userinfo中添加GetEnrollDataStr函数测试功能
+4、在userinfo中添加SetEnrollDataStr函数测试功能
+5、在Access Control DEMO->UserGroup中添加DeleteUserInfoEx函数测试功能
+
+
+
+二、TFT彩屏机器C#demo添加的测试功能
+1、添加UserPhto测试demo
+2、在UserPhto中添加GetPhotoCount函数测试功能
+3、在UserPhto中添加GetPhotoByName函数测试功能
+4、在UserPhto中添加ClearPhotoByTime函数测试功能
+5、在UserPhto中添加GetPhotoNamesByTime函数测试功能
+6、在userinfo中添加SSR_EnableUser函数测试功能
+7、添加PullSpecial测试demo
+8、在PullSpecial中添加SSR_SetDeviceData函数测试功能
+9、在PullSpecial中添加SSR_GetDeviceData函数测试功能

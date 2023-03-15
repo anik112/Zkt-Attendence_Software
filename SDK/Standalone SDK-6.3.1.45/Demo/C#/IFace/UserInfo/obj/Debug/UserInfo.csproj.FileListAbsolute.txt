@@ -1,0 +1,17 @@
+E:\C#\IFace\UserInfo\obj\Debug\Interop.zkemkeeper.dll
+E:\C#\IFace\UserInfo\obj\Debug\UserInfo.csproj.ResolveComReference.cache
+E:\SVN\脱机通讯开发包(32bit Ver6.2.4.11)\Demo\C#\IFace\UserInfo\obj\Debug\Interop.zkemkeeper.dll
+E:\SVN\脱机通讯开发包(32bit Ver6.2.4.11)\Demo\C#\IFace\UserInfo\obj\Debug\UserInfo.csproj.ResolveComReference.cache
+E:\SVN\脱机通讯开发包(32bit Ver6.2.4.11)\Demo\C#\IFace\UserInfo\bin\Debug\UserInfo.exe
+E:\SVN\脱机通讯开发包(32bit Ver6.2.4.11)\Demo\C#\IFace\UserInfo\bin\Debug\UserInfo.pdb
+E:\SVN\脱机通讯开发包(32bit Ver6.2.4.11)\Demo\C#\IFace\UserInfo\bin\Debug\Interop.zkemkeeper.dll
+E:\SVN\脱机通讯开发包(32bit Ver6.2.4.11)\Demo\C#\IFace\UserInfo\obj\Debug\ResolveAssemblyReference.cache
+E:\SVN\脱机通讯开发包(32bit Ver6.2.4.11)\Demo\C#\IFace\UserInfo\obj\Debug\UserInfo.UserInfoMain.resources
+E:\SVN\脱机通讯开发包(32bit Ver6.2.4.11)\Demo\C#\IFace\UserInfo\obj\Debug\UserInfo.Properties.Resources.resources
+E:\SVN\脱机通讯开发包(32bit Ver6.2.4.11)\Demo\C#\IFace\UserInfo\obj\Debug\UserInfo.csproj.GenerateResource.Cache
+E:\SVN\脱机通讯开发包(32bit Ver6.2.4.11)\Demo\C#\IFace\UserInfo\obj\Debug\UserInfo.exe
+E:\SVN\脱机通讯开发包(32bit Ver6.2.4.11)\Demo\C#\IFace\UserInfo\obj\Debug\UserInfo.pdb
+E:\BiometricsIdentIDCard\zkempull\脱机通讯开发包-6.3.1.35\Demo\C#\IFace\UserInfo\obj\Debug\Interop.zkemkeeper.dll
+E:\BiometricsIdentIDCard\zkempull\脱机通讯开发包-6.3.1.35\Demo\C#\IFace\UserInfo\obj\Debug\UserInfo.csproj.ResolveComReference.cache
+E:\BiometricsIdentIDCard\zkempull\脱机通讯开发包-6.3.1.35\Demo\C#\IFace\UserInfo\obj\Debug\UserInfo.exe
+E:\BiometricsIdentIDCard\zkempull\脱机通讯开发包-6.3.1.35\Demo\C#\IFace\UserInfo\obj\Debug\UserInfo.pdb

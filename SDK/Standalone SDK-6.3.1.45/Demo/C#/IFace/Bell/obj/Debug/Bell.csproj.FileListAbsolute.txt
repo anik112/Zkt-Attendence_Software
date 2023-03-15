@@ -1,0 +1,12 @@
+F:\projects\Bell\obj\Debug\ResolveAssemblyReference.cache
+F:\projects\Bell\obj\Debug\Interop.zkemkeeper.dll
+F:\projects\Bell\obj\Debug\Bell.csproj.ResolveComReference.cache
+F:\projects\Bell\obj\Debug\Bell.Properties.Resources.resources
+F:\projects\Bell\obj\Debug\Bell.csproj.GenerateResource.Cache
+F:\projects\Bell\bin\Debug\Bell.exe
+F:\projects\Bell\bin\Debug\Bell.pdb
+F:\projects\Bell\bin\Debug\Interop.zkemkeeper.dll
+F:\projects\Bell\obj\Debug\Bell.exe
+F:\projects\Bell\obj\Debug\Bell.pdb
+F:\projects\Bell\obj\Debug\Bell.Bell.resources
+F:\projects\Bell\bin\Debug\Bell.exe.config

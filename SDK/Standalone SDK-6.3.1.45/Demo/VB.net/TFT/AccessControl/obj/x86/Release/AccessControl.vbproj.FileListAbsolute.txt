@@ -1,0 +1,4 @@
+E:\SVN\脱机通讯Demo\Demo\VB.net\TFT\AccessControl\obj\x86\Release\Interop.zkemkeeper.dll
+E:\SVN\脱机通讯Demo\Demo\VB.net\TFT\AccessControl\obj\x86\Release\AccessControl.vbproj.ResolveComReference.cache
+E:\SVN\脱机通讯Demo\Demo\VB.net\TFT\AccessControl\obj\x86\Release\AccessControl.exe
+E:\SVN\脱机通讯Demo\Demo\VB.net\TFT\AccessControl\obj\x86\Release\AccessControl.xml

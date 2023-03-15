@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bell", "Bell.csproj", "{7E4A95BF-8D4E-4CEB-AEEB-4B5A62247B3E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7E4A95BF-8D4E-4CEB-AEEB-4B5A62247B3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E4A95BF-8D4E-4CEB-AEEB-4B5A62247B3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E4A95BF-8D4E-4CEB-AEEB-4B5A62247B3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E4A95BF-8D4E-4CEB-AEEB-4B5A62247B3E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

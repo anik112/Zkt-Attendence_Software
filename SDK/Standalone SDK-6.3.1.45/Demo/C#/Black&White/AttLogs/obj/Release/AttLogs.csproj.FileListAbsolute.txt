@@ -1,0 +1,39 @@
+E:\C#\Black&White\AttLogs\obj\Release\Interop.zkemkeeper.dll
+E:\C#\Black&White\AttLogs\obj\Release\AttLogs.csproj.ResolveComReference.cache
+E:\C#\Black&White\AttLogs\bin\Release\AttLogs.exe
+E:\C#\Black&White\AttLogs\bin\Release\AttLogs.pdb
+E:\C#\Black&White\AttLogs\bin\Release\Interop.zkemkeeper.dll
+E:\C#\Black&White\AttLogs\obj\Release\ResolveAssemblyReference.cache
+E:\C#\Black&White\AttLogs\obj\Release\AttLogs.AttLogsMain.resources
+E:\C#\Black&White\AttLogs\obj\Release\AttLogs.Properties.Resources.resources
+E:\C#\Black&White\AttLogs\obj\Release\AttLogs.csproj.GenerateResource.Cache
+E:\C#\Black&White\AttLogs\obj\Release\AttLogs.exe
+E:\C#\Black&White\AttLogs\obj\Release\AttLogs.pdb
+D:\wince\work\脱机sdk\文档\光盘资料\脱机通讯开发包(32bit Ver6.2.4.1)\Demo\C#\Black&White\AttLogs\obj\Release\Interop.zkemkeeper.dll
+D:\wince\work\脱机sdk\文档\光盘资料\脱机通讯开发包(32bit Ver6.2.4.1)\Demo\C#\Black&White\AttLogs\obj\Release\AttLogs.csproj.ResolveComReference.cache
+D:\wince\work\脱机sdk\文档\光盘资料\脱机通讯开发包(32bit Ver6.2.4.1)\Demo\C#\Black&White\AttLogs\obj\Release\AttLogs.exe
+D:\wince\work\脱机sdk\文档\光盘资料\脱机通讯开发包(32bit Ver6.2.4.1)\Demo\C#\Black&White\AttLogs\bin\Release\AttLogs.exe
+D:\wince\work\脱机sdk\文档\光盘资料\脱机通讯开发包(32bit Ver6.2.4.1)\Demo\C#\Black&White\AttLogs\bin\Release\AttLogs.pdb
+D:\wince\work\脱机sdk\文档\光盘资料\脱机通讯开发包(32bit Ver6.2.4.1)\Demo\C#\Black&White\AttLogs\bin\Release\Interop.zkemkeeper.dll
+D:\wince\work\脱机sdk\文档\光盘资料\脱机通讯开发包(32bit Ver6.2.4.1)\Demo\C#\Black&White\AttLogs\obj\Release\ResolveAssemblyReference.cache
+D:\wince\work\脱机sdk\文档\光盘资料\脱机通讯开发包(32bit Ver6.2.4.1)\Demo\C#\Black&White\AttLogs\obj\Release\AttLogs.AttLogsMain.resources
+D:\wince\work\脱机sdk\文档\光盘资料\脱机通讯开发包(32bit Ver6.2.4.1)\Demo\C#\Black&White\AttLogs\obj\Release\AttLogs.Properties.Resources.resources
+D:\wince\work\脱机sdk\文档\光盘资料\脱机通讯开发包(32bit Ver6.2.4.1)\Demo\C#\Black&White\AttLogs\obj\Release\AttLogs.csproj.GenerateResource.Cache
+D:\wince\work\脱机sdk\文档\光盘资料\脱机通讯开发包(32bit Ver6.2.4.1)\Demo\C#\Black&White\AttLogs\obj\Release\AttLogs.pdb
+F:\projects\脱机通讯开发包-6.3.1.38\Demo\C#\Black&White\AttLogs\obj\Release\Interop.zkemkeeper.dll
+F:\projects\脱机通讯开发包-6.3.1.38\Demo\C#\Black&White\AttLogs\obj\Release\AttLogs.csproj.ResolveComReference.cache
+F:\projects\脱机通讯开发包-6.3.1.38\Demo\C#\Black&White\AttLogs\obj\Release\AttLogs.exe
+F:\projects\脱机通讯开发包-6.3.1.38\Demo\C#\Black&White\AttLogs\obj\Release\AttLogs.pdb
+F:\projects\脱机通讯开发包-6.3.1.38\Demo\C#\Black&White\AttLogs\bin\Release\AttLogs.exe
+F:\projects\脱机通讯开发包-6.3.1.38\Demo\C#\Black&White\AttLogs\bin\Release\AttLogs.pdb
+F:\projects\脱机通讯开发包-6.3.1.38\Demo\C#\Black&White\AttLogs\bin\Release\Interop.zkemkeeper.dll
+F:\projects\脱机通讯开发包-6.3.1.38\Demo\C#\Black&White\AttLogs\obj\Release\ResolveAssemblyReference.cache
+F:\projects\脱机通讯开发包-6.3.1.38\Demo\C#\Black&White\AttLogs\obj\Release\AttLogs.AttLogsMain.resources
+F:\projects\脱机通讯开发包-6.3.1.38\Demo\C#\Black&White\AttLogs\obj\Release\AttLogs.Properties.Resources.resources
+F:\projects\脱机通讯开发包-6.3.1.38\Demo\C#\Black&White\AttLogs\obj\Release\AttLogs.csproj.GenerateResource.Cache
+E:\Project\zkempull\脱机通讯开发包-6.3.1.39\Demo\C#\Black&White\AttLogs\obj\Release\Interop.zkemkeeper.dll
+E:\Project\zkempull\脱机通讯开发包-6.3.1.39\Demo\C#\Black&White\AttLogs\obj\Release\AttLogs.csproj.ResolveComReference.cache
+E:\Project\zkempull\脱机通讯开发包-6.3.1.39\Demo\C#\Black&White\AttLogs\obj\Release\AttLogs.exe
+E:\Project\zkempull\脱机通讯开发包-6.3.1.39\Demo\C#\Black&White\AttLogs\obj\Release\AttLogs.pdb
+D:\Zkt-Attendence_Software\SDK\Standalone SDK-6.3.1.45\Demo\C#\Black&White\AttLogs\obj\Release\AttLogs.exe
+D:\Zkt-Attendence_Software\SDK\Standalone SDK-6.3.1.45\Demo\C#\Black&White\AttLogs\obj\Release\AttLogs.pdb

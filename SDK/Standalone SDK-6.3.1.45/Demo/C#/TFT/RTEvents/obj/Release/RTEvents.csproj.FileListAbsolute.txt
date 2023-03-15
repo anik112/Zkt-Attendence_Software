@@ -1,0 +1,44 @@
+E:\C#\TFT\RTEvents\obj\Release\Interop.zkemkeeper.dll
+E:\C#\TFT\RTEvents\obj\Release\AxInterop.zkemkeeper.dll
+E:\C#\TFT\RTEvents\obj\Release\RTEvents.csproj.ResolveComReference.cache
+E:\C#\TFT\RTEvents\bin\Release\RTEvents.exe
+E:\C#\TFT\RTEvents\bin\Release\RTEvents.pdb
+E:\C#\TFT\RTEvents\bin\Release\Interop.zkemkeeper.dll
+E:\C#\TFT\RTEvents\bin\Release\AxInterop.zkemkeeper.dll
+E:\C#\TFT\RTEvents\obj\Release\ResolveAssemblyReference.cache
+E:\C#\TFT\RTEvents\obj\Release\RTEvents.RTEventsMain.resources
+E:\C#\TFT\RTEvents\obj\Release\RTEvents.Properties.Resources.resources
+E:\C#\TFT\RTEvents\obj\Release\RTEvents.csproj.GenerateResource.Cache
+E:\C#\TFT\RTEvents\obj\Release\RTEvents.exe
+E:\C#\TFT\RTEvents\obj\Release\RTEvents.pdb
+D:\wince\work\脱机sdk\文档\光盘资料\脱机通讯开发包(32bit Ver6.2.4.1)\Demo\C#\TFT\RTEvents\obj\Release\Interop.zkemkeeper.dll
+D:\wince\work\脱机sdk\文档\光盘资料\脱机通讯开发包(32bit Ver6.2.4.1)\Demo\C#\TFT\RTEvents\obj\Release\AxInterop.zkemkeeper.dll
+D:\wince\work\脱机sdk\文档\光盘资料\脱机通讯开发包(32bit Ver6.2.4.1)\Demo\C#\TFT\RTEvents\obj\Release\RTEvents.csproj.ResolveComReference.cache
+D:\wince\work\脱机sdk\文档\光盘资料\脱机通讯开发包(32bit Ver6.2.4.1)\Demo\C#\TFT\RTEvents\obj\Release\RTEvents.exe
+D:\wince\work\脱机sdk\文档\光盘资料\脱机通讯开发包(32bit Ver6.2.4.1)\Demo\C#\TFT\RTEvents\bin\Release\RTEvents.exe
+D:\wince\work\脱机sdk\文档\光盘资料\脱机通讯开发包(32bit Ver6.2.4.1)\Demo\C#\TFT\RTEvents\bin\Release\RTEvents.pdb
+D:\wince\work\脱机sdk\文档\光盘资料\脱机通讯开发包(32bit Ver6.2.4.1)\Demo\C#\TFT\RTEvents\bin\Release\Interop.zkemkeeper.dll
+D:\wince\work\脱机sdk\文档\光盘资料\脱机通讯开发包(32bit Ver6.2.4.1)\Demo\C#\TFT\RTEvents\bin\Release\AxInterop.zkemkeeper.dll
+D:\wince\work\脱机sdk\文档\光盘资料\脱机通讯开发包(32bit Ver6.2.4.1)\Demo\C#\TFT\RTEvents\obj\Release\ResolveAssemblyReference.cache
+D:\wince\work\脱机sdk\文档\光盘资料\脱机通讯开发包(32bit Ver6.2.4.1)\Demo\C#\TFT\RTEvents\obj\Release\RTEvents.RTEventsMain.resources
+D:\wince\work\脱机sdk\文档\光盘资料\脱机通讯开发包(32bit Ver6.2.4.1)\Demo\C#\TFT\RTEvents\obj\Release\RTEvents.Properties.Resources.resources
+D:\wince\work\脱机sdk\文档\光盘资料\脱机通讯开发包(32bit Ver6.2.4.1)\Demo\C#\TFT\RTEvents\obj\Release\RTEvents.csproj.GenerateResource.Cache
+D:\wince\work\脱机sdk\文档\光盘资料\脱机通讯开发包(32bit Ver6.2.4.1)\Demo\C#\TFT\RTEvents\obj\Release\RTEvents.pdb
+E:\SVN\脱机通讯开发包(32bit Ver6.2.4.11)\Demo\C#\TFT\RTEvents\obj\Release\Interop.zkemkeeper.dll
+E:\SVN\脱机通讯开发包(32bit Ver6.2.4.11)\Demo\C#\TFT\RTEvents\obj\Release\AxInterop.zkemkeeper.dll
+E:\SVN\脱机通讯开发包(32bit Ver6.2.4.11)\Demo\C#\TFT\RTEvents\obj\Release\RTEvents.csproj.ResolveComReference.cache
+E:\SVN\脱机通讯开发包(32bit Ver6.2.4.11)\Demo\C#\TFT\RTEvents\obj\Release\RTEvents.exe
+E:\SVN\脱机通讯开发包(32bit Ver6.2.4.11)\Demo\C#\TFT\RTEvents\obj\Release\RTEvents.pdb
+E:\BiometricsIdentIDCard\zkempull\脱机通讯开发包\Demo\C#\TFT\RTEvents\obj\Release\Interop.zkemkeeper.dll
+E:\BiometricsIdentIDCard\zkempull\脱机通讯开发包\Demo\C#\TFT\RTEvents\obj\Release\AxInterop.zkemkeeper.dll
+E:\BiometricsIdentIDCard\zkempull\脱机通讯开发包\Demo\C#\TFT\RTEvents\obj\Release\RTEvents.csproj.ResolveComReference.cache
+E:\BiometricsIdentIDCard\zkempull\脱机通讯开发包\Demo\C#\TFT\RTEvents\obj\Release\RTEvents.exe
+E:\BiometricsIdentIDCard\zkempull\脱机通讯开发包\Demo\C#\TFT\RTEvents\obj\Release\RTEvents.pdb
+E:\BiometricsIdentIDCard\zkempull\脱机通讯开发包\Demo\C#\TFT\RTEvents\bin\Release\RTEvents.exe
+E:\BiometricsIdentIDCard\zkempull\脱机通讯开发包\Demo\C#\TFT\RTEvents\obj\Release\ResolveAssemblyReference.cache
+E:\BiometricsIdentIDCard\zkempull\脱机通讯开发包\Demo\C#\TFT\RTEvents\obj\Release\RTEvents.RTEventsMain.resources
+E:\BiometricsIdentIDCard\zkempull\脱机通讯开发包\Demo\C#\TFT\RTEvents\obj\Release\RTEvents.Properties.Resources.resources
+E:\BiometricsIdentIDCard\zkempull\脱机通讯开发包\Demo\C#\TFT\RTEvents\obj\Release\RTEvents.csproj.GenerateResource.Cache
+E:\BiometricsIdentIDCard\zkempull\脱机通讯开发包\Demo\C#\TFT\RTEvents\bin\Release\RTEvents.pdb
+E:\BiometricsIdentIDCard\zkempull\脱机通讯开发包\Demo\C#\TFT\RTEvents\bin\Release\Interop.zkemkeeper.dll
+E:\BiometricsIdentIDCard\zkempull\脱机通讯开发包\Demo\C#\TFT\RTEvents\bin\Release\AxInterop.zkemkeeper.dll

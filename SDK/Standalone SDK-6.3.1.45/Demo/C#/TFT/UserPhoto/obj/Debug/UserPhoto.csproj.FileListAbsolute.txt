@@ -1,0 +1,13 @@
+D:\wince\work\脱机sdk\sdk6.2.4.7\Document\脱机通讯开发包(32bit Ver6.2.4.11)\Demo\C#\TFT\UserPhoto\obj\Debug\Interop.zkemkeeper.dll
+D:\wince\work\脱机sdk\sdk6.2.4.7\Document\脱机通讯开发包(32bit Ver6.2.4.11)\Demo\C#\TFT\UserPhoto\obj\Debug\UserPhoto.csproj.ResolveComReference.cache
+F:\projects\脱机通讯开发包-6.3.1.38\Demo\C#\TFT\UserPhoto\bin\Debug\UserPhoto.exe
+F:\projects\脱机通讯开发包-6.3.1.38\Demo\C#\TFT\UserPhoto\bin\Debug\UserPhoto.pdb
+F:\projects\脱机通讯开发包-6.3.1.38\Demo\C#\TFT\UserPhoto\bin\Debug\Interop.zkemkeeper.dll
+F:\projects\脱机通讯开发包-6.3.1.38\Demo\C#\TFT\UserPhoto\obj\Debug\ResolveAssemblyReference.cache
+F:\projects\脱机通讯开发包-6.3.1.38\Demo\C#\TFT\UserPhoto\obj\Debug\Interop.zkemkeeper.dll
+F:\projects\脱机通讯开发包-6.3.1.38\Demo\C#\TFT\UserPhoto\obj\Debug\UserPhoto.csproj.ResolveComReference.cache
+F:\projects\脱机通讯开发包-6.3.1.38\Demo\C#\TFT\UserPhoto\obj\Debug\UserPhoto.UserPhotoMain.resources
+F:\projects\脱机通讯开发包-6.3.1.38\Demo\C#\TFT\UserPhoto\obj\Debug\UserPhoto.Properties.Resources.resources
+F:\projects\脱机通讯开发包-6.3.1.38\Demo\C#\TFT\UserPhoto\obj\Debug\UserPhoto.csproj.GenerateResource.Cache
+F:\projects\脱机通讯开发包-6.3.1.38\Demo\C#\TFT\UserPhoto\obj\Debug\UserPhoto.exe
+F:\projects\脱机通讯开发包-6.3.1.38\Demo\C#\TFT\UserPhoto\obj\Debug\UserPhoto.pdb

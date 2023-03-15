@@ -1,0 +1,2 @@
+E:\C#\Black&White\AttLogs\obj\Debug\Interop.zkemkeeper.dll
+E:\C#\Black&White\AttLogs\obj\Debug\AttLogs.csproj.ResolveComReference.cache

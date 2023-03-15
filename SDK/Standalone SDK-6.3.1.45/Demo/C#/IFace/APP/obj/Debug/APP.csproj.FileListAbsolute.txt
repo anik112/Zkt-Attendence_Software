@@ -1,0 +1,12 @@
+F:\projects\APP\bin\Debug\APP.exe
+F:\projects\APP\bin\Debug\APP.pdb
+F:\projects\APP\bin\Debug\Interop.zkemkeeper.dll
+F:\projects\APP\obj\Debug\ResolveAssemblyReference.cache
+F:\projects\APP\obj\Debug\Interop.zkemkeeper.dll
+F:\projects\APP\obj\Debug\APP.csproj.ResolveComReference.cache
+F:\projects\APP\obj\Debug\APP.App.resources
+F:\projects\APP\obj\Debug\APP.Properties.Resources.resources
+F:\projects\APP\obj\Debug\APP.csproj.GenerateResource.Cache
+F:\projects\APP\obj\Debug\APP.exe
+F:\projects\APP\obj\Debug\APP.pdb
+F:\projects\APP\bin\Debug\APP.exe.config

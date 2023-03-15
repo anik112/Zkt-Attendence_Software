@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="Access">
+</Property><Property Name="解决方案文件" Value="E:\SVN\脱机通讯Demo\Demo\VB.net\TFT\AccessControl\Access.sln">
+</Property><Property Name="用户选项文件" Value="E:\SVN\脱机通讯Demo\Demo\VB.net\TFT\AccessControl\Access.suo">
+</Property><Property Name="Date" Value="2018年1月26日">
+</Property><Property Name="Time" Value="16:26">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="Access.sln" Description="文件已成功备份为 E:\SVN\脱机通讯Demo\Demo\VB.net\TFT\AccessControl\Backup\Access.sln">
+</Event><Event ErrorLevel="0" Project="" Source="Access.suo" Description="文件已成功备份为 E:\SVN\脱机通讯Demo\Demo\VB.net\TFT\AccessControl\Backup\Access.suo">
+</Event><Event ErrorLevel="0" Project="AccessControl" Source="AccessControl.vbproj" Description="项目文件已成功备份为 E:\SVN\脱机通讯Demo\Demo\VB.net\TFT\AccessControl\Backup\AccessControl.vbproj">
+</Event><Event ErrorLevel="0" Project="AccessControl" Source="ACMain.vb" Description="文件已成功备份为 E:\SVN\脱机通讯Demo\Demo\VB.net\TFT\AccessControl\Backup\ACMain.vb">
+</Event><Event ErrorLevel="0" Project="AccessControl" Source="ACMain.Designer.vb" Description="文件已成功备份为 E:\SVN\脱机通讯Demo\Demo\VB.net\TFT\AccessControl\Backup\ACMain.Designer.vb">
+</Event><Event ErrorLevel="0" Project="AccessControl" Source="My Project\AssemblyInfo.vb" Description="文件已成功备份为 E:\SVN\脱机通讯Demo\Demo\VB.net\TFT\AccessControl\Backup\My Project\AssemblyInfo.vb">
+</Event><Event ErrorLevel="0" Project="AccessControl" Source="My Project\Application.Designer.vb" Description="文件已成功备份为 E:\SVN\脱机通讯Demo\Demo\VB.net\TFT\AccessControl\Backup\My Project\Application.Designer.vb">
+</Event><Event ErrorLevel="0" Project="AccessControl" Source="My Project\Resources.Designer.vb" Description="文件已成功备份为 E:\SVN\脱机通讯Demo\Demo\VB.net\TFT\AccessControl\Backup\My Project\Resources.Designer.vb">
+</Event><Event ErrorLevel="0" Project="AccessControl" Source="My Project\Settings.Designer.vb" Description="文件已成功备份为 E:\SVN\脱机通讯Demo\Demo\VB.net\TFT\AccessControl\Backup\My Project\Settings.Designer.vb">
+</Event><Event ErrorLevel="0" Project="AccessControl" Source="SearchforUSBCom.vb" Description="文件已成功备份为 E:\SVN\脱机通讯Demo\Demo\VB.net\TFT\AccessControl\Backup\SearchforUSBCom.vb">
+</Event><Event ErrorLevel="0" Project="AccessControl" Source="My Project\Application.myapp" Description="文件已成功备份为 E:\SVN\脱机通讯Demo\Demo\VB.net\TFT\AccessControl\Backup\My Project\Application.myapp">
+</Event><Event ErrorLevel="0" Project="AccessControl" Source="My Project\Settings.settings" Description="文件已成功备份为 E:\SVN\脱机通讯Demo\Demo\VB.net\TFT\AccessControl\Backup\My Project\Settings.settings">
+</Event><Event ErrorLevel="0" Project="AccessControl" Source="images\top.jpg" Description="文件已成功备份为 E:\SVN\脱机通讯Demo\Demo\VB.net\TFT\AccessControl\Backup\images\top.jpg">
+</Event><Event ErrorLevel="0" Project="AccessControl" Source="ACMain.resx" Description="文件已成功备份为 E:\SVN\脱机通讯Demo\Demo\VB.net\TFT\AccessControl\Backup\ACMain.resx">
+</Event><Event ErrorLevel="0" Project="AccessControl" Source="My Project\Resources.resx" Description="文件已成功备份为 E:\SVN\脱机通讯Demo\Demo\VB.net\TFT\AccessControl\Backup\My Project\Resources.resx">
+</Event><Event ErrorLevel="0" Project="AccessControl" Source="My Project\app.manifest" Description="文件已成功备份为 E:\SVN\脱机通讯Demo\Demo\VB.net\TFT\AccessControl\Backup\My Project\app.manifest">
+</Event><Event ErrorLevel="0" Project="AccessControl" Source="AccessControl.vbproj" Description="项目已成功转换">
+</Event><Event ErrorLevel="3" Project="AccessControl" Source="AccessControl.vbproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="Access.sln" Description="成功转换解决方案">
+</Event><Event ErrorLevel="3" Project="" Source="Access.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="AccessControl" Source="AccessControl.vbproj" Description="扫描完成: 项目文件不需要升级。">
+</Event></UpgradeLog>

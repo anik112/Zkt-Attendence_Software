@@ -1,0 +1,16 @@
+E:\C#\TFT\RTEvents\obj\Debug\Interop.zkemkeeper.dll
+E:\C#\TFT\RTEvents\obj\Debug\AxInterop.zkemkeeper.dll
+E:\C#\TFT\RTEvents\obj\Debug\RTEvents.csproj.ResolveComReference.cache
+E:\BiometricsIdentIDCard\zkempull\脱机通讯开发包\Demo\C#\TFT\RTEvents\obj\Debug\Interop.zkemkeeper.dll
+E:\BiometricsIdentIDCard\zkempull\脱机通讯开发包\Demo\C#\TFT\RTEvents\obj\Debug\AxInterop.zkemkeeper.dll
+E:\BiometricsIdentIDCard\zkempull\脱机通讯开发包\Demo\C#\TFT\RTEvents\obj\Debug\RTEvents.csproj.ResolveComReference.cache
+E:\BiometricsIdentIDCard\zkempull\脱机通讯开发包\Demo\C#\TFT\RTEvents\bin\Debug\RTEvents.exe
+E:\BiometricsIdentIDCard\zkempull\脱机通讯开发包\Demo\C#\TFT\RTEvents\bin\Debug\RTEvents.pdb
+E:\BiometricsIdentIDCard\zkempull\脱机通讯开发包\Demo\C#\TFT\RTEvents\bin\Debug\Interop.zkemkeeper.dll
+E:\BiometricsIdentIDCard\zkempull\脱机通讯开发包\Demo\C#\TFT\RTEvents\bin\Debug\AxInterop.zkemkeeper.dll
+E:\BiometricsIdentIDCard\zkempull\脱机通讯开发包\Demo\C#\TFT\RTEvents\obj\Debug\ResolveAssemblyReference.cache
+E:\BiometricsIdentIDCard\zkempull\脱机通讯开发包\Demo\C#\TFT\RTEvents\obj\Debug\RTEvents.RTEventsMain.resources
+E:\BiometricsIdentIDCard\zkempull\脱机通讯开发包\Demo\C#\TFT\RTEvents\obj\Debug\RTEvents.Properties.Resources.resources
+E:\BiometricsIdentIDCard\zkempull\脱机通讯开发包\Demo\C#\TFT\RTEvents\obj\Debug\RTEvents.csproj.GenerateResource.Cache
+E:\BiometricsIdentIDCard\zkempull\脱机通讯开发包\Demo\C#\TFT\RTEvents\obj\Debug\RTEvents.exe
+E:\BiometricsIdentIDCard\zkempull\脱机通讯开发包\Demo\C#\TFT\RTEvents\obj\Debug\RTEvents.pdb

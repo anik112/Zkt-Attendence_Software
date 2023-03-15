@@ -1,0 +1,33 @@
+E:\C#\TFT\Card Management\obj\Release\Interop.zkemkeeper.dll
+E:\C#\TFT\Card Management\obj\Release\Card.csproj.ResolveComReference.cache
+E:\C#\TFT\Card Management\bin\Release\CardManagement.exe
+E:\C#\TFT\Card Management\bin\Release\CardManagement.pdb
+E:\C#\TFT\Card Management\bin\Release\Interop.zkemkeeper.dll
+E:\C#\TFT\Card Management\obj\Release\ResolveAssemblyReference.cache
+E:\C#\TFT\Card Management\obj\Release\Card.CardMain.resources
+E:\C#\TFT\Card Management\obj\Release\Card.Properties.Resources.resources
+E:\C#\TFT\Card Management\obj\Release\Card.csproj.GenerateResource.Cache
+E:\C#\TFT\Card Management\obj\Release\CardManagement.exe
+E:\C#\TFT\Card Management\obj\Release\CardManagement.pdb
+D:\wince\work\脱机sdk\文档\光盘资料\脱机通讯开发包(32bit Ver6.2.4.1)\Demo\C#\TFT\Card Management\obj\Release\Interop.zkemkeeper.dll
+D:\wince\work\脱机sdk\文档\光盘资料\脱机通讯开发包(32bit Ver6.2.4.1)\Demo\C#\TFT\Card Management\obj\Release\Card.csproj.ResolveComReference.cache
+D:\wince\work\脱机sdk\文档\光盘资料\脱机通讯开发包(32bit Ver6.2.4.1)\Demo\C#\TFT\Card Management\obj\Release\CardManagement.exe
+D:\wince\work\脱机sdk\文档\光盘资料\脱机通讯开发包(32bit Ver6.2.4.1)\Demo\C#\TFT\Card Management\bin\Release\CardManagement.exe
+D:\wince\work\脱机sdk\文档\光盘资料\脱机通讯开发包(32bit Ver6.2.4.1)\Demo\C#\TFT\Card Management\bin\Release\CardManagement.pdb
+D:\wince\work\脱机sdk\文档\光盘资料\脱机通讯开发包(32bit Ver6.2.4.1)\Demo\C#\TFT\Card Management\bin\Release\Interop.zkemkeeper.dll
+D:\wince\work\脱机sdk\文档\光盘资料\脱机通讯开发包(32bit Ver6.2.4.1)\Demo\C#\TFT\Card Management\obj\Release\ResolveAssemblyReference.cache
+D:\wince\work\脱机sdk\文档\光盘资料\脱机通讯开发包(32bit Ver6.2.4.1)\Demo\C#\TFT\Card Management\obj\Release\Card.CardMain.resources
+D:\wince\work\脱机sdk\文档\光盘资料\脱机通讯开发包(32bit Ver6.2.4.1)\Demo\C#\TFT\Card Management\obj\Release\Card.Properties.Resources.resources
+D:\wince\work\脱机sdk\文档\光盘资料\脱机通讯开发包(32bit Ver6.2.4.1)\Demo\C#\TFT\Card Management\obj\Release\Card.csproj.GenerateResource.Cache
+D:\wince\work\脱机sdk\文档\光盘资料\脱机通讯开发包(32bit Ver6.2.4.1)\Demo\C#\TFT\Card Management\obj\Release\CardManagement.pdb
+F:\projects\脱机通讯开发包-6.3.1.38\Demo\C#\TFT\Card Management\obj\Release\Interop.zkemkeeper.dll
+F:\projects\脱机通讯开发包-6.3.1.38\Demo\C#\TFT\Card Management\obj\Release\Card.csproj.ResolveComReference.cache
+F:\projects\脱机通讯开发包-6.3.1.38\Demo\C#\TFT\Card Management\obj\Release\CardManagement.exe
+F:\projects\脱机通讯开发包-6.3.1.38\Demo\C#\TFT\Card Management\obj\Release\CardManagement.pdb
+F:\projects\脱机通讯开发包-6.3.1.38\Demo\C#\TFT\Card Management\bin\Release\CardManagement.exe
+F:\projects\脱机通讯开发包-6.3.1.38\Demo\C#\TFT\Card Management\bin\Release\CardManagement.pdb
+F:\projects\脱机通讯开发包-6.3.1.38\Demo\C#\TFT\Card Management\bin\Release\Interop.zkemkeeper.dll
+F:\projects\脱机通讯开发包-6.3.1.38\Demo\C#\TFT\Card Management\obj\Release\ResolveAssemblyReference.cache
+F:\projects\脱机通讯开发包-6.3.1.38\Demo\C#\TFT\Card Management\obj\Release\Card.CardMain.resources
+F:\projects\脱机通讯开发包-6.3.1.38\Demo\C#\TFT\Card Management\obj\Release\Card.Properties.Resources.resources
+F:\projects\脱机通讯开发包-6.3.1.38\Demo\C#\TFT\Card Management\obj\Release\Card.csproj.GenerateResource.Cache

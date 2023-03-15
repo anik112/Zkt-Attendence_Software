@@ -1,0 +1,4 @@
+E:\SVN\脱机通讯Demo\Demo\VB.net\TFT\Others\obj\x86\Release\Interop.zkemkeeper.dll
+E:\SVN\脱机通讯Demo\Demo\VB.net\TFT\Others\obj\x86\Release\Others.vbproj.ResolveComReference.cache
+E:\SVN\脱机通讯Demo\Demo\VB.net\TFT\Others\obj\x86\Release\Others.exe
+E:\SVN\脱机通讯Demo\Demo\VB.net\TFT\Others\obj\x86\Release\Others.xml
