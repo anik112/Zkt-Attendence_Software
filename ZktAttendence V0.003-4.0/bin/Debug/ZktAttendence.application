@@ -3,18 +3,15 @@
   <assemblyIdentity name="ZktAttendence.application" version="1.0.0.0" publicKeyToken="0000000000000000" language="en-US" processorArchitecture="msil" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <description asmv2:publisher="Pranta" asmv2:product="ZktAttendence" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <deployment install="true" mapFileExtensions="true" co.v1:createDesktopShortcut="true" />
-  <compatibleFrameworks xmlns="urn:schemas-microsoft-com:clickonce.v2">
-    <framework targetVersion="4.7.2" profile="Full" supportedRuntime="4.0.30319" />
-  </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="ZktAttendence.exe.manifest" size="4622">
+    <dependentAssembly dependencyType="install" codebase="ZktAttendence.exe.manifest" size="5421">
       <assemblyIdentity name="ZktAttendence.exe" version="1.0.0.0" publicKeyToken="0000000000000000" language="en-US" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
-        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>f8ZhTea+ockGQ+KXrZxp9aIdyZlf4Wi0VnMNP8iwkb8=</dsig:DigestValue>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>Vfgo5IdgeDzq+PWR4NAal950Wmo=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

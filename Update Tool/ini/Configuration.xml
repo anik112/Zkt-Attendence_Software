@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<ArrayOfTFTPServerConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <TFTPServerConfiguration>
+    <Name>TFTP</Name>
+    <EndPoint>
+      <Address>192.168.1.64</Address>
+      <Port>4371</Port>
+    </EndPoint>
+    <SinglePort>false</SinglePort>
+    <Ttl>-1</Ttl>
+    <DontFragment>false</DontFragment>
+    <RootPath>D:\TFTPTemp</RootPath>
+    <AutoCreateDirectories>true</AutoCreateDirectories>
+    <AllowRead>true</AllowRead>
+    <AllowWrite>true</AllowWrite>
+    <Timeout>2000</Timeout>
+    <Retries>5</Retries>
+    <ConvertPathSeparator>true</ConvertPathSeparator>
+    <WindowSize>1</WindowSize>
+    <Alternatives />
+  </TFTPServerConfiguration>
+</ArrayOfTFTPServerConfiguration>

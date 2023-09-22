@@ -1,0 +1,24 @@
+ZKPackUpdate()>>>System.FormatException: 未找到任何可识别的数字。
+   在 System.ParseNumbers.StringToInt(String s, Int32 radix, Int32 flags, Int32* currPos)
+   在 System.Convert.ToInt32(String value, Int32 fromBase)
+   在 ZMM100UPTOOL.classes.Henry.HenryDecOut(String value, String& outValue)
+   在 ZMM100UPTOOL.UI.OnlineUp_Up.ZKPackUpdate(String filePath) time=2014/8/29 13:45:22
+WaitFor() timeOutT=0>>> time=2015/1/6 9:35:00
+bt_getLicense_Click()>>>System.IO.IOException: The process cannot access the file 'G:\TFTPTemp\MemInfo.txt' because it is being used by another process.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options)
+   at System.IO.StreamReader..ctor(String path, Encoding encoding, Boolean detectEncodingFromByteOrderMarks, Int32 bufferSize)
+   at System.IO.StreamReader..ctor(String path)
+   at ZMM100UPTOOL.classes.LinuxCMD.GetDeviceMemoryInfo(String MemDir, String& MemFree)
+   at ZMM100UPTOOL.UI.OnlineUp_Up.bt_getLicense_Click(Object sender, EventArgs e) time=2015/1/6 9:35:20
+bt_getLicense_Click()>>> 1 delete errorSystem.IO.IOException: The process cannot access the file because it is being used by another process.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.__Error.WinIOError()
+   at System.IO.File.Move(String sourceFileName, String destFileName)
+   at ZMM100UPTOOL.UI.OnlineUp_Up.bt_getLicense_Click(Object sender, EventArgs e) time=2015/1/6 9:36:02
+bt_getLicense_Click()>>> 2 delete errorSystem.IO.IOException: The process cannot access the file because it is being used by another process.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.__Error.WinIOError()
+   at System.IO.File.Move(String sourceFileName, String destFileName)
+   at ZMM100UPTOOL.UI.OnlineUp_Up.bt_getLicense_Click(Object sender, EventArgs e) time=2015/1/6 9:36:03

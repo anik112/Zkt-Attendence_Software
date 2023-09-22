@@ -1,0 +1,1 @@
+## Copy tsmcom32.dll file in "C:\Windows\System32"

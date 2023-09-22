@@ -1,0 +1,112 @@
+﻿
+CommandFailed=cd command operation failed
+TFTPFileFailed=tftp obtain file failed
+UnpackFailure=Extract Failure
+FileDeletionFailed=Delete File Failed
+PleaseLoginMachine=Pls login device
+OperationFailed=Operation failed, please make sure the file format is correct!
+SelectUpgradeFile=Pls Select Update File!
+SelectUpgradeOptions=Pls Select Upate Options First!
+MustUpgraded=No Update File!
+LicenseUpFailed=License Upgrade Failed
+LicenseUpIng=License File Upgrade
+LicenseObtainSuccess=License Obtain Success
+LicenseObtainfailed=License Obtain Failed
+LicenseLogSuccess=License Log Obtain Success
+LicenseLogFailed=License Log Obtain Failed
+LicensePath=License File Path
+NotDeviceLicenseDerict=No corresponding license folder
+DeviceNoFialed=Read Device Serial Number Failed
+LanguageUpFailed=Language Update Failed
+LanguageUpIng=Language File Update
+FPLicenseUpFailde=FP License Update Failed
+FPLicenseUpIng=FP License Update
+UDiskKernalBoardWait=Wait for device Start-up
+
+DeviceRestart=Device is restarting 
+DeviceConFailed=Connection Failed, Pls check whether the device has already started! 
+DeviceConFailedReCon=Connection Failed, Pls connect with the device! 
+DeviceConFailedPWD=Error Connection Passwd!
+TFTPUpload=tftp Upload
+FileFailed=File Failed
+Success=Success
+Failed=Failed
+ParamSetSuccess=Restart to take effect
+
+RestoreDataCompleteRebootAttention=Data Restore Success, reboot to take effect, whether to reboot?
+RestoreDataAttention=This action will overwrite the original data, confirm to restore data?
+
+UpgradeFileAlreadyExists=File already exist,whether overwrite the original one?
+FileMakeFailed=Make zkpack file failed
+UpFileFormatFailed=Incorrect File Format!
+IPAddr=IP Address
+UserName=User Name
+PWD=Password
+SDKConnect=Device firmware attached
+ConPWD=Comm Password
+StateNoLogin=Not logged in
+StateNoCon=Not connected
+StateYesLogin=Logged in
+StateYesCon=Connected
+Login=Login
+Con=Connection
+ConRefresh=Re-login connection
+ConIpError=The device must be in the same network segment with PC, set the PC IP tftp service or device IP address!
+ConInitDev=Initialling Data
+ConFailed=Connection failed, pls check the wire connection or setting!
+LoginConSeccese=Success login and connect!
+UserOrPWDFailed=Error User name or Passwd!
+TelnetLoginFailed=Login Failed!
+DevFirmConFailed=Connection failed!
+IllegalIPAddr=Illegal IP address
+IPAddrNotNull=IP address can not be null
+IllegalPassword=Illegal symbol in passwd, the connection passwd should be consist of number 0~9!
+ParamNotNull=Parameter's name or value cannot be null
+ParamValueFailed=Incorrect Value
+IllegalSymbol=Illegal Symbol, Pls have a check
+DevNoConnect=No Connect Device
+DevFirmNoConnect=No Connect Firmware
+DevNoThisFile=No This File In Device
+
+FileUpload=Transmitting File
+FIleReceive=Receiving File
+DataProcessing=Data Proccessing
+
+Attention=Attention
+DirectoryPath=Save Path
+FilePath=File Path
+FirmData=Firmware
+FirmDirectoryPath=Incorrect Folder£¬Selcet Again
+FirmDirPathAttention=Select Local File Path First
+
+CompressedPackageError=Incorrect Package format
+AdministratorAttention=The software does not work without administrator privileges, please setup administrator privileges!
+ProgramRunAttention=This program can run only one instance!
+
+Upgrade=Upgrade
+UpdataIng=Upgrading
+UpScrenSize=Screen Size
+UpPicSize=Picture Size
+ObtainLicense=Obtain
+ObtainLicenseEx=Obtain License or Log
+LicenseLog=Obtain License Log
+UpSuccesse=Upgrade Successe
+GetDevPlantAttention=Obtain Platform Info Failed
+UpPackageHeadError=Upd Package Head Format Error
+UpPackageTextError=No this series number in the upgrade package
+UpPackagePlantError=Upgrade failed,please make the upgrade package correct. 
+UpPackageDevError=This function is not suuported 
+ParamSet=Parameters Setting
+
+SelectedFileNotConformityEX={0}Format is reguired, please select again!
+SelectedFileNotConformity=Incorrect File Format,please select again!
+
+LicenseUp=Licensing Operations
+FirmUp=Firmware Update
+GetLicenseFile=Obtaining License
+GetLicenseLog=Obtaining License Log
+RestoreDataCompleteRebootAttention=Data Restore Success, reboot to take effect, whether to reboot?
+RestoreDataAttention=This action will overwrite the original data, confirm to restore data?
+DevRestart=Restart device
+RestoreDataCompleteReboot=Restore Data Success, device is now rebooting! 
+UpFailed=Upgrade Failed

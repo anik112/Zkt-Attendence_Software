@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using ZktAttendence.Utilitis;
 using System.Xml;
 using System.IO;

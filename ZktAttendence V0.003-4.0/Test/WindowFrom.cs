@@ -250,7 +250,7 @@ namespace ZktAttendence.Test
                     userAttndData = zkt.GetAttendenceLogData(objZkt, selector.getMachineNumber());
                     //userList.AddRange(zkt.GetUserInformation(objZkt, selector.getMachineNumber())); // Last update - 17-11-2020
 
-                    //Console.WriteLine(userAttndData);
+                    Console.WriteLine(userAttndData);
 
                     int recordCount = 0;// record counter
                     try
