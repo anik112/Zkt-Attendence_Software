@@ -41,6 +41,8 @@
             this.txtDateOfRTA = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgnBtnProcess = new System.Windows.Forms.Button();
             this.txtToDate = new System.Windows.Forms.TextBox();
@@ -54,6 +56,7 @@
             this.menuBar = new System.Windows.Forms.MenuStrip();
             this.fileHeadMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.menuFileAddDevice = new System.Windows.Forms.ToolStripMenuItem();
+            this.label3 = new System.Windows.Forms.Label();
             btnClear = new System.Windows.Forms.Button();
             this.groupPan01.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -86,7 +89,7 @@
             this.groupPan01.Controls.Add(this.txtDateForClear);
             this.groupPan01.Controls.Add(this.label2);
             this.groupPan01.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupPan01.Location = new System.Drawing.Point(346, 38);
+            this.groupPan01.Location = new System.Drawing.Point(421, 38);
             this.groupPan01.Name = "groupPan01";
             this.groupPan01.Size = new System.Drawing.Size(201, 167);
             this.groupPan01.TabIndex = 5;
@@ -137,9 +140,9 @@
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 38);
+            this.groupBox1.Location = new System.Drawing.Point(18, 38);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(328, 167);
+            this.groupBox1.Size = new System.Drawing.Size(397, 167);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Data Download";
@@ -149,7 +152,7 @@
             this.groupBox3.Controls.Add(this.panel1);
             this.groupBox3.Controls.Add(this.txtDateOfRTA);
             this.groupBox3.Controls.Add(this.label1);
-            this.groupBox3.Location = new System.Drawing.Point(197, 27);
+            this.groupBox3.Location = new System.Drawing.Point(265, 27);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(124, 130);
             this.groupBox3.TabIndex = 16;
@@ -200,6 +203,9 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.textBox2);
+            this.groupBox2.Controls.Add(this.textBox1);
             this.groupBox2.Controls.Add(this.panel2);
             this.groupBox2.Controls.Add(this.txtToDate);
             this.groupBox2.Controls.Add(this.lblToDate);
@@ -207,10 +213,26 @@
             this.groupBox2.Controls.Add(this.lblFromDate);
             this.groupBox2.Location = new System.Drawing.Point(8, 27);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(173, 130);
+            this.groupBox2.Size = new System.Drawing.Size(257, 130);
             this.groupBox2.TabIndex = 15;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "From ZKT";
+            // 
+            // textBox2
+            // 
+            this.textBox2.AccessibleName = "txtToTime";
+            this.textBox2.Location = new System.Drawing.Point(179, 53);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(72, 22);
+            this.textBox2.TabIndex = 23;
+            // 
+            // textBox1
+            // 
+            this.textBox1.AccessibleName = "txtFromTime";
+            this.textBox1.Location = new System.Drawing.Point(179, 27);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(72, 22);
+            this.textBox1.TabIndex = 22;
             // 
             // panel2
             // 
@@ -218,7 +240,7 @@
             this.panel2.Controls.Add(this.dgnBtnProcess);
             this.panel2.Location = new System.Drawing.Point(13, 81);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(150, 43);
+            this.panel2.Size = new System.Drawing.Size(238, 43);
             this.panel2.TabIndex = 21;
             // 
             // dgnBtnProcess
@@ -226,9 +248,9 @@
             this.dgnBtnProcess.AccessibleName = "btnProcess";
             this.dgnBtnProcess.BackColor = System.Drawing.SystemColors.Control;
             this.dgnBtnProcess.Font = new System.Drawing.Font("Lucida Sans", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgnBtnProcess.Location = new System.Drawing.Point(19, 5);
+            this.dgnBtnProcess.Location = new System.Drawing.Point(53, 5);
             this.dgnBtnProcess.Name = "dgnBtnProcess";
-            this.dgnBtnProcess.Size = new System.Drawing.Size(111, 33);
+            this.dgnBtnProcess.Size = new System.Drawing.Size(144, 33);
             this.dgnBtnProcess.TabIndex = 3;
             this.dgnBtnProcess.Text = "Process";
             this.dgnBtnProcess.UseVisualStyleBackColor = false;
@@ -239,7 +261,7 @@
             this.txtToDate.AccessibleName = "";
             this.txtToDate.Location = new System.Drawing.Point(75, 53);
             this.txtToDate.Name = "txtToDate";
-            this.txtToDate.Size = new System.Drawing.Size(88, 22);
+            this.txtToDate.Size = new System.Drawing.Size(101, 22);
             this.txtToDate.TabIndex = 18;
             this.txtToDate.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtToDate_MouseClick);
             this.txtToDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtToDate_KeyPress);
@@ -259,9 +281,9 @@
             // txtFromDate
             // 
             this.txtFromDate.AccessibleName = "txtFromDate";
-            this.txtFromDate.Location = new System.Drawing.Point(75, 25);
+            this.txtFromDate.Location = new System.Drawing.Point(75, 27);
             this.txtFromDate.Name = "txtFromDate";
-            this.txtFromDate.Size = new System.Drawing.Size(88, 22);
+            this.txtFromDate.Size = new System.Drawing.Size(101, 22);
             this.txtFromDate.TabIndex = 17;
             this.txtFromDate.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtFromDate_MouseClick);
             this.txtFromDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFromDate_KeyPress);
@@ -270,7 +292,7 @@
             // 
             this.lblFromDate.AutoSize = true;
             this.lblFromDate.Font = new System.Drawing.Font("Lucida Sans", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFromDate.Location = new System.Drawing.Point(10, 28);
+            this.lblFromDate.Location = new System.Drawing.Point(10, 30);
             this.lblFromDate.Name = "lblFromDate";
             this.lblFromDate.Size = new System.Drawing.Size(64, 14);
             this.lblFromDate.TabIndex = 19;
@@ -282,7 +304,7 @@
             this.txtShowMsg.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtShowMsg.Font = new System.Drawing.Font("Lucida Console", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtShowMsg.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtShowMsg.Location = new System.Drawing.Point(553, 38);
+            this.txtShowMsg.Location = new System.Drawing.Point(628, 38);
             this.txtShowMsg.Name = "txtShowMsg";
             this.txtShowMsg.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
             this.txtShowMsg.Size = new System.Drawing.Size(354, 412);
@@ -298,7 +320,7 @@
             this.tablePan.Location = new System.Drawing.Point(12, 237);
             this.tablePan.Name = "tablePan";
             this.tablePan.Padding = new System.Windows.Forms.Padding(5, 10, 5, 10);
-            this.tablePan.Size = new System.Drawing.Size(535, 213);
+            this.tablePan.Size = new System.Drawing.Size(610, 213);
             this.tablePan.TabIndex = 17;
             this.tablePan.MouseEnter += new System.EventHandler(this.tablePan_MouseEnter);
             // 
@@ -343,7 +365,7 @@
             this.fileHeadMenu});
             this.menuBar.Location = new System.Drawing.Point(0, 0);
             this.menuBar.Name = "menuBar";
-            this.menuBar.Size = new System.Drawing.Size(911, 24);
+            this.menuBar.Size = new System.Drawing.Size(991, 24);
             this.menuBar.TabIndex = 20;
             this.menuBar.Text = "menuStrip1";
             // 
@@ -361,16 +383,26 @@
             // 
             this.menuFileAddDevice.AccessibleName = "menuFileAddDevice";
             this.menuFileAddDevice.Name = "menuFileAddDevice";
-            this.menuFileAddDevice.Size = new System.Drawing.Size(180, 22);
+            this.menuFileAddDevice.Size = new System.Drawing.Size(138, 22);
             this.menuFileAddDevice.Text = "&Add Device";
             this.menuFileAddDevice.Click += new System.EventHandler(this.menuFileAddDevice_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Lucida Sans", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(199, 12);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(33, 14);
+            this.label3.TabIndex = 24;
+            this.label3.Text = "Time";
             // 
             // WindowFrom
             // 
             this.AccessibleName = "deselectCheckBox";
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(911, 459);
+            this.ClientSize = new System.Drawing.Size(991, 459);
             this.Controls.Add(this.isSelectAll);
             this.Controls.Add(this.isDeselectAll);
             this.Controls.Add(this.tablePan);
@@ -425,5 +457,8 @@
         private System.Windows.Forms.MenuStrip menuBar;
         private System.Windows.Forms.ToolStripMenuItem fileHeadMenu;
         private System.Windows.Forms.ToolStripMenuItem menuFileAddDevice;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label3;
     }
 }

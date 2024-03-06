@@ -43,11 +43,11 @@ namespace ZktAttendence.Test
 
             if ((txtFromDate.Text != String.Empty)
                 && (txtToDate.Text != String.Empty)
-            //&& (int.Parse(txtFromDate.Text.Substring(3, 2)) <= int.Parse(txtToDate.Text.Substring(3, 2)))
+                && (int.Parse(txtFromDate.Text.Substring(3, 2)) <= int.Parse(txtToDate.Text.Substring(3, 2)))
             )
             {
                 Console.WriteLine("In-String Format");
-                Console.WriteLine("From Date: "+txtFromDate.Text.Substring(3, 2));
+                Console.WriteLine("From Date: "+txtFromDate.Text.Substring(0, 2));
                 setSelectedMachineList();
                 int errorStatus = processStart();
                 if (errorStatus == 1001)
@@ -196,7 +196,7 @@ namespace ZktAttendence.Test
 
             Console.WriteLine("=>" + toDate);
 
-            /*
+            
             while (!workDates[index].Equals(txtToDate.Text))
             {
                 fromdt = fromdt.AddDays(1);
@@ -207,9 +207,9 @@ namespace ZktAttendence.Test
                     return 1001;
                 }
                 Console.WriteLine("=>" + fromdt);
-                //setMsgInBox("\n>> -- Make Index -- <<\n");
+                setMsgInBox("\n>> -- Make Index -- <<\n");
             }
-            */
+            
 
             if (isClear)
             {
@@ -259,8 +259,6 @@ namespace ZktAttendence.Test
                     userAttndData = zkt.GetAttendenceLogData(objZkt, selector.getMachineNumber());
                     //userList.AddRange(zkt.GetUserInformation(objZkt, selector.getMachineNumber())); // Last update - 17-11-2020
 
-                    Console.WriteLine("Raw Data: "+userAttndData);
-
                     int recordCount = 0;// record counter
                     try
                     {
@@ -281,7 +279,7 @@ namespace ZktAttendence.Test
                                 String[] timePart = part[1].Split(':'); // '19:54:20' to {19,54,20}
                                 String finalTimeWithFormat = timePart[0] + timePart[1] + timePart[2];
 
-                                writer.WriteLine($"{machinAttendence.MachineNumber}:{machinAttendence.IndRegID.ToString().PadLeft(14, '0')}:{finalDateWithFormat}:{finalTimeWithFormat}:11"); // chnage in 16-11-2020
+                                writer.WriteLine($"{machinAttendence.MachineNumber}:{machinAttendence.IndRegID.ToString().PadLeft(10, '0')}:{finalDateWithFormat}:{finalTimeWithFormat}:11"); // chnage in 16-11-2020
 
                                 // last update - 17-11-2020
                                 /*foreach (UserInfo user in userList)
@@ -312,7 +310,7 @@ namespace ZktAttendence.Test
                                 {
                                     if (chekingData.Contains(workDates[i]))
                                     {
-
+                                       
                                         //105:00020001990:20191125:195420:11
                                         String[] part = chekingData.Split(' '); // string like '19:54:20 2020/08/20' // 22/05/2021 07:10:19
                                         String[] datePart = part[0].Split('/'); // '2020/08/20' to {2020,08,20}
@@ -321,7 +319,7 @@ namespace ZktAttendence.Test
                                         String[] timePart = part[1].Split(':'); // '19:54:20' to {19,54,20}
                                         String finalTimeWithFormat = timePart[0] + timePart[1] + timePart[2];
 
-                                        writer.WriteLine($"{machinAttendence.MachineNumber}:{machinAttendence.IndRegID.ToString().PadLeft(14, '0')}:{finalDateWithFormat}:{finalTimeWithFormat}:11"); // chnage in 16-11-2020
+                                        writer.WriteLine($"{machinAttendence.MachineNumber}:{machinAttendence.IndRegID.ToString().PadLeft(10, '0')}:{finalDateWithFormat}:{finalTimeWithFormat}:11"); // chnage in 16-11-2020
                                         // setMsgInBox($"{machinAttendence.MachineNumber}:{machinAttendence.IndRegID.ToString().PadLeft(10, '0')}:{finalDateWithFormat}:{finalTimeWithFormat}:11");
                                         // last update - 17-11-2020
                                         /*foreach (UserInfo user in userList)
@@ -353,7 +351,7 @@ namespace ZktAttendence.Test
                     }
                     catch (Exception ex)
                     {
-                        //setMsgInBox(ex.Message);
+                        setMsgInBox(ex.Message);
                         Console.WriteLine("Into-Process: "+ex.Message);
                         setMsgInBox(ex.ToString());
                         setMsgInBox(GetLineNumber(ex).ToString());
